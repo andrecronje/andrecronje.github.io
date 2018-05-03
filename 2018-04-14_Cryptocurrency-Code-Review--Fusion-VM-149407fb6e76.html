@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Cryptocurrency Code Review: Fusion VM</title><meta name="description" content="Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…"><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Cryptocurrency Code Review: Fusion VM</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…
+</section>
+<section data-field="body" class="e-content">
+<section name="de88" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="aa81" id="aa81" class="graf graf--h3 graf--leading graf--title">Cryptocurrency Code Review: Fusion VM</h3><p name="5a28" id="5a28" class="graf graf--p graf-after--h3"><strong class="markup--strong markup--p-strong">Disclaimer</strong>: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a comment on the overall project, scope, or success thereof. This was done as an educational review by me and any comments in the article are simply my opinion. It should not be used as any comment or advice on the project as a whole.</p><div name="dd83" id="dd83" class="graf graf--mixtapeEmbed graf-after--p"><a href="https://crypp.to/FusionVMCode" data-href="https://crypp.to/FusionVMCode" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://crypp.to/FusionVMCode"><strong class="markup--strong markup--mixtapeEmbed-strong">Fusion VM Code Review - Cryptofinance Blockchain | Crypto Briefing</strong><br><em class="markup--em markup--mixtapeEmbed-em">My initial FUSION VM code review is an early update on the blockchain code for this interesting cryptofinance project…</em>crypp.to</a><a href="https://crypp.to/FusionVMCode" class="js-mixtapeImage mixtapeImage u-ignoreBlock" data-media-id="ccb72353a1e55eba639029e57562526c" data-thumbnail-img-id="0*QFbFn7Z1Bj1oMMsb." style="background-image: url(https://cdn-images-1.medium.com/fit/c/160/160/0*QFbFn7Z1Bj1oMMsb.);"></a></div><figure name="8143" id="8143" class="graf graf--figure graf-after--mixtapeEmbed"><div class="aspectRatioPlaceholder is-locked" style="max-width: 524px; max-height: 434px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 82.8%;"></div><img class="graf-image" data-image-id="1*vxGkEhaZkoXJQu01BuikBg.png" data-width="524" data-height="434" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*vxGkEhaZkoXJQu01BuikBg.png"></div></figure><p name="c80c" id="c80c" class="graf graf--p graf-after--figure">I wasn’t originally going to do this review, I feel there isn’t enough substance yet for me to do a review, but everyone keeps asking, so let me just share my thoughts.</p><figure name="f246" id="f246" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 499px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 71.3%;"></div><img class="graf-image" data-image-id="1*jOzGE9HLMGJFj2g9kuBn7A.png" data-width="934" data-height="666" src="https://cdn-images-1.medium.com/max/800/1*jOzGE9HLMGJFj2g9kuBn7A.png"></div></figure><p name="5595" id="5595" class="graf graf--p graf-after--figure">First off, Java, nothing inherently wrong, but I was hoping for something more optimized, Fusion did state they are planning JVM support though, so this is probably a choice connected to it.</p><p name="bb75" id="bb75" class="graf graf--p graf-after--p">Lack of a detailed readme is a bit disappointing.</p><p name="cb8a" id="cb8a" class="graf graf--p graf-after--p">I was hoping for a standalone VM implementation, something I could start from the command line and play with, maybe even throw in a basic contract, unfortunately we don’t have this yet, for now we just have code.</p><figure name="2cdb" id="2cdb" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 425px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 60.8%;"></div><img class="graf-image" data-image-id="1*YuQ15Zq1cBpXunRjdNp7Pg.png" data-width="943" data-height="573" src="https://cdn-images-1.medium.com/max/800/1*YuQ15Zq1cBpXunRjdNp7Pg.png"></div></figure><p name="b627" id="b627" class="graf graf--p graf-after--figure">No commit history to work off of, so we just have to evaluate what is available in the repository.</p><figure name="b07c" id="b07c" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 725px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 103.60000000000001%;"></div><img class="graf-image" data-image-id="1*u-fYNQxUFmU9v4jVYoCKOA.png" data-width="750" data-height="777" src="https://cdn-images-1.medium.com/max/800/1*u-fYNQxUFmU9v4jVYoCKOA.png"></div></figure><p name="ce25" id="ce25" class="graf graf--p graf-after--figure">No comments unfortunately, we see some interface definitions.</p><figure name="cda4" id="cda4" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 586px; max-height: 186px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 31.7%;"></div><img class="graf-image" data-image-id="1*pomEVALlBembo-WCO5t49g.png" data-width="586" data-height="186" src="https://cdn-images-1.medium.com/max/800/1*pomEVALlBembo-WCO5t49g.png"></div></figure><p name="71a5" id="71a5" class="graf graf--p graf-after--figure">My assumption here is the the communication layer for the built in VM Oracles will use JSON, for now just a stub.</p><figure name="29eb" id="29eb" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 633px; max-height: 510px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 80.60000000000001%;"></div><img class="graf-image" data-image-id="1*oWrTDykezGdKh94mhjIfIg.png" data-width="633" data-height="510" src="https://cdn-images-1.medium.com/max/800/1*oWrTDykezGdKh94mhjIfIg.png"></div></figure><p name="f346" id="f346" class="graf graf--p graf-after--figure">HttpUtils, something I was interested to see an implementation on, but nothing here yet.</p><figure name="ca69" id="ca69" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 465px; max-height: 312px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 67.10000000000001%;"></div><img class="graf-image" data-image-id="1*-Iy-RpTBAozD_Mg-4ujGDA.png" data-width="465" data-height="312" src="https://cdn-images-1.medium.com/max/800/1*-Iy-RpTBAozD_Mg-4ujGDA.png"></div></figure><p name="ede3" id="ede3" class="graf graf--p graf-after--figure">Stub. (Stub just means a short form of something)</p><figure name="2838" id="2838" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 599px; max-height: 583px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 97.3%;"></div><img class="graf-image" data-image-id="1*GSxVJm2xWJnFUjjmF4VZyw.png" data-width="599" data-height="583" src="https://cdn-images-1.medium.com/max/800/1*GSxVJm2xWJnFUjjmF4VZyw.png"></div></figure><p name="4909" id="4909" class="graf graf--p graf-after--figure">OpCodes are instructions that we want to perform, so we first call useGas with the OpCode value, which calls calcGas (which currently returns 0 because it isn’t implemented) which sees if there is enough gas. useGas is defined in the global context, so I assume that each AppVirtualMachine is a single instantiation (confirmed in AppSystemService that it is) otherwise this is unoptimized.</p><p name="4887" id="4887" class="graf graf--p graf-after--p">Real implementation is in Virtual Machine, so let’s go find it.</p><figure name="3604" id="3604" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 753px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 107.60000000000001%;"></div><img class="graf-image" data-image-id="1*m-FVcWxlDCIjD-fPaWVEbA.png" data-width="793" data-height="853" src="https://cdn-images-1.medium.com/max/800/1*m-FVcWxlDCIjD-fPaWVEbA.png"></div></figure><p name="6352" id="6352" class="graf graf--p graf-after--figure">Good error handling, good structure, straight forward implementation.</p><div name="a05b" id="a05b" class="graf graf--mixtapeEmbed graf-after--p"><a href="https://crypp.to/FusionVMCode" data-href="https://crypp.to/FusionVMCode" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://crypp.to/FusionVMCode"><strong class="markup--strong markup--mixtapeEmbed-strong">Fusion VM Code Review - Cryptofinance Blockchain | Crypto Briefing</strong><br><em class="markup--em markup--mixtapeEmbed-em">My initial FUSION VM code review is an early update on the blockchain code for this interesting cryptofinance project…</em>crypp.to</a><a href="https://crypp.to/FusionVMCode" class="js-mixtapeImage mixtapeImage u-ignoreBlock" data-media-id="ccb72353a1e55eba639029e57562526c" data-thumbnail-img-id="0*QFbFn7Z1Bj1oMMsb." style="background-image: url(https://cdn-images-1.medium.com/fit/c/160/160/0*QFbFn7Z1Bj1oMMsb.);"></a></div><p name="901f" id="901f" class="graf graf--p graf-after--mixtapeEmbed"><strong class="markup--strong markup--p-strong">Conclusion</strong>: It’s good code, but it’s standard code. I was definitely hoping for more, this is a fairly straight forward VM implementation with the stubs added for built in Oracles.</p><p name="5f4c" id="5f4c" class="graf graf--p graf-after--p graf--trailing">For now, this definitely hasn’t sated me, and I’ll be looking forward to doing a real review when they release more substance.</p></div></div></section>
+</section>
+<footer><p class="p-tags">Tagged in <a href="https://medium.com/tag/software-development" class="p-tag">Software Development</a>, <a href="https://medium.com/tag/crypto" class="p-tag">Crypto</a>, <a href="https://medium.com/tag/cryptocurrency" class="p-tag">Cryptocurrency</a>, <a href="https://medium.com/tag/fusion" class="p-tag">Fusion</a></p><p>By <a href="https://medium.com/@suchi.blackwing" class="p-author h-card">Andre Cronje</a> on <a href="https://medium.com/p/149407fb6e76"><time class="dt-published" datetime="2018-04-14T14:14:15.658Z">April 14, 2018</time></a>.</p><p><a href="https://medium.com/@suchi.blackwing/cryptocurrency-code-review-fusion-vm-149407fb6e76" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 2, 2018.</p></footer></article>
+
+</body></html>

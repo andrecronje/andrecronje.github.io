@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Cryptocurrency Code Review: Lamden (TAU)</title><meta name="description" content="Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…"><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Cryptocurrency Code Review: Lamden (TAU)</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…
+</section>
+<section data-field="body" class="e-content">
+<section name="09ea" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="01d6" id="01d6" class="graf graf--h3 graf--leading graf--title">Cryptocurrency Code Review: Lamden (TAU)</h3><p name="8f65" id="8f65" class="graf graf--p graf-after--h3"><strong class="markup--strong markup--p-strong">Disclaimer</strong>: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a comment on the overall project, scope, or success thereof. This was done as an educational review by me and any comments in the article are simply my opinion. It should not be used as any comment or advice on the project as a whole.</p><p name="1390" id="1390" class="graf graf--p graf-after--p">==EDIT 19/03/2018 Stuart Farmer (CEO of Lamden) posted a comment below and reached out (very passionate guy), his full comments are below the article but I will extract the key points here;</p><p name="2f9e" id="2f9e" class="graf graf--p graf--startsWithDoubleQuote graf-after--p">“ This code is in the middle of a refactor with the basic-demo branch being complete, and is launched here: <a href="https://testnet.lamden.io/" data-href="https://testnet.lamden.io/" class="markup--anchor markup--p-anchor" rel="nofollow noopener noopener noopener" target="_blank">https://testnet.lamden.io/</a>” <strong class="markup--strong markup--p-strong">Me</strong>: So the summary here is that the code I reviewed wasn’t the actual updated and completed code, there is another branch that instead has their code (basic-demo branch), I will have a look at the different branches and update accordingly</p><p name="8a5a" id="8a5a" class="graf graf--p graf--startsWithDoubleQuote graf-after--p">“ In terms of Seneca, your understanding is completely flawed. Seneca is a restricted AST module so that you can produce smart contracts using the standard Python APIs.” <strong class="markup--strong markup--p-strong">Me</strong>: Will have a look again and update accordingly</p><p name="fdf0" id="fdf0" class="graf graf--p graf--startsWithDoubleQuote graf-after--p">“ What you see on Clove is our public repo, so you actually aren’t seeing much of anything there as most of it is private.” <strong class="markup--strong markup--p-strong">Me</strong>: So you can ignore the comments below on Clove</p><p name="6b8a" id="6b8a" class="graf graf--p graf--startsWithDoubleQuote graf-after--p">“ Admittedly, Flora and Saffron are on ice” <strong class="markup--strong markup--p-strong">Me</strong>: So again, you can ignore the comments below on Flora and Saffron.</p><p name="0297" id="0297" class="graf graf--p graf-after--p">I have omitted the juicer bits of his comment, you can see he is really passionate about his code and his project, so do read the full comment he made on the article below</p><p name="bf80" id="bf80" class="graf graf--p graf-after--p">==</p><figure name="c991" id="c991" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 445px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 63.6%;"></div><img class="graf-image" data-image-id="1*2BXn9JijSVtICTfwJAgOPQ.png" data-width="922" data-height="586" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*2BXn9JijSVtICTfwJAgOPQ.png"></div></figure><p name="354b" id="354b" class="graf graf--p graf-after--figure">We start off with a lot of repositories, 20 to be in fact, one thing I noticed is that these repositories are very seldom worked though. Their activity seems minimal, but let’s continue</p><figure name="0fc1" id="0fc1" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 621px; max-height: 563px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 90.7%;"></div><img class="graf-image" data-image-id="1*00yifVpP1C2J36S0IvIgMA.png" data-width="621" data-height="563" src="https://cdn-images-1.medium.com/max/800/1*00yifVpP1C2J36S0IvIgMA.png"></div></figure><p name="49fd" id="49fd" class="graf graf--p graf-after--figure">There are 5 pinned repositories, Cilantro, Clove, Saffron, Flora, and Seneca. Let’s have a look at each</p><figure name="61a7" id="61a7" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 232px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 33.1%;"></div><img class="graf-image" data-image-id="1*BMWfr3EM7LFtccGv-H1doA.png" data-width="907" data-height="300" src="https://cdn-images-1.medium.com/max/800/1*BMWfr3EM7LFtccGv-H1doA.png"></div></figure><p name="6173" id="6173" class="graf graf--p graf-after--figure">I started looking at Seneca, this is their Smart Contract (actually database) implementation. This is less of a smart contract and more just extended database functionality</p><figure name="547b" id="547b" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 307px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 43.9%;"></div><img class="graf-image" data-image-id="1*lMDyY4W7LrSTIPGgtyJ22A.png" data-width="829" data-height="364" src="https://cdn-images-1.medium.com/max/800/1*lMDyY4W7LrSTIPGgtyJ22A.png"></div></figure><p name="9550" id="9550" class="graf graf--p graf-after--figure">And turns out it’s less of an implementation than a pure wrapper around mysql. Other than this single wrapper there is nothing to see in Seneca. So let’s move on to Flora.</p><p name="6e80" id="6e80" class="graf graf--p graf-after--p">After some investigation, Flora is a distributed smart contract package manager for Ethereum that is just sharded over Cassandra.</p><figure name="e086" id="e086" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 594px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 84.8%;"></div><img class="graf-image" data-image-id="1*H6tBkbSwllBq95DYM4-SWw.png" data-width="851" data-height="722" src="https://cdn-images-1.medium.com/max/800/1*H6tBkbSwllBq95DYM4-SWw.png"></div></figure><p name="e55a" id="e55a" class="graf graf--p graf-after--figure">Nothing has been implemented yet, there are a few basic wrappers for existing software like sqlite, IPFS, or cassandra, but there is nothing here right now. So moving on to Saffron.</p><p name="c237" id="c237" class="graf graf--p graf-after--p">Saffron is a private blockchain, so looks like we might have something here.</p><figure name="7501" id="7501" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 513px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 73.3%;"></div><img class="graf-image" data-image-id="1*VNuSVPbQDvUYKEeVKsd5Qw.png" data-width="879" data-height="644" src="https://cdn-images-1.medium.com/max/800/1*VNuSVPbQDvUYKEeVKsd5Qw.png"></div></figure><p name="3e77" id="3e77" class="graf graf--p graf-after--figure">Interesting, that’s an Ethereum genesis block</p><figure name="e02a" id="e02a" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 494px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 70.6%;"></div><img class="graf-image" data-image-id="1*pSQP434qSQt8MSUoRNAXCA.png" data-width="871" data-height="615" src="https://cdn-images-1.medium.com/max/800/1*pSQP434qSQt8MSUoRNAXCA.png"></div></figure><p name="260b" id="260b" class="graf graf--p graf-after--figure">And now we now why, because it is just Ethereum. Very little other code here other than a sqlite wrapper that stores solidy contracts in raw form. So done with Saffron, let’s look at Clove</p><figure name="3ba6" id="3ba6" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 759px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 108.5%;"></div><img class="graf-image" data-image-id="1*3xDbepwVRYqDmeNm7Pfn5w.png" data-width="848" data-height="920" src="https://cdn-images-1.medium.com/max/800/1*3xDbepwVRYqDmeNm7Pfn5w.png"></div></figure><p name="5e69" id="5e69" class="graf graf--p graf-after--figure">That’s 50% of the entire code, there is nothing here. Done with Clove, let’s go to Cillantro</p><figure name="b46f" id="b46f" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 561px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 80.10000000000001%;"></div><img class="graf-image" data-image-id="1*l9RdJzgq1BtzEiiOmp3i_A.png" data-width="864" data-height="692" src="https://cdn-images-1.medium.com/max/800/1*l9RdJzgq1BtzEiiOmp3i_A.png"></div></figure><p name="bf08" id="bf08" class="graf graf--p graf-after--figure">Some basic code, very blockchain 101 kind of stuff, it just has a zmq listener and then consumes transactions off of the queue and saves in a merkle.</p><figure name="0d70" id="0d70" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 581px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 83.1%;"></div><img class="graf-image" data-image-id="1*nUiLZamoCL1aK0PBOzY3Eg.png" data-width="868" data-height="721" src="https://cdn-images-1.medium.com/max/800/1*nUiLZamoCL1aK0PBOzY3Eg.png"></div></figure><p name="d497" id="d497" class="graf graf--p graf-after--figure">Masternode not really doing anything yet. Nothing else to see here, so done with Cillantro as well.</p><figure name="d5ed" id="d5ed" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 618px; max-height: 130px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 21%;"></div><img class="graf-image" data-image-id="1*1nQM0PukEs4Jvs_8YKr7nA.png" data-width="618" data-height="130" src="https://cdn-images-1.medium.com/max/800/1*1nQM0PukEs4Jvs_8YKr7nA.png"></div></figure><p name="4c35" id="4c35" class="graf graf--p graf-after--figure"><strong class="markup--strong markup--p-strong">Conclusion</strong>: These are very inactive code bases and it’s very blockchain 101 type of code. The implementations currently provided as well are just wrappers on existing technology so it isn’t offering anything new to the user. There is also a reason why most of these offerings haven’t been implemented and that’s because they aren’t decentralized.</p><p name="c139" id="c139" class="graf graf--p graf-after--p graf--trailing">There is nothing to see here or to review really, they are far away from having anything real world available and I don’t see any aspect in which they compete with the current existing players in the market.</p></div></div></section>
+</section>
+<footer><p class="p-tags">Tagged in <a href="https://medium.com/tag/blockchain" class="p-tag">Blockchain</a>, <a href="https://medium.com/tag/lamden" class="p-tag">Lamden</a>, <a href="https://medium.com/tag/crypto" class="p-tag">Crypto</a>, <a href="https://medium.com/tag/cryptocurrency-updates" class="p-tag">Cryptocurrency Updates</a>, <a href="https://medium.com/tag/ethereum" class="p-tag">Ethereum</a></p><p>By <a href="https://medium.com/@suchi.blackwing" class="p-author h-card">Andre Cronje</a> on <a href="https://medium.com/p/c973669c2219"><time class="dt-published" datetime="2018-03-17T12:18:15.601Z">March 17, 2018</time></a>.</p><p><a href="https://medium.com/@suchi.blackwing/cryptocurrency-code-review-lamden-tau-c973669c2219" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 2, 2018.</p></footer></article>
+
+</body></html>

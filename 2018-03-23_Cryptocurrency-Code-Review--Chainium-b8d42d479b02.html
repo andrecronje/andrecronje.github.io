@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Cryptocurrency Code Review: Chainium</title><meta name="description" content="Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…"><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Cryptocurrency Code Review: Chainium</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…
+</section>
+<section data-field="body" class="e-content">
+<section name="dcb2" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="58f2" id="58f2" class="graf graf--h3 graf--leading graf--title">Cryptocurrency Code Review: Chainium</h3><p name="558b" id="558b" class="graf graf--p graf-after--h3"><strong class="markup--strong markup--p-strong">Disclaimer</strong>: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a comment on the overall project, scope, or success thereof. This was done as an educational review by me and any comments in the article are simply my opinion. It should not be used as any comment or advice on the project as a whole.</p><figure name="0908" id="0908" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 94px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 13.5%;"></div><img class="graf-image" data-image-id="1*12C0tENMFlkm0tS8G7ZUJA.png" data-width="899" data-height="121" src="https://cdn-images-1.medium.com/max/800/1*12C0tENMFlkm0tS8G7ZUJA.png"></div></figure><figure name="3d0e" id="3d0e" class="graf graf--figure graf-after--figure"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 430px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 61.4%;"></div><img class="graf-image" data-image-id="1*a8_aoD_C8y8IOm-I5BSi3Q.png" data-width="975" data-height="599" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*a8_aoD_C8y8IOm-I5BSi3Q.png"></div></figure><figure name="3d28" id="3d28" class="graf graf--figure graf-after--figure"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 421px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 60.199999999999996%;"></div><img class="graf-image" data-image-id="1*8sjYuZXr_S7kTkYUNlDHqw.png" data-width="842" data-height="507" src="https://cdn-images-1.medium.com/max/800/1*8sjYuZXr_S7kTkYUNlDHqw.png"></div></figure><p name="ccc3" id="ccc3" class="graf graf--p graf-after--figure">I quickly want to get the definition of prototype;</p><figure name="efef" id="efef" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 657px; max-height: 466px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 70.89999999999999%;"></div><img class="graf-image" data-image-id="1*U-RLY1sD5WZ0i4jo4UuvyQ.png" data-width="657" data-height="466" src="https://cdn-images-1.medium.com/max/800/1*U-RLY1sD5WZ0i4jo4UuvyQ.png"></div></figure><p name="cc86" id="cc86" class="graf graf--p graf-after--figure">Now I quickly want to get the definition of Alpha version</p><figure name="2785" id="2785" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 662px; max-height: 201px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 30.4%;"></div><img class="graf-image" data-image-id="1*RcjO29rSvBATafKEdLI0GQ.png" data-width="662" data-height="201" src="https://cdn-images-1.medium.com/max/800/1*RcjO29rSvBATafKEdLI0GQ.png"></div></figure><p name="9e48" id="9e48" class="graf graf--p graf-after--figure">Here are the stages as I have them;</p><p name="eaa8" id="eaa8" class="graf graf--p graf-after--p">None &lt; Whitepaper &lt; Mockup &lt; Proof of Concept &lt; Alpha &lt; Beta &lt; Production.</p><p name="e08d" id="e08d" class="graf graf--p graf-after--p">What do you call an Alpha Prototype? You call it a mockup.</p><p name="aef5" id="aef5" class="graf graf--p graf-after--p">Let’s look at their mockup</p><figure name="07f6" id="07f6" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 411px; max-height: 525px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 127.69999999999999%;"></div><img class="graf-image" data-image-id="1*K7DbScEF_73btjDWlm0x6w.png" data-width="411" data-height="525" src="https://cdn-images-1.medium.com/max/800/1*K7DbScEF_73btjDWlm0x6w.png"></div></figure><p name="dec8" id="dec8" class="graf graf--p graf-after--figure">Angular and Cordova, so cross platform. I prefer React-Native, but that’s just personal preference, so it doesn’t matter.</p><p name="42f0" id="42f0" class="graf graf--p graf-after--p">But it means we won’t be seeing a custom iOS and a custom Android application.</p><figure name="628e" id="628e" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 275px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 39.300000000000004%;"></div><img class="graf-image" data-image-id="1*Hmq3lQ5o3XK2BDKj87zsPQ.png" data-width="908" data-height="357" src="https://cdn-images-1.medium.com/max/800/1*Hmq3lQ5o3XK2BDKj87zsPQ.png"></div></figure><p name="9023" id="9023" class="graf graf--p graf-after--figure">Some localhost server, shame it isn’t online.</p><figure name="f2d4" id="f2d4" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 574px; max-height: 780px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 135.9%;"></div><img class="graf-image" data-image-id="1*oPOV8d2gSYYfZcJFiz4DgQ.png" data-width="574" data-height="780" src="https://cdn-images-1.medium.com/max/800/1*oPOV8d2gSYYfZcJFiz4DgQ.png"></div></figure><p name="37ea" id="37ea" class="graf graf--p graf-after--figure">Fake stubs. Nothing to see here. And are we still using ID’s today? Haven’t we migrated to UUID’s already?</p><figure name="ca55" id="ca55" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 799px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 114.19999999999999%;"></div><img class="graf-image" data-image-id="1*xwBDNSr7Y3F3FTOXnt8ZeQ.png" data-width="725" data-height="828" src="https://cdn-images-1.medium.com/max/800/1*xwBDNSr7Y3F3FTOXnt8ZeQ.png"></div></figure><p name="3774" id="3774" class="graf graf--p graf-after--figure">I’m seeing HTTP processors, I’m just not seeing the events. I’ll keep looking</p><figure name="c6d6" id="c6d6" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 291px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 41.6%;"></div><img class="graf-image" data-image-id="1*A3HaxRhkZM3ngGCTfIZEZg.png" data-width="913" data-height="380" src="https://cdn-images-1.medium.com/max/800/1*A3HaxRhkZM3ngGCTfIZEZg.png"></div></figure><p name="4cce" id="4cce" class="graf graf--p graf-after--figure">Good code structure at least, I like seeing separation of providers/pages/components/models, so that’s a +1 from a code architecture point of view.</p><p name="5745" id="5745" class="graf graf--p graf-after--p">Everything else is just boiler plate.</p><p name="6e84" id="6e84" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">Conclusion</strong>: It’s ok code, nothing fancy, but you can’t really mess up code like this easily. I was expecting around 2 weeks of effort, I see they did it in about that, so good job there. This is just a mockup though, not a prototype, not an alpha, just a mockup, nothing more.</p><p name="6e14" id="6e14" class="graf graf--p graf-after--p">Why do they need their own blockchain and token?</p><figure name="7a6b" id="7a6b" class="graf graf--figure graf-after--p graf--trailing"><div class="aspectRatioPlaceholder is-locked" style="max-width: 327px; max-height: 244px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 74.6%;"></div><img class="graf-image" data-image-id="1*DOKODZr1f7XSyalJGfx4yQ.png" data-width="327" data-height="244" src="https://cdn-images-1.medium.com/max/800/1*DOKODZr1f7XSyalJGfx4yQ.png"></div></figure></div></div></section>
+</section>
+<footer><p class="p-tags">Tagged in <a href="https://medium.com/tag/react-native" class="p-tag">React Native</a>, <a href="https://medium.com/tag/chainium" class="p-tag">Chainium</a>, <a href="https://medium.com/tag/crypto" class="p-tag">Crypto</a>, <a href="https://medium.com/tag/cryptocurrency" class="p-tag">Cryptocurrency</a>, <a href="https://medium.com/tag/ico" class="p-tag">ICO</a></p><p>By <a href="https://medium.com/@suchi.blackwing" class="p-author h-card">Andre Cronje</a> on <a href="https://medium.com/p/b8d42d479b02"><time class="dt-published" datetime="2018-03-23T09:11:38.201Z">March 23, 2018</time></a>.</p><p><a href="https://medium.com/@suchi.blackwing/cryptocurrency-code-review-chainium-b8d42d479b02" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 2, 2018.</p></footer></article>
+
+</body></html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Cryptocurrency Code Review: NKN</title><meta name="description" content="Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…"><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Cryptocurrency Code Review: NKN</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…
+</section>
+<section data-field="body" class="e-content">
+<section name="3cd4" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="5b79" id="5b79" class="graf graf--h3 graf--leading graf--title">Cryptocurrency Code Review: NKN</h3><p name="0a93" id="0a93" class="graf graf--p graf-after--h3"><strong class="markup--strong markup--p-strong">Disclaimer</strong>: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a comment on the overall project, scope, or success thereof. This was done as an educational review by me and any comments in the article are simply my opinion. It should not be used as any comment or advice on the project as a whole.</p><p name="2977" id="2977" class="graf graf--p graf-after--p">EDIT 27/03/2018</p><p name="cea3" id="cea3" class="graf graf--p graf-after--p">Hi, Andre， I am co-founder of NKN, Justin Wang. Some clarifications here.</p><p name="ae49" id="ae49" class="graf graf--p graf-after--p">To those who may have concern on the code history from ft-blockchain,</p><p name="fce1" id="fce1" class="graf graf--p graf-after--p">1. The ft-blockchain code in NKN repo is based on DNA which is an incentived forum demo code and is NOT core purpose of NKN project.<br>2. DNA complaints with APACHE license that by design permits anyone to reuse the code and create derivative products almost under any license, ranging from copyright to proprietary. <br>3. The founder of NKN Yanbo Li, is the only maintainer for DNA . He is also the 1st and major code contributors for DNA. <a href="https://github.com/DNAProject/DNA/graphs/contributors" data-href="https://github.com/DNAProject/DNA/graphs/contributors" class="markup--anchor markup--p-anchor" rel="nofollow noopener noopener noopener noopener" target="_blank">https://github.com/DNAProject/DNA/graphs/contributors</a><br>4. The core code of NKN (nkn-core repo) is still under development and will open to public soon. NKN team want to guarantee the framework and main direction of nkn-core development.</p><p name="fa96" id="fa96" class="graf graf--p graf-after--p">B.R.</p><p name="6bfc" id="6bfc" class="graf graf--p graf-after--p">Justin Wang</p><p name="c32b" id="c32b" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">Me</strong>: So the core code is not yet available as open source and DNA and NKN have a soft relationship via Yanbo Li as the maintainer for DNA, all cleared up ;)</p><p name="1688" id="1688" class="graf graf--p graf-after--p">** Original article follows</p><figure name="922d" id="922d" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 108px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 15.5%;"></div><img class="graf-image" data-image-id="1*ESVnKDM7AuouF4ezOFBD8w.png" data-width="898" data-height="139" src="https://cdn-images-1.medium.com/max/800/1*ESVnKDM7AuouF4ezOFBD8w.png"></div></figure><figure name="0647" id="0647" class="graf graf--figure graf-after--figure"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 599px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 85.6%;"></div><img class="graf-image" data-image-id="1*xLBFY2ydZUaYM46AJMyNRw.png" data-width="917" data-height="785" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*xLBFY2ydZUaYM46AJMyNRw.png"></div></figure><p name="0567" id="0567" class="graf graf--p graf-after--figure">Fortunetree (the incentive forum) and ft-blockchain look to be the interesting ones, docs are just whitepapers and nkn-site is just the website.</p><figure name="07d1" id="07d1" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 659px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 94.19999999999999%;"></div><img class="graf-image" data-image-id="1*qsaiRsgZkpJ5FyoPiReZ0w.png" data-width="912" data-height="859" src="https://cdn-images-1.medium.com/max/800/1*qsaiRsgZkpJ5FyoPiReZ0w.png"></div></figure><p name="8456" id="8456" class="graf graf--p graf-after--figure">Looking at this, I thought that it looked very familiar, I couldn’t place it, but I had seen this somewhere before.</p><figure name="38c0" id="38c0" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 698px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 99.8%;"></div><img class="graf-image" data-image-id="1*ICBA8hhPcvG52uejX_BzAQ.png" data-width="916" data-height="914" src="https://cdn-images-1.medium.com/max/800/1*ICBA8hhPcvG52uejX_BzAQ.png"></div></figure><p name="3882" id="3882" class="graf graf--p graf-after--figure">Oh right, DNA project, but I still remember something else</p><figure name="818f" id="818f" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 695px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 99.3%;"></div><img class="graf-image" data-image-id="1*qajLs8vjVyHsFTZQa9JgJw.png" data-width="934" data-height="927" src="https://cdn-images-1.medium.com/max/800/1*qajLs8vjVyHsFTZQa9JgJw.png"></div></figure><p name="0621" id="0621" class="graf graf--p graf-after--figure">Right, Elastos. So who am I reviewing currently? I am reviewing Elastos? DNA Project? NKN? None of these are forks of each other? So which one was first? I don’t know.</p><figure name="9c95" id="9c95" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 235px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 33.6%;"></div><img class="graf-image" data-image-id="1*ZQ1Bx1xKvBfHBJ6KhxJ-Bw.png" data-width="943" data-height="317" src="https://cdn-images-1.medium.com/max/800/1*ZQ1Bx1xKvBfHBJ6KhxJ-Bw.png"></div></figure><p name="d86d" id="d86d" class="graf graf--p graf-after--figure">So it definitely wasn’t Elastos, but way to go giving credit where it was due. At least NKN copied over the commit history. Which by the way gives us;</p><figure name="28f8" id="28f8" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 414px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 59.099999999999994%;"></div><img class="graf-image" data-image-id="1*rJDPEdaad-OBYNxdb6L7tw.png" data-width="903" data-height="534" src="https://cdn-images-1.medium.com/max/800/1*rJDPEdaad-OBYNxdb6L7tw.png"></div></figure><p name="22a2" id="22a2" class="graf graf--p graf-after--figure">So DNA Project was the first. So I guess today we are reviewing DNA Project and not NKN or Elastos. The state of this industry is ridiculous, how can we copy and plagiarize this much from each other and call it our own?</p><figure name="0a89" id="0a89" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 507px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 72.39999999999999%;"></div><img class="graf-image" data-image-id="1*Cp8GRMrelkCHL5g3-UsgMg.png" data-width="717" data-height="519" src="https://cdn-images-1.medium.com/max/800/1*Cp8GRMrelkCHL5g3-UsgMg.png"></div></figure><p name="807c" id="807c" class="graf graf--p graf-after--figure">DNA project looks like it stopped in Dec 6, 2017, let’s see what NKN has changed since then.</p><figure name="7be8" id="7be8" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 312px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 44.6%;"></div><img class="graf-image" data-image-id="1*uSJ--pubm_oZ1ZakNjNDcw.png" data-width="1880" data-height="838" src="https://cdn-images-1.medium.com/max/800/1*uSJ--pubm_oZ1ZakNjNDcw.png"></div></figure><p name="1989" id="1989" class="graf graf--p graf-after--figure">Massive project rename from DNA to FT.</p><figure name="1203" id="1203" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 377px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 53.800000000000004%;"></div><img class="graf-image" data-image-id="1*WGBlPcHtGEz0Y6NQgJhXuA.png" data-width="1057" data-height="569" src="https://cdn-images-1.medium.com/max/800/1*WGBlPcHtGEz0Y6NQgJhXuA.png"></div></figure><p name="f59b" id="f59b" class="graf graf--p graf-after--figure">Ok, so the repo contributors changed around that August 8 mark, so we can assume they forked it then, let’s see what they changed since.</p><p name="3586" id="3586" class="graf graf--p graf-after--p">Ok, so some good code leading up to the rebrand which I’m ignoring since I don’t know who the contributors were, and then since the rebrand no new code additions.</p><p name="3445" id="3445" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">Conclusion</strong>: Is NKN DNA Project? Are they rebranding? This code is just DNA project code without anything changed? And where does Elastos come in on all of this?</p><p name="b02c" id="b02c" class="graf graf--p graf-after--p graf--trailing">For a DNA Project code review, go read my Elastos code review, since what I thought was Elastos was actually DNA Project apparently.</p></div></div></section>
+</section>
+<footer><p class="p-tags">Tagged in <a href="https://medium.com/tag/software-development" class="p-tag">Software Development</a>, <a href="https://medium.com/tag/crypto" class="p-tag">Crypto</a>, <a href="https://medium.com/tag/cryptocurrency" class="p-tag">Cryptocurrency</a>, <a href="https://medium.com/tag/ico" class="p-tag">ICO</a></p><p>By <a href="https://medium.com/@suchi.blackwing" class="p-author h-card">Andre Cronje</a> on <a href="https://medium.com/p/1ac425435f63"><time class="dt-published" datetime="2018-03-23T09:34:23.388Z">March 23, 2018</time></a>.</p><p><a href="https://medium.com/@suchi.blackwing/cryptocurrency-code-review-nkn-1ac425435f63" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 2, 2018.</p></footer></article>
+
+</body></html>

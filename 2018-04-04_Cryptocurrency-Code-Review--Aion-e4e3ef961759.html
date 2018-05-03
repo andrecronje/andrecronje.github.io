@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Cryptocurrency Code Review: Aion</title><meta name="description" content="Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…"><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Cryptocurrency Code Review: Aion</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…
+</section>
+<section data-field="body" class="e-content">
+<section name="2917" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="842b" id="842b" class="graf graf--h3 graf--leading graf--title">Cryptocurrency Code Review: Aion</h3><p name="ee1c" id="ee1c" class="graf graf--p graf-after--h3"><strong class="markup--strong markup--p-strong">Disclaimer</strong>: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a comment on the overall project, scope, or success thereof. This was done as an educational review by me and any comments in the article are simply my opinion. It should not be used as any comment or advice on the project as a whole.</p><figure name="6816" id="6816" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 347px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 49.6%;"></div><img class="graf-image" data-image-id="1*MB4jRqxAfet0NCR1-cU19w.png" data-width="740" data-height="367" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*MB4jRqxAfet0NCR1-cU19w.png"></div></figure><figure name="3615" id="3615" class="graf graf--figure graf-after--figure"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 605px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 86.4%;"></div><img class="graf-image" data-image-id="1*tEiItQaRwXP292ITLz7xmA.png" data-width="1059" data-height="915" src="https://cdn-images-1.medium.com/max/800/1*tEiItQaRwXP292ITLz7xmA.png"></div></figure><figure name="5001" id="5001" class="graf graf--figure graf-after--figure"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 614px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 87.7%;"></div><img class="graf-image" data-image-id="1*s3hu7gduqaU1bhO_g89sKg.png" data-width="1017" data-height="892" src="https://cdn-images-1.medium.com/max/800/1*s3hu7gduqaU1bhO_g89sKg.png"></div></figure><p name="a327" id="a327" class="graf graf--p graf-after--figure">Lot’s of commits, great branches usage (per feature set), lot’s of contributors.</p><p name="644b" id="644b" class="graf graf--p graf-after--p">Design wise, fantastic architecture, everything is designed as their own self standing module, easy to pull them apart.</p><figure name="476b" id="476b" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 775px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 110.7%;"></div><img class="graf-image" data-image-id="1*kplxk5nKYPNIZvcR9Q9nxg.png" data-width="832" data-height="921" src="https://cdn-images-1.medium.com/max/800/1*kplxk5nKYPNIZvcR9Q9nxg.png"></div></figure><p name="8258" id="8258" class="graf graf--p graf-after--figure">Little sparse on the comment side, but luckily we don’t need comments.</p><p name="2b1b" id="2b1b" class="graf graf--p graf-after--p">So, modular, and optimized are a bit of a double edged sword. Everything here is design to be plug and play and config driven, which is fantastic from a implementation point of view, but sadly, not so great from an optimization point of view. Config’s need to be checked a lot and this does cause overhead. That’s the thing with coding at the end of the day, each choice is just a trade off.</p><figure name="10d8" id="10d8" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 230px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 32.800000000000004%;"></div><img class="graf-image" data-image-id="1*kb__TasVyQyeAItqXrW2Dg.png" data-width="755" data-height="248" src="https://cdn-images-1.medium.com/max/800/1*kb__TasVyQyeAItqXrW2Dg.png"></div></figure><p name="b955" id="b955" class="graf graf--p graf-after--figure">The type choices here confuse me a bit, these are final values, some of these do not need to be long. Again, not super optimized, but not bad.</p><figure name="9a3a" id="9a3a" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 430px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 61.5%;"></div><img class="graf-image" data-image-id="1*vsRKGYoKNj_0M_socvHzlg.png" data-width="794" data-height="488" src="https://cdn-images-1.medium.com/max/800/1*vsRKGYoKNj_0M_socvHzlg.png"></div></figure><p name="71cf" id="71cf" class="graf graf--p graf-after--figure">Error handling could be done a bit better.</p><p name="39ae" id="39ae" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">Conclusion</strong>: When I nitpick about such small things, then you know the code is good, I like the architecture, I like the design patterns, the files are kept neat and bite size to make each module easily understandable. I was somehow expecting more code, but quantity isn’t a descriptor of quality. This is just good code.</p><p name="0a0e" id="0a0e" class="graf graf--p graf-after--p">The one thing I am sad about though, is that I don’t see their cross-chain protocol, and that as far as I’m concerned is the thing that differentiates them, I feel a lot of time, focus, and energy is going into catching up with the current blockchain game, I really wished they would have skipped that and just focused on their cross-chain implementation.</p><p name="7c5d" id="7c5d" class="graf graf--p graf-after--p">Aion right now is supposed to be the cross-chain leader, but I’m not seeing any cross-chain. They are also supposed to be blockchain 3.0, but from what I can see they are still on 1.0</p><p name="a1be" id="a1be" class="graf graf--p graf-after--p graf--trailing">They still have a lot of catching up to do before they can start running ahead, I really hope we start seeing some cross-chain implementations soon, otherwise they might lose this game. It’s good code though.</p></div></div></section>
+</section>
+<footer><p class="p-tags">Tagged in <a href="https://medium.com/tag/software-development" class="p-tag">Software Development</a>, <a href="https://medium.com/tag/blockchain" class="p-tag">Blockchain</a>, <a href="https://medium.com/tag/crypto" class="p-tag">Crypto</a>, <a href="https://medium.com/tag/cryptocurrency" class="p-tag">Cryptocurrency</a>, <a href="https://medium.com/tag/aion" class="p-tag">Aion</a></p><p>By <a href="https://medium.com/@suchi.blackwing" class="p-author h-card">Andre Cronje</a> on <a href="https://medium.com/p/e4e3ef961759"><time class="dt-published" datetime="2018-04-04T17:58:30.824Z">April 4, 2018</time></a>.</p><p><a href="https://medium.com/@suchi.blackwing/cryptocurrency-code-review-aion-e4e3ef961759" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 2, 2018.</p></footer></article>
+
+</body></html>

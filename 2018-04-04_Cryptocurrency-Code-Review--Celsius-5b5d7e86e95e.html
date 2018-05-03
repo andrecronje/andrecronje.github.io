@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Cryptocurrency Code Review: Celsius</title><meta name="description" content="Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…"><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Cryptocurrency Code Review: Celsius</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…
+</section>
+<section data-field="body" class="e-content">
+<section name="2540" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="8ac0" id="8ac0" class="graf graf--h3 graf--leading graf--title">Cryptocurrency Code Review: Celsius</h3><p name="e1b1" id="e1b1" class="graf graf--p graf-after--h3"><strong class="markup--strong markup--p-strong">Disclaimer</strong>: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a comment on the overall project, scope, or success thereof. This was done as an educational review by me and any comments in the article are simply my opinion. It should not be used as any comment or advice on the project as a whole.</p><figure name="2d52" id="2d52" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 216px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 30.8%;"></div><img class="graf-image" data-image-id="1*b_bSJ1XkwjibxNrAThjY5Q.png" data-width="1052" data-height="324" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*b_bSJ1XkwjibxNrAThjY5Q.png"></div></figure><figure name="756d" id="756d" class="graf graf--figure graf-after--figure"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 256px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 36.6%;"></div><img class="graf-image" data-image-id="1*KDpA1HqMpEVvIxzsvgI5_w.png" data-width="841" data-height="308" src="https://cdn-images-1.medium.com/max/800/1*KDpA1HqMpEVvIxzsvgI5_w.png"></div></figure><figure name="f054" id="f054" class="graf graf--figure graf-after--figure"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 506px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 72.3%;"></div><img class="graf-image" data-image-id="1*ddNxINMCv7VARDj-5rGj-w.png" data-width="1078" data-height="779" src="https://cdn-images-1.medium.com/max/800/1*ddNxINMCv7VARDj-5rGj-w.png"></div></figure><p name="1fc5" id="1fc5" class="graf graf--p graf-after--figure">Let’s start from the bottom and work our way up.</p><figure name="a6fb" id="a6fb" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 563px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 80.5%;"></div><img class="graf-image" data-image-id="1*-bJDW9ApM21HzOhQT15Sag.png" data-width="1015" data-height="817" src="https://cdn-images-1.medium.com/max/800/1*-bJDW9ApM21HzOhQT15Sag.png"></div></figure><p name="d644" id="d644" class="graf graf--p graf-after--figure">I really like their technology stack, React-Native, Redux, and then Web3.js, so we can expect a mobile app that interacts with Ethereum. This already intrigues me because I expect to see some form of a wallet then, but I’m not seeing the native modules to support wallet building. This is an utter horrible thing to try and do, I’ve done it, it was painful.</p><p name="c9f9" id="c9f9" class="graf graf--p graf-after--p">But let’s see if we can find it in</p><figure name="719b" id="719b" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 579px; max-height: 477px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 82.39999999999999%;"></div><img class="graf-image" data-image-id="1*uRXRNHNyB-Jq9sj9KkxNPg.png" data-width="579" data-height="477" src="https://cdn-images-1.medium.com/max/800/1*uRXRNHNyB-Jq9sj9KkxNPg.png"></div></figure><p name="2f25" id="2f25" class="graf graf--p graf-after--figure">I see they at least have crypto-js, but that won’t be enough, let’s see what we are working with. This is still an Expo app, they have yet to unpack it, this tells me they are still incredibly early days since they haven’t gone through the native library hardships yet, but let’s reserve that comment for later and keep going with our investigation.</p><p name="4de3" id="4de3" class="graf graf--p graf-after--p">Boiler plate react and redux so far, nothing interesting to report.</p><figure name="79b0" id="79b0" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 532px; max-height: 388px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 72.89999999999999%;"></div><img class="graf-image" data-image-id="1*AzkdNWWisWvSPi27UFVuWQ.png" data-width="532" data-height="388" src="https://cdn-images-1.medium.com/max/800/1*AzkdNWWisWvSPi27UFVuWQ.png"></div></figure><p name="33af" id="33af" class="graf graf--p graf-after--figure">I’m hoping that comment is just a typo and that the password isn’t infact just the plain user password but instead a joined hash with a salt.</p><figure name="40f4" id="40f4" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 658px; max-height: 630px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 95.7%;"></div><img class="graf-image" data-image-id="1*KObsOsYeOD96KXQNBjqZew.png" data-width="658" data-height="630" src="https://cdn-images-1.medium.com/max/800/1*KObsOsYeOD96KXQNBjqZew.png"></div></figure><p name="d3fc" id="d3fc" class="graf graf--p graf-after--figure">Standard actions with json-rpc. They are using a mix of REST and JSON-RPC, whatever works I guess.</p><figure name="d244" id="d244" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 223px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 31.8%;"></div><img class="graf-image" data-image-id="1*7znUqMSRM0fr2bFdaHpCdw.png" data-width="780" data-height="248" src="https://cdn-images-1.medium.com/max/800/1*7znUqMSRM0fr2bFdaHpCdw.png"></div></figure><p name="08a1" id="08a1" class="graf graf--p graf-after--figure">Now we are using parameterized URL’s, stick to one pattern guys.</p><figure name="5564" id="5564" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 272px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 38.9%;"></div><img class="graf-image" data-image-id="1*JUwSzPoRxj1irJPkKsteow.png" data-width="709" data-height="276" src="https://cdn-images-1.medium.com/max/800/1*JUwSzPoRxj1irJPkKsteow.png"></div></figure><p name="a6c3" id="a6c3" class="graf graf--p graf-after--figure">Looks like they are wrapping the main ethereum functions in their API, I don’t think that it’s published, also interested to see what getSecureStoreKey looks like.</p><p name="f0f4" id="f0f4" class="graf graf--p graf-after--p">More boiler plate redux.</p><p name="6eab" id="6eab" class="graf graf--p graf-after--p">VerifyPhoto doesn’t actually do anything<br>VerifyPhoneNumber doesn’t actually do anything<br>VerifyDocument doesn’t actually do anything</p><p name="6301" id="6301" class="graf graf--p graf-after--p">You get the point</p><p name="32d0" id="32d0" class="graf graf--p graf-after--p">This is all fake boilerplate for now, they haven’t done any of the meat yet, let’s move on</p><figure name="965d" id="965d" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 291px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 41.6%;"></div><img class="graf-image" data-image-id="1*z2oTByBrSwdg_TwzToGYfQ.png" data-width="949" data-height="395" src="https://cdn-images-1.medium.com/max/800/1*z2oTByBrSwdg_TwzToGYfQ.png"></div></figure><p name="fd3c" id="fd3c" class="graf graf--p graf-after--figure">Guys, look at that instruction, — rpccorsdomain ‘*’, this opens up your node to everyone that can access it, never use this when hosting a domain. I like what they were trying to do with this passport proxy, but please don’t follow these instructions</p><figure name="ec3e" id="ec3e" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 644px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 91.9%;"></div><img class="graf-image" data-image-id="1*0Yro0kK5O_TAGbVvx2rNvw.png" data-width="968" data-height="890" src="https://cdn-images-1.medium.com/max/800/1*0Yro0kK5O_TAGbVvx2rNvw.png"></div></figure><p name="6813" id="6813" class="graf graf--p graf-after--figure">Express boilerplate. Just more boiler plate guys, nothing here.</p><figure name="3eb4" id="3eb4" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 563px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 80.4%;"></div><img class="graf-image" data-image-id="1*whKGcAt4doEVLUyERvNKVg.png" data-width="1043" data-height="839" src="https://cdn-images-1.medium.com/max/800/1*whKGcAt4doEVLUyERvNKVg.png"></div></figure><p name="56f0" id="56f0" class="graf graf--p graf-after--figure">Let’s move on to the celsius app instead. After going through a few screens I stopped, there is nothing here.</p><p name="6aec" id="6aec" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">Conclusion</strong>: This is just a boiler plate react app, they haven’t done anything with Crypto yet, no wallet creation, no mnemonic, no bip39, nothing. It’s just a few pretty screens talking to a boiler plate REST/JSON-RPC backend with a basic nod, but severe lack of any real security.</p><p name="6318" id="6318" class="graf graf--p graf-after--p">They still have all the hard work to do, they have done the incredibly easy (talking 2–3 weeks effort) part, they haven’t done any of the actual Crypto. Encryption or Security side of things (which I thought was the core)</p><p name="ea10" id="ea10" class="graf graf--p graf-after--p graf--trailing">This is very basic, HalloWorld react-native-redux stuff.</p></div></div></section>
+</section>
+<footer><p class="p-tags">Tagged in <a href="https://medium.com/tag/react" class="p-tag">React</a>, <a href="https://medium.com/tag/crypto" class="p-tag">Crypto</a>, <a href="https://medium.com/tag/cryptocurrency" class="p-tag">Cryptocurrency</a>, <a href="https://medium.com/tag/blockchain" class="p-tag">Blockchain</a>, <a href="https://medium.com/tag/ico" class="p-tag">ICO</a></p><p>By <a href="https://medium.com/@suchi.blackwing" class="p-author h-card">Andre Cronje</a> on <a href="https://medium.com/p/5b5d7e86e95e"><time class="dt-published" datetime="2018-04-04T15:27:06.617Z">April 4, 2018</time></a>.</p><p><a href="https://medium.com/@suchi.blackwing/cryptocurrency-code-review-celsius-5b5d7e86e95e" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 2, 2018.</p></footer></article>
+
+</body></html>

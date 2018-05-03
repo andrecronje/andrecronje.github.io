@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Smart Contract Code Review: Arcblock</title><meta name="description" content="Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…"><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Smart Contract Code Review: Arcblock</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…
+</section>
+<section data-field="body" class="e-content">
+<section name="e928" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="491f" id="491f" class="graf graf--h3 graf--leading graf--title">Smart Contract Code Review: Arcblock</h3><p name="c6a5" id="c6a5" class="graf graf--p graf-after--h3"><strong class="markup--strong markup--p-strong">Disclaimer</strong>: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a comment on the overall project, scope, or success thereof. This was done as an educational review by me and any comments in the article are simply my opinion. It should not be used as any comment or advice on the project as a whole.</p><p name="e55f" id="e55f" class="graf graf--p graf-after--p">The plan was to review Arcblock code, sadly, they don’t have anything available, so instead let’s do a quick review on their smart contract. They didn’t have a smart contract for their ICO so nothing to review there, instead we will have a look at their token contract.</p><figure name="c29b" id="c29b" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 465px; max-height: 221px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 47.5%;"></div><img class="graf-image" data-image-id="1*8iiQOzfI0UkOyLGfx2wV9A.png" data-width="465" data-height="221" src="https://cdn-images-1.medium.com/max/800/1*8iiQOzfI0UkOyLGfx2wV9A.png"></div></figure><p name="a2b2" id="a2b2" class="graf graf--p graf-after--figure">ArcBlockToken has the usual boiler plate, normally you would pass these arguments as constructor variables when you deploy, but they decided to hardcode into their contract. Very version 1 implementation.</p><p name="ebcf" id="ebcf" class="graf graf--p graf-after--p">The token inherits from PausableToken</p><figure name="9cf3" id="9cf3" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 376px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 53.7%;"></div><img class="graf-image" data-image-id="1*byvRAKelaqlKv3t_tiT3qA.png" data-width="828" data-height="445" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*byvRAKelaqlKv3t_tiT3qA.png"></div></figure><p name="3e81" id="3e81" class="graf graf--p graf-after--figure">PausableToken is a standard token and inherits from Pausable. Transfers, approvals, increasing and decreasing approval amounts can only happen while the token isn’t paused. Why did they do it this way instead of just implementing Pausable in their standardToken? I have no idea, seems like redundant code to me.</p><figure name="d094" id="d094" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 731px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 104.4%;"></div><img class="graf-image" data-image-id="1*V-2brJvB09DnYHVq2oLJ6g.png" data-width="885" data-height="924" src="https://cdn-images-1.medium.com/max/800/1*V-2brJvB09DnYHVq2oLJ6g.png"></div></figure><p name="1b80" id="1b80" class="graf graf--p graf-after--figure">Here they could have just implemented Pausable and not had to create another interface, but so be it. StandardToken is a direct copy from OpenZeppelin’s StandardToken, so nothing interesting here and then just more boilerplate.</p><p name="7fb4" id="7fb4" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">Conclusion</strong>: Nothing of interest, not particularly good code. I guess maybe since they will be launching their own mainnet they just didn’t care? I don’t like seeing contracts with global pauses, they could just stop all circulating tokens whenever they wanted to, this should at least be controlled in some logical measure (voting consensus for example, that’s why token governance exists), it’s basically a centralization mechanic.</p><p name="c553" id="c553" class="graf graf--p graf-after--p">Not impressed by the pointless extra interface, not impressed by the hardcoded constructor values, and everything else is just copy paste.</p><p name="f097" id="f097" class="graf graf--p graf-after--p">I’m writing this one down to they just didn’t really bother to learn Ethereum, that’s maybe why they didn’t do a smart contract ICO either?</p><p name="9a05" id="9a05" class="graf graf--p graf-after--p graf--trailing">Let’s hope the mainnet code shows more passion than this, whomever built this wasn’t proud of their work.</p></div></div></section>
+</section>
+<footer><p class="p-tags">Tagged in <a href="https://medium.com/tag/ethereum" class="p-tag">Ethereum</a></p><p>By <a href="https://medium.com/@suchi.blackwing" class="p-author h-card">Andre Cronje</a> on <a href="https://medium.com/p/aa4ad6a56f05"><time class="dt-published" datetime="2018-03-02T13:07:45.902Z">March 2, 2018</time></a>.</p><p><a href="https://medium.com/@suchi.blackwing/smart-contract-code-review-arcblock-aa4ad6a56f05" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 2, 2018.</p></footer></article>
+
+</body></html>

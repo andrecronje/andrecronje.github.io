@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Cryptocurrency Code Review: QuarkChain</title><meta name="description" content="Disclaimer: Crypto Briefing code reviews are performed by auditing what is on display in the master branch of the repo’s made available…"><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Cryptocurrency Code Review: QuarkChain</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Disclaimer: Crypto Briefing code reviews are performed by auditing what is on display in the master branch of the repo’s made available…
+</section>
+<section data-field="body" class="e-content">
+<section name="072d" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="3227" id="3227" class="graf graf--h3 graf--leading graf--title">Cryptocurrency Code Review: QuarkChain</h3><p name="fd8e" id="fd8e" class="graf graf--p graf-after--h3"><strong class="markup--strong markup--p-strong">Disclaimer</strong>: Crypto Briefing code reviews are performed by auditing what is on display in the master branch of the repo’s made available. This review is not a comment on the overall project, scope, or success thereof. This was done as an educational review and any comments in the article are the opinion of the writer. It is normal for code to change rapidly, hence we timestamp our code reviews so that they present a snapshot at a moment in time. <strong class="markup--strong markup--p-strong">Information contained herein should not be used as any comment or advice on the project as a whole.</strong></p><figure name="fa65" id="fa65" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 416px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 59.5%;"></div><img class="graf-image" data-image-id="1*S7058dOhYeZiZByAL9yaeQ.png" data-width="1428" data-height="849" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*S7058dOhYeZiZByAL9yaeQ.png"></div></figure><figure name="49be" id="49be" class="graf graf--figure graf-after--figure"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 279px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 39.900000000000006%;"></div><img class="graf-image" data-image-id="1*_01OIf2Cj8H4yV2CmwP81g.png" data-width="1329" data-height="530" src="https://cdn-images-1.medium.com/max/800/1*_01OIf2Cj8H4yV2CmwP81g.png"></div></figure><p name="f955" id="f955" class="graf graf--p graf-after--figure">EDIT 19/04/2018 <a href="https://medium.com/u/3a63efb06182" data-href="https://medium.com/u/3a63efb06182" data-anchor-type="2" data-user-id="3a63efb06182" data-action-value="3a63efb06182" data-action="show-user-card" data-action-type="hover" class="markup--user markup--p-user" target="_blank">Jenson Ball</a> responded with a fantastic analysis that made me realize I might have no clarified some points accurately enough. I thought this is the perfect time to add the comments. First the response from <a href="https://medium.com/u/3a63efb06182" data-href="https://medium.com/u/3a63efb06182" data-anchor-type="2" data-user-id="3a63efb06182" data-action-value="3a63efb06182" data-action="show-user-card" data-action-type="hover" class="markup--user markup--p-user" target="_blank">Jenson Ball</a></p><p name="eab1" id="eab1" class="graf graf--p graf--startsWithDoubleQuote graf-after--p">“Hey man,</p><p name="0600" id="0600" class="graf graf--p graf-after--p">I used to like your review till this one. As you said before, with relatively centralized network say 7 or 21 nodes, you can achieve as high tps as possible, if the hardward is not the bottleneck. The beauty of blockchain is the property of decentralization . It’s super difficult to achieve 100 or even 1000 tps with 1000 or 10K nodes in the network.</p><p name="0f59" id="0f59" class="graf graf--p graf-after--p">However, for this project, they only run their testnet using 5 nodes, and then you claim they can achieve 50k tps. Is it secure? Does it violate your previous standard? Is it a blockchain? When it goes to 1,000 or 10,000 nodes like Ethereum, can it still achieves 100 tps?</p><p name="c642" id="c642" class="graf graf--p graf-after--p">TBH, their sharding is not sharding but layering. Are you sure the frequent cross-sharding communication won’t drag their entire system? On the market, any team claiming to have solutions solving state sharding in an efficient manner is skeptical, as all the proposals are on the paper like ETH 2.0, Omniledger. Why Ethereum hasn’t implemented state sharding since 2016? It’s not trivial. Frequent cross-shard communication and atomic protocol must introduce non-negligible overhead to drag the entire process down. To ensure the security of each shard, you have to randomly select nodes from the network and reshuffle the network periodically. The synchronization of new nodes with the nodes in the same shard also cause non-negligible overhead. Overall, these issues can easily lead state sharding not to be a suitable solution for scalability.</p><p name="0826" id="0826" class="graf graf--p graf-after--p">All in all, any result is not credible or you cannot trust the result, if the blockchain system doesn’t run with over 1,000 nodes.”</p><p name="e9a9" id="e9a9" class="graf graf--p graf-after--p">And he is 100% correct, I need to explain two things, transactional concurrency and clustering.</p><p name="4fee" id="4fee" class="graf graf--p graf-after--p">First transactional concurrency. Ethereum can be seen as a single (not using thread in the traditional sense here) threaded transactional system, whereas QuarkChain would be considered a multi threaded transactional system, so what do I mean by this? If we ran 100 Ethereum threads(each one being their own Ethereum, thus achieving multi threaded concurrency), and each one was doing 10 TPS, then we could say Ethereum is doing 1k TPS or we could say Ethereum is doing 10 TPS. This is similar to what QuarkChain are doing, so you could say they are currently doing 2k TPS, but you could also say they are currently doing 100 TPS. So to clarify, when we talk about QuarkChain doing 10k TPS for argument sake, we are talking about a specific application of the solution, in this case, I’m, by design, running 5 shards. I have 5 tasks I know that I can run concurrently, let’s say shard one is a WAN/ETH pair, shard two is a POA/ETH pair and so on, I’m dedicating each shard to a specific goal, thus achieving overall TPS of 1k, however you could also say I’m achieving 200 TPS (since that’s the fastest the most active shard can go). So QuarkChain is a specific solution for a specific problem, anything I can do with state isolation and concurrency, this isn’t a generalized TPS solution.</p><p name="7024" id="7024" class="graf graf--p graf-after--p">Then the second item I want to discuss is clustering, and this is really what I’m excited about, Quark are developing their super nodes, these are QuarkChain optimized clusters. What is a cluster? A cluster is a grouping of servers/computers that work together to share their overall power and capacity. So these clusters will be able to create a new paradigm of Node. Fully shared CPU and RAM (assuming across gigabit connectivity) to leverage the maximum capacity of concurrency (the same concurrency we discussed above).</p><p name="d1f1" id="d1f1" class="graf graf--p graf-after--p">It’s these two items, being able to increase concurrency, and allowing clustered nodes to take advantage of this concurrency, that makes me excited about QuarkChain. And it’s these two items that will give them the capacity in this specific concurrency use case. Something, that I have quite a few applications for ready to be used.</p><p name="eab3" id="eab3" class="graf graf--p graf-after--p">So, let’s consider iterative vs functional programming. I’m going to use a very dumb analogy to compare this.</p><p name="a0a7" id="a0a7" class="graf graf--p graf-after--p">Iterative is a single process at a time. If I had to do 1+1 8 times, an iterative process would do 1+1, after it finishes it does 1+1 again, and it keeps repeating this until it completed 8 cycles. This was fantastic on single core CPU’s, because they were designed with one thing in mind.</p><p name="2084" id="2084" class="graf graf--p graf-after--p">Then came multi cores and for the longest time we saw that programs simply weren’t using our multi cores. We would have 4 cores, and core 1 would be working at 100% while the rest stand by and watch, I’m always reminded of this gif</p><figure name="c132" id="c132" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 320px; max-height: 180px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 56.3%;"></div><img class="graf-image" data-image-id="0*KnMvge0leynY6dQs.gif" data-width="320" data-height="180" src="https://cdn-images-1.medium.com/max/800/0*KnMvge0leynY6dQs.gif"></div></figure><p name="6507" id="6507" class="graf graf--p graf-after--figure">Then came along functional programming and all of a sudden we could ask all 4 CPU’s to share the work evenly, now if we asked for 1+1 8 times, it would do 1+1 x 4 and another cycle of x 4.</p><p name="965d" id="965d" class="graf graf--p graf-after--p">It’s this same kind of paradigm that intrigues me with Quark, and it’s that throughput I’m excited about.</p><p name="e053" id="e053" class="graf graf--p graf-after--p">**** Original follows ****</p><p name="32be" id="32be" class="graf graf--p graf-after--p">The QuarkChain team were kind enough to give me early access to their system, and I know why, they wanted to show off. They could have only given me snippets, or they could have controlled the narrative, instead they let me lead the exploratory exercise.</p><p name="a2fa" id="a2fa" class="graf graf--p graf-after--p">As we started I had my usual doubts, probably just a fork, probably not doing anything new, and probably just unfounded hype. I’m happy to say they proved me wrong.</p><p name="2281" id="2281" class="graf graf--p graf-after--p">While I still strongly disagree with their 1 million TPS claim (even though theoretically possible on their system), I do believe technologically they will be able to achieve up to 50,000 TPS, and this is something that definitely intrigues me.</p><p name="657c" id="657c" class="graf graf--p graf-after--p">My full analysis was published by Cryptobriefing, so if you would like more data, please read through the analysis below.</p><div name="9979" id="9979" class="graf graf--mixtapeEmbed graf-after--p graf--trailing"><a href="https://cryptobriefing.com/quarkchain-code-review-deep-dive/" data-href="https://cryptobriefing.com/quarkchain-code-review-deep-dive/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://cryptobriefing.com/quarkchain-code-review-deep-dive/"><strong class="markup--strong markup--mixtapeEmbed-strong">QuarkChain Code Review - Deep Dive | Crypto Briefing</strong><br><em class="markup--em markup--mixtapeEmbed-em">Today I&#39;m doing a deep dive with my QuarkChain code review - the findings were factored into the QuarkChain ICO review…</em>cryptobriefing.com</a><a href="https://cryptobriefing.com/quarkchain-code-review-deep-dive/" class="js-mixtapeImage mixtapeImage u-ignoreBlock" data-media-id="cb6868af3e88efc52fee5c3cd5993567" data-thumbnail-img-id="0*pUYdWZMl9Rp4NIhY." style="background-image: url(https://cdn-images-1.medium.com/fit/c/160/160/0*pUYdWZMl9Rp4NIhY.);"></a></div></div></div></section>
+</section>
+<footer><p class="p-tags">Tagged in <a href="https://medium.com/tag/software-development" class="p-tag">Software Development</a>, <a href="https://medium.com/tag/crypto" class="p-tag">Crypto</a>, <a href="https://medium.com/tag/cryptocurrency" class="p-tag">Cryptocurrency</a>, <a href="https://medium.com/tag/ico" class="p-tag">ICO</a>, <a href="https://medium.com/tag/quarkchain" class="p-tag">Quarkchain</a></p><p>By <a href="https://medium.com/@suchi.blackwing" class="p-author h-card">Andre Cronje</a> on <a href="https://medium.com/p/3dc18eacdf40"><time class="dt-published" datetime="2018-04-18T05:36:34.866Z">April 18, 2018</time></a>.</p><p><a href="https://medium.com/@suchi.blackwing/cryptocurrency-code-review-quarkchain-3dc18eacdf40" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 2, 2018.</p></footer></article>
+
+</body></html>

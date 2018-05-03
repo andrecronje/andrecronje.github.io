@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Cryptocurrency Code Review: Tron (TRX)</title><meta name="description" content="Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…"><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Cryptocurrency Code Review: Tron (TRX)</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…
+</section>
+<section data-field="body" class="e-content">
+<section name="f57e" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="59fb" id="59fb" class="graf graf--h3 graf--leading graf--title">Cryptocurrency Code Review: Tron (TRX)</h3><p name="76a6" id="76a6" class="graf graf--p graf-after--h3"><strong class="markup--strong markup--p-strong">Disclaimer</strong>: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a comment on the overall project, scope, or success thereof. This was done as an educational review by me and any comments in the article are simply my opinion. It should not be used as any comment or advice on the project as a whole.</p><figure name="b459" id="b459" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 656px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 93.7%;"></div><img class="graf-image" data-image-id="1*2HZzrxbghWLviO7JLIILRA.png" data-width="911" data-height="854" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*2HZzrxbghWLviO7JLIILRA.png"></div></figure><p name="c4ec" id="c4ec" class="graf graf--p graf-after--figure">Active repo, always good to see, two primary projects wallet-cli and java-tron. We will be looking at java-tron</p><figure name="8e76" id="8e76" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 576px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 82.3%;"></div><img class="graf-image" data-image-id="1*DCs9OQe78Y17BrcVp9fevw.png" data-width="904" data-height="744" src="https://cdn-images-1.medium.com/max/800/1*DCs9OQe78Y17BrcVp9fevw.png"></div></figure><p name="f56f" id="f56f" class="graf graf--p graf-after--figure">Gradle being used to manage, that’s good to see, lots of commits and branches and 1 core release</p><figure name="0740" id="0740" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 635px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 90.7%;"></div><img class="graf-image" data-image-id="1*ePgf4t622Vbp45LCM4p7ig.png" data-width="904" data-height="820" src="https://cdn-images-1.medium.com/max/800/1*ePgf4t622Vbp45LCM4p7ig.png"></div></figure><p name="bc3f" id="bc3f" class="graf graf--p graf-after--figure">Branches look good, they avoid changing on the main stable repo until a branch is passed, this is good development structure.</p><figure name="e52a" id="e52a" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 560px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 80%;"></div><img class="graf-image" data-image-id="1*JzChXFFGcNGHPYPPAQOpdg.png" data-width="918" data-height="734" src="https://cdn-images-1.medium.com/max/800/1*JzChXFFGcNGHPYPPAQOpdg.png"></div></figure><p name="21e6" id="21e6" class="graf graf--p graf-after--figure">They use protobuff, it’s a fantastic technology by Google, and I’m glad to see it finally being used in a project. Too many blockchains are creating their own network protocol package layer when this is a problem we have solved for years, ASN.1 and Protobuff being my personal favourite.</p><p name="6949" id="6949" class="graf graf--p graf-after--p">Went through all the proto definitions, they are solid.</p><figure name="efa3" id="efa3" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 591px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 84.39999999999999%;"></div><img class="graf-image" data-image-id="1*exKC1dkN8-AXCEgSn4KUDQ.png" data-width="909" data-height="767" src="https://cdn-images-1.medium.com/max/800/1*exKC1dkN8-AXCEgSn4KUDQ.png"></div></figure><p name="2d3e" id="2d3e" class="graf graf--p graf-after--figure">Full Node, this is the entry point for running a node, just starts up an Application object from org.tron.common.application.*, will have a look at it just now, there are no help guides here just yet, still very much dev only, so this isn’t at any production level ready yet, but let’s focus on the substance for now;</p><figure name="70b5" id="70b5" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 396px; max-height: 165px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 41.699999999999996%;"></div><img class="graf-image" data-image-id="1*K_b-swhBBfL6sPXjTLsc6w.png" data-width="396" data-height="165" src="https://cdn-images-1.medium.com/max/800/1*K_b-swhBBfL6sPXjTLsc6w.png"></div></figure><p name="cfd8" id="cfd8" class="graf graf--p graf-after--figure">The wallet is a bit odd, it needs an application object to create itself, this means wallets are only running locally on an application, this doesn’t mean anything just yet, just an observation.</p><figure name="0d47" id="0d47" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 607px; max-height: 383px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 63.1%;"></div><img class="graf-image" data-image-id="1*6nGE9uTErYjZUMlHU699iQ.png" data-width="607" data-height="383" src="https://cdn-images-1.medium.com/max/800/1*6nGE9uTErYjZUMlHU699iQ.png"></div></figure><p name="dc0f" id="dc0f" class="graf graf--p graf-after--figure">I am really not a fan of the UTXO model, I don’t understand why people are implementing it, although at least they abstract balance and then they abstract that for creating transactions, so they hide the part of the implementation I don’t like.</p><figure name="6103" id="6103" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 318px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 45.4%;"></div><img class="graf-image" data-image-id="1*KW80PdJRdXk9dPHSW8Rl7w.png" data-width="912" data-height="414" src="https://cdn-images-1.medium.com/max/800/1*KW80PdJRdXk9dPHSW8Rl7w.png"></div></figure><p name="f28c" id="f28c" class="graf graf--p graf-after--figure">Only witnesses can product blocks, this is a very centralized model, we are seeing more and more centralized systems, I guess it depends on who can be a witness though, ignoring this for now.</p><figure name="5941" id="5941" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 417px; max-height: 112px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 26.900000000000002%;"></div><img class="graf-image" data-image-id="1*MZExOnNXN7G93oMcCluusg.png" data-width="417" data-height="112" src="https://cdn-images-1.medium.com/max/800/1*MZExOnNXN7G93oMcCluusg.png"></div></figure><p name="2312" id="2312" class="graf graf--p graf-after--figure">Good error handling, unknown exceptions are logged and thrown, this tells us these developers have definitely had production level experience and had to deal with things like kernel panics and out of memory errors, this is good to see.</p><figure name="6234" id="6234" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 566px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 80.9%;"></div><img class="graf-image" data-image-id="1*cIipkEhJefHVrQYpNVOVoA.png" data-width="712" data-height="576" src="https://cdn-images-1.medium.com/max/800/1*cIipkEhJefHVrQYpNVOVoA.png"></div></figure><p name="320f" id="320f" class="graf graf--p graf-after--figure">WitnessService.java code is good. I like the tryProduceBlock mechanism before block creation</p><figure name="1d1b" id="1d1b" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 627px; max-height: 148px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 23.599999999999998%;"></div><img class="graf-image" data-image-id="1*ihx950I1tP9m7fMGJ6I7Fg.png" data-width="627" data-height="148" src="https://cdn-images-1.medium.com/max/800/1*ihx950I1tP9m7fMGJ6I7Fg.png"></div></figure><p name="41fc" id="41fc" class="graf graf--p graf-after--figure">Different time implementation than before, shows a bit of inconsistency, but probably just multiple devs working on the project without cross peer review, doesn’t mean anything bad.</p><figure name="404e" id="404e" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 428px; max-height: 181px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 42.3%;"></div><img class="graf-image" data-image-id="1*rIgbDaAgTVImlI16duznrg.png" data-width="428" data-height="181" src="https://cdn-images-1.medium.com/max/800/1*rIgbDaAgTVImlI16duznrg.png"></div></figure><p name="37d7" id="37d7" class="graf graf--p graf-after--figure">Dealing with exception messages is annoying, it’s nicer to have completely different exceptions to map, the change from different exceptions here to a single message based one I’m not a fan of, it makes down stream implementation harder.</p><p name="3e83" id="3e83" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">Conclusion</strong>: Bit of a mix of mid to senior level code, all in all it is good though, there isn’t too much going on here, a p2p implementation, wallet and account implementation, and the witness implementation. Witnesses need at least &gt; 33% participation to vote, and the vote implementation is fairly standard.</p><p name="04b7" id="04b7" class="graf graf--p graf-after--p">It is a long way from being finalized or production ready. I didn’t see the Kafka implementation anywhere, I was looking forward to it since Kafka and Spark are two of my favourite technologies.</p><p name="1054" id="1054" class="graf graf--p graf-after--p graf--trailing">In this competitive market I don’t think it’s enough to give them an edge since they are still playing catch up to existing infrastructures without bringing anything new to the game.</p></div></div></section>
+</section>
+<footer><p class="p-tags">Tagged in <a href="https://medium.com/tag/blockchain" class="p-tag">Blockchain</a>, <a href="https://medium.com/tag/tron" class="p-tag">Tron</a>, <a href="https://medium.com/tag/cryptocurrency" class="p-tag">Cryptocurrency</a>, <a href="https://medium.com/tag/crypto" class="p-tag">Crypto</a>, <a href="https://medium.com/tag/java" class="p-tag">Java</a></p><p>By <a href="https://medium.com/@suchi.blackwing" class="p-author h-card">Andre Cronje</a> on <a href="https://medium.com/p/2c9565772cb1"><time class="dt-published" datetime="2018-03-18T08:38:16.649Z">March 18, 2018</time></a>.</p><p><a href="https://medium.com/@suchi.blackwing/cryptocurrency-code-review-tron-trx-2c9565772cb1" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 2, 2018.</p></footer></article>
+
+</body></html>

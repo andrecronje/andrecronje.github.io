@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Cryptocurrency Code Review: Hycon</title><meta name="description" content="Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…"><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Cryptocurrency Code Review: Hycon</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…
+</section>
+<section data-field="body" class="e-content">
+<section name="01a5" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="117a" id="117a" class="graf graf--h3 graf--leading graf--title">Cryptocurrency Code Review: Hycon</h3><p name="5e3b" id="5e3b" class="graf graf--p graf-after--h3"><strong class="markup--strong markup--p-strong">Disclaimer</strong>: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a comment on the overall project, scope, or success thereof. This was done as an educational review by me and any comments in the article are simply my opinion. It should not be used as any comment or advice on the project as a whole.</p><figure name="7d52" id="7d52" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 127px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 18.099999999999998%;"></div><img class="graf-image" data-image-id="1*k87S4kF7-BZDiZqZRWItfw.png" data-width="893" data-height="162" src="https://cdn-images-1.medium.com/max/800/1*k87S4kF7-BZDiZqZRWItfw.png"></div></figure><figure name="686a" id="686a" class="graf graf--figure graf-after--figure"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 574px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 82.1%;"></div><img class="graf-image" data-image-id="1*DFUSzHhW4--coRpAFoQfxw.png" data-width="1026" data-height="842" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*DFUSzHhW4--coRpAFoQfxw.png"></div></figure><p name="1087" id="1087" class="graf graf--p graf-after--figure">So, I don’t know why I’m reviewing this. It’s just a protobuff file. But for some reason they have some code wrapped around it, so I guess let’s have a look.</p><figure name="5223" id="5223" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 579px; max-height: 567px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 97.89999999999999%;"></div><img class="graf-image" data-image-id="1*33umuQvPUErsz_LBY9b2Lw.png" data-width="579" data-height="567" src="https://cdn-images-1.medium.com/max/800/1*33umuQvPUErsz_LBY9b2Lw.png"></div></figure><p name="4ef1" id="4ef1" class="graf graf--p graf-after--figure">So, this is the proto of their actual genesis block. Not quite the normal way to do genesis. Is the plan to have each block as it’s own proto? Straight forward, header { merkleRoot, stateRoot, difficulty, timestamp } transactions {from, to, amount, fee, signature, recovery? }</p><figure name="009c" id="009c" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 562px; max-height: 665px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 118.30000000000001%;"></div><img class="graf-image" data-image-id="1*HOQMOr5ErWUNKI8m_zj1bw.png" data-width="562" data-height="665" src="https://cdn-images-1.medium.com/max/800/1*HOQMOr5ErWUNKI8m_zj1bw.png"></div></figure><p name="82a1" id="82a1" class="graf graf--p graf-after--figure">Boilerplate created by Protobuff, this is not their code</p><figure name="96a4" id="96a4" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 472px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 67.4%;"></div><img class="graf-image" data-image-id="1*Zo8Q1AVUZAw5Y_fLLLsm5Q.png" data-width="920" data-height="620" src="https://cdn-images-1.medium.com/max/800/1*Zo8Q1AVUZAw5Y_fLLLsm5Q.png"></div></figure><p name="c92e" id="c92e" class="graf graf--p graf-after--figure">Just iterate and print out.</p><figure name="7797" id="7797" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 629px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 89.9%;"></div><img class="graf-image" data-image-id="1*eJIXEkNDAFzueFZpJwDM3A.png" data-width="928" data-height="834" src="https://cdn-images-1.medium.com/max/800/1*eJIXEkNDAFzueFZpJwDM3A.png"></div></figure><p name="b891" id="b891" class="graf graf--p graf-after--figure">But why?</p><figure name="fc88" id="fc88" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 606px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 86.6%;"></div><img class="graf-image" data-image-id="1*Sf0puaw8DtDryH5n2__LgA.png" data-width="700" data-height="606" src="https://cdn-images-1.medium.com/max/800/1*Sf0puaw8DtDryH5n2__LgA.png"></div></figure><p name="327a" id="327a" class="graf graf--p graf-after--figure">Same for the C++</p><p name="80ae" id="80ae" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">Conclusion</strong>: I have no idea why I reviewed this code, I expected it to be nothing, and it was nothing. They aren’t showing anything here, except that they know how to read a file and print it out.</p><p name="cd87" id="cd87" class="graf graf--p graf-after--p graf--trailing">Is this just for the “We have github” checkbox?</p></div></div></section>
+</section>
+<footer><p class="p-tags">Tagged in <a href="https://medium.com/tag/software-development" class="p-tag">Software Development</a>, <a href="https://medium.com/tag/crypto" class="p-tag">Crypto</a>, <a href="https://medium.com/tag/cryptocurrency" class="p-tag">Cryptocurrency</a>, <a href="https://medium.com/tag/ico" class="p-tag">ICO</a>, <a href="https://medium.com/tag/hycon" class="p-tag">Hycon</a></p><p>By <a href="https://medium.com/@suchi.blackwing" class="p-author h-card">Andre Cronje</a> on <a href="https://medium.com/p/6d75887dae0b"><time class="dt-published" datetime="2018-04-04T15:58:06.510Z">April 4, 2018</time></a>.</p><p><a href="https://medium.com/@suchi.blackwing/cryptocurrency-code-review-hycon-6d75887dae0b" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 2, 2018.</p></footer></article>
+
+</body></html>

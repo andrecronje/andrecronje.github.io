@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Cryptocurrency Code Review: Monero (XMR)</title><meta name="description" content="Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…"><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Cryptocurrency Code Review: Monero (XMR)</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…
+</section>
+<section data-field="body" class="e-content">
+<section name="cd33" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="6fae" id="6fae" class="graf graf--h3 graf--leading graf--title">Cryptocurrency Code Review: Monero (XMR)</h3><p name="5898" id="5898" class="graf graf--p graf-after--h3"><strong class="markup--strong markup--p-strong">Disclaimer</strong>: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a comment on the overall project, scope, or success thereof. This was done as an educational review by me and any comments in the article are simply my opinion. It should not be used as any comment or advice on the project as a whole.</p><p name="c1fa" id="c1fa" class="graf graf--p graf--startsWithDoubleQuote graf-after--p">“Monero: the secure, private, untraceable cryptocurrency”</p><figure name="1047" id="1047" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 483px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 69%;"></div><img class="graf-image" data-image-id="1*ctgoFvsPB2YEKEYgFzrw0A.png" data-width="1102" data-height="760" src="https://cdn-images-1.medium.com/max/800/1*ctgoFvsPB2YEKEYgFzrw0A.png"></div></figure><figure name="ae15" id="ae15" class="graf graf--figure graf-after--figure"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 308px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 44.1%;"></div><img class="graf-image" data-image-id="1*M29z11OFiVwOdEamTgHPlg.png" data-width="1076" data-height="474" src="https://cdn-images-1.medium.com/max/800/1*M29z11OFiVwOdEamTgHPlg.png"></div></figure><p name="2616" id="2616" class="graf graf--p graf-after--figure">A lot of work has gone into this.</p><figure name="8d21" id="8d21" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 145px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 20.7%;"></div><img class="graf-image" data-image-id="1*9kKGdt9I00ki0gQkVdLkYQ.png" data-width="736" data-height="152" src="https://cdn-images-1.medium.com/max/800/1*9kKGdt9I00ki0gQkVdLkYQ.png"></div></figure><p name="e811" id="e811" class="graf graf--p graf-after--figure">Calculable values are pre-calculated. This is a good sign of optimization.</p><figure name="9b6f" id="9b6f" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 598px; max-height: 98px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 16.400000000000002%;"></div><img class="graf-image" data-image-id="1*1bSGD9MHJFfkzs8f8wLSlw.png" data-width="598" data-height="98" src="https://cdn-images-1.medium.com/max/800/1*1bSGD9MHJFfkzs8f8wLSlw.png"></div></figure><p name="2e3e" id="2e3e" class="graf graf--p graf-after--figure">Not always.</p><figure name="ad07" id="ad07" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 319px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 45.6%;"></div><img class="graf-image" data-image-id="1*1NAXWVKtovca6wlNQ7WO2w.png" data-width="888" data-height="405" src="https://cdn-images-1.medium.com/max/800/1*1NAXWVKtovca6wlNQ7WO2w.png"></div></figure><p name="2676" id="2676" class="graf graf--p graf--startsWithDoubleQuote graf-after--figure">“Catch all” error statements should be a last resort, first you deal with the ones you expect, and then you catch the rest.</p><figure name="431a" id="431a" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 567px; max-height: 329px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 57.99999999999999%;"></div><img class="graf-image" data-image-id="1*LcXeA1MGcNJ5Vasw1Umi4g.png" data-width="567" data-height="329" src="https://cdn-images-1.medium.com/max/800/1*LcXeA1MGcNJ5Vasw1Umi4g.png"></div></figure><p name="250f" id="250f" class="graf graf--p graf-after--figure">In some places that is the pattern however. Multiple developers tend to implement different patterns.</p><figure name="5439" id="5439" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 664px; max-height: 470px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 70.8%;"></div><img class="graf-image" data-image-id="1*wOUOuLAgp5A59iuVzaNWvg.png" data-width="664" data-height="470" src="https://cdn-images-1.medium.com/max/800/1*wOUOuLAgp5A59iuVzaNWvg.png"></div></figure><p name="e089" id="e089" class="graf graf--p graf-after--figure">Perfect pattern, deal with the case you expect, throw the rest, 10/10</p><p name="90b7" id="90b7" class="graf graf--p graf-after--p">Not much else to say, the rest of the code follows similar standards, the tx pool, block, and core are all good, I really wish there was more to point out, but it’s just good. This review feels a bit empty though, but I don’t see value in just pasting more and more examples.</p><p name="e679" id="e679" class="graf graf--p graf-after--p">So I guess, it is just good.</p><p name="2ab7" id="2ab7" class="graf graf--p graf-after--p">So instead, I’m going to talk about the life cycle of code. Code starts out perfect. You get that first scope, and you begin building for it, and it’s exact, it’s neat, it’s everything you want it to be. Then the first change begins to happen, someone decides actually, they want feature x to instead do y. Now, you could go back and build it from the start, which is the right way, but you have timelines to meet and people have expectations, so instead you do a small little hack, then another, then another, and eventually you end up with this</p><figure name="1420" id="1420" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 540px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 77.10000000000001%;"></div><img class="graf-image" data-image-id="1*2svV-1q_xthn20dAzMQfPw.png" data-width="960" data-height="740" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*2svV-1q_xthn20dAzMQfPw.png"></div></figure><p name="e1a5" id="e1a5" class="graf graf--p graf-after--figure">Now I will comment, you can see this in the code, the hardfork splits, and all the calculations that happen around them. But this will inevitably happen as a project ages, there is nothing we can do about it, but how it is dealt with is the difference. So normally as a developer you reach a point where you stop caring about your code and you just keep hacking. But you could still architecture these forks in a clean way, build them around a config and set that config up as a guide through the rest of the code, this is how Ethereum has done it with DAO and Byzantium and this is how Monero is doing it.</p><p name="af63" id="af63" class="graf graf--p graf-after--p">It shows that even though the project has aged and even though it has been through hardship, it is still kept to a certain standard. The way these scope creep features are dealt with, is still in a good fashion.</p><p name="dfc4" id="dfc4" class="graf graf--p graf-after--p">Sure, the newer guys will have the advantage because they get to start clean, optimized, and perfect, but they have yet to walk this road, and trust me, they will, it’s inevitable. But it’s how we deal with these issues in code that shows the caliber, and I think both Ethereum and Monero are good examples of this standard.</p><p name="c52f" id="c52f" class="graf graf--p graf-after--p graf--trailing"><strong class="markup--strong markup--p-strong">Conclusion</strong>: It’s optimized, well documented, high quality code.</p></div></div></section>
+</section>
+<footer><p class="p-tags">Tagged in <a href="https://medium.com/tag/software-development" class="p-tag">Software Development</a>, <a href="https://medium.com/tag/crypto" class="p-tag">Crypto</a>, <a href="https://medium.com/tag/cryptocurrency" class="p-tag">Cryptocurrency</a>, <a href="https://medium.com/tag/monero" class="p-tag">Monero</a></p><p>By <a href="https://medium.com/@suchi.blackwing" class="p-author h-card">Andre Cronje</a> on <a href="https://medium.com/p/7ec487cd3917"><time class="dt-published" datetime="2018-03-28T12:48:03.420Z">March 28, 2018</time></a>.</p><p><a href="https://medium.com/@suchi.blackwing/cryptocurrency-code-review-monero-xmr-7ec487cd3917" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 2, 2018.</p></footer></article>
+
+</body></html>

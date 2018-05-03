@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Cryptocurrency Code Review: Internet Node Token (INT)</title><meta name="description" content="Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…"><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Cryptocurrency Code Review: Internet Node Token (INT)</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…
+</section>
+<section data-field="body" class="e-content">
+<section name="97f3" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="e342" id="e342" class="graf graf--h3 graf--leading graf--title">Cryptocurrency Code Review: Internet Node Token (INT)</h3><p name="19d9" id="19d9" class="graf graf--p graf-after--h3"><strong class="markup--strong markup--p-strong">Disclaimer</strong>: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a comment on the overall project, scope, or success thereof. This was done as an educational review by me and any comments in the article are simply my opinion. It should not be used as any comment or advice on the project as a whole.</p><p name="f3a5" id="f3a5" class="graf graf--p graf--startsWithDoubleQuote graf-after--p">“INT will provide series of decentralized IoT applications and industrial ecology with a reliable data source, transmission and storage security, confidential and untrusted infrastructure and shapes a new business model focused on devices, which opens up a new market.”</p><figure name="cad1" id="cad1" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 565px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 80.7%;"></div><img class="graf-image" data-image-id="1*pvGjCFP9atzSBusOPyeO-Q.png" data-width="928" data-height="749" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*pvGjCFP9atzSBusOPyeO-Q.png"></div></figure><p name="5c4d" id="5c4d" class="graf graf--p graf-after--figure">Very quiet and inactive repo. Let’s have a look at INTchainIO (INTchain is an open source smart contract platform for the Internet of Things) and INTchain</p><figure name="72ba" id="72ba" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 283px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 40.400000000000006%;"></div><img class="graf-image" data-image-id="1*PPjy0u2OhBVz_LtcQl3aXg.png" data-width="945" data-height="382" src="https://cdn-images-1.medium.com/max/800/1*PPjy0u2OhBVz_LtcQl3aXg.png"></div></figure><p name="1e22" id="1e22" class="graf graf--p graf-after--figure">2 commits, last one was 31 October 2017, nothing in this repo. So I’m not so sure about the “Open Source” statement, let’s look at INTchain.</p><figure name="56a6" id="56a6" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 675px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 96.39999999999999%;"></div><img class="graf-image" data-image-id="1*kJdErc4uecY-fCvU8tSVeg.png" data-width="927" data-height="894" src="https://cdn-images-1.medium.com/max/800/1*kJdErc4uecY-fCvU8tSVeg.png"></div></figure><p name="98b6" id="98b6" class="graf graf--p graf-after--figure">Last commit 5 months ago, only 2 commits, there is nothing happening in either of these repo’s, there is really no point in reviewing, but let’s at least look at the code quality.</p><figure name="4711" id="4711" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 324px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 46.300000000000004%;"></div><img class="graf-image" data-image-id="1*4k-Zaf06HndZzsSB3gmimg.png" data-width="938" data-height="434" src="https://cdn-images-1.medium.com/max/800/1*4k-Zaf06HndZzsSB3gmimg.png"></div></figure><p name="88aa" id="88aa" class="graf graf--p graf-after--figure">Empty</p><figure name="e773" id="e773" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 266px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 37.9%;"></div><img class="graf-image" data-image-id="1*MLBE4ic1pHOkmixQALn-9A.png" data-width="933" data-height="354" src="https://cdn-images-1.medium.com/max/800/1*MLBE4ic1pHOkmixQALn-9A.png"></div></figure><p name="f825" id="f825" class="graf graf--p graf-after--figure">Empty</p><figure name="d91f" id="d91f" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 383px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 54.800000000000004%;"></div><img class="graf-image" data-image-id="1*KZDz_TzQhbyJmsQeRqP8hA.png" data-width="902" data-height="494" src="https://cdn-images-1.medium.com/max/800/1*KZDz_TzQhbyJmsQeRqP8hA.png"></div></figure><p name="3491" id="3491" class="graf graf--p graf-after--figure">Some boilerplate</p><figure name="6cd7" id="6cd7" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 639px; max-height: 484px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 75.7%;"></div><img class="graf-image" data-image-id="1*7GbK9TDR8gjtOTgUKmdA3Q.png" data-width="639" data-height="484" src="https://cdn-images-1.medium.com/max/800/1*7GbK9TDR8gjtOTgUKmdA3Q.png"></div></figure><p name="0d45" id="0d45" class="graf graf--p graf-after--figure">This looked like something, but it looked familiar;</p><figure name="2ea3" id="2ea3" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 403px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 57.599999999999994%;"></div><img class="graf-image" data-image-id="1*ri4rXt_SpQZ_yI0_buoALw.png" data-width="805" data-height="464" src="https://cdn-images-1.medium.com/max/800/1*ri4rXt_SpQZ_yI0_buoALw.png"></div></figure><p name="2d51" id="2d51" class="graf graf--p graf-after--figure">Very familiar, as in the above snippet is from EOS, so just code copied from EOS, further investigation showed the rest is also just some old EOS code.</p><p name="6b17" id="6b17" class="graf graf--p graf-after--p graf--trailing"><strong class="markup--strong markup--p-strong">Conclusion</strong>: There is nothing here, this is either not Open Source, or they have abandoned ship, just some very old incomplete EOS code.</p></div></div></section>
+</section>
+<footer><p class="p-tags">Tagged in <a href="https://medium.com/tag/git" class="p-tag">Git</a>, <a href="https://medium.com/tag/crypto" class="p-tag">Crypto</a>, <a href="https://medium.com/tag/cryptocurrency" class="p-tag">Cryptocurrency</a>, <a href="https://medium.com/tag/int" class="p-tag">Int</a></p><p>By <a href="https://medium.com/@suchi.blackwing" class="p-author h-card">Andre Cronje</a> on <a href="https://medium.com/p/40a0e308ff59"><time class="dt-published" datetime="2018-03-29T18:48:03.881Z">March 29, 2018</time></a>.</p><p><a href="https://medium.com/@suchi.blackwing/cryptocurrency-code-review-internet-node-token-int-40a0e308ff59" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 2, 2018.</p></footer></article>
+
+</body></html>

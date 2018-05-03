@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Open Source, Not Open Source</title><meta name="description" content="This post is really just a rambling of thoughts and ideas and may seem a bit incoherent at times."><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Open Source, Not Open Source</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+This post is really just a rambling of thoughts and ideas and may seem a bit incoherent at times.
+</section>
+<section data-field="body" class="e-content">
+<section name="a6f9" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="eef7" id="eef7" class="graf graf--h3 graf--leading graf--title">Open Source, Not Open Source</h3><p name="083e" id="083e" class="graf graf--p graf-after--h3">This post is really just a rambling of thoughts and ideas and may seem a bit incoherent at times.</p><p name="fa6b" id="fa6b" class="graf graf--p graf-after--p">Let me start by explaining why I do these “reviews”, I put it in quotes because my intent was never to do reviews, but instead to use this as a teaching mechanism for myself. A writer will tell you that the best way to become a better writer is to read a lot. Similarly I believe the best way to improve your coding skills is to read a lot of code, so this is what I do. In the crypto space, we have the whitepaper, which to a developer is really just a teaser of things to come, so often I am filled with such excitement and anticipation after reading a whitepaper that I rush to the Open Source project’s code base to try and consume everything they have on offer. Sadly, in the Crypto space we have developed the Not Open Source, this isn’t closed Source, this is just where we act like it’s Open Source but in reality it is just a smokescreen.</p><p name="f2e4" id="f2e4" class="graf graf--p graf-after--p">So how this this conversation start, I had a great discussion with @Grandbear yesterday (Q from EximChain) with regards to the current state of Open Source, he very appropriately pointed out that a lot of my reviews come off as scathing and that their purpose is to create FUD (Fear Uncertainty Doubt) when we should be focusing on building each other up as every project contributing opensource code is crucial this early in the space.</p><p name="533a" id="533a" class="graf graf--p graf-after--p">This made me realize I need to take a bit of a step back and explain myself. I have been a salaried or consulting developer &amp; architect most of my life, 99.9% of everything I have ever written is closed source and proprietary. Some of the code that I am most proud of to this day, I can show to no one. This weights heavy on my heart.</p><p name="7d26" id="7d26" class="graf graf--p graf-after--p">So, why is Open Source so important to me? The times that we had the greatest technological advancements were during times of war, what was different then? The difference was we were banded together and working towards a common goal. Organizations that would normally keep code proprietary or closed source would willingly share their technology with each other for the greater good instead of personal gain. This I believe is the vision of Open Source, not just transparency, but the community begging that we please band together and help improve each other.</p><p name="f077" id="f077" class="graf graf--p graf-after--p">So at this point, there are a few categories of Open Source that I would like to discuss;</p><p name="1aff" id="1aff" class="graf graf--p graf-after--p">First is the traditional idea, that a set of code is made publicly available and the community can contribute to it via PR’s (Pull Requests). Here we have the full transparency Open Source teams, Ethereum, Aion, RChain, Zilliqa, ChainLink, and there are many other great examples, these are the standards of Open Source for me and I have learned so much from each one of them, a sincere thank you.</p><p name="0c73" id="0c73" class="graf graf--p graf-after--p">The second is the fork, this allows me to copy another set of code, while keeping the original line of ownership very clear, this can have great cross community functionality if the one fork wants to deviate, however both still keep core mechanisms the same, this allows for cross-PR’s where both communities can contribute to each other. A great example here is Zcash which started out as a Bitcoin fork.</p><p name="6ae0" id="6ae0" class="graf graf--p graf-after--p">Then we have the clone, this is normally where another code base was cloned with the intent to develop on it but not necessarily to contribute back to the original base. This however keeps the history in tact, which is a friendly nod towards the original developers.</p><p name="c637" id="c637" class="graf graf--p graf-after--p">Lastly we have the copy, development history is wiped, there is no link to the original fork and there is no nod to the original community.</p><p name="aac3" id="aac3" class="graf graf--p graf-after--p">Which one sounds more awesome?</p><p name="904e" id="904e" class="graf graf--p graf-after--p">Now, let’s talk about Not Open Source, we have the halve open source, the examples I want to use here are EximChain, and TomoChain, EximChain on the one hand have this amazing piece of software, their terraformer, which allows you to boot up nodes across multiple zones and it is service agnostic, this is an amazing tool that I can see being adopted by a lot of companies, I myself have forked it and intend to use it in the future after making some modifications to support Hyperledger Fabric and if I can do this in an agnostic way I’ll be sending my PR back.</p><p name="9647" id="9647" class="graf graf--p graf-after--p">Then on the other hand they have the fork and rename.</p><p name="941e" id="941e" class="graf graf--p graf-after--p">TomoChain have their example cross-chain app which I really like and also did a fork from, and then they have the fork and rename.</p><p name="7852" id="7852" class="graf graf--p graf-after--p">So fantastic code on one end, and a smokescreen on the other, but, this is our own fault as a community, because if they didn’t have the smokescreen we would have been complaining about how they are closed source.</p><p name="2617" id="2617" class="graf graf--p graf-after--p">To measure companies we have essentially created a manipulable checklist</p><ul class="postList"><li name="03d3" id="03d3" class="graf graf--li graf-after--p">Token metrics? Check</li><li name="f7ae" id="f7ae" class="graf graf--li graf-after--li">LinkedIn team? Check</li><li name="bb81" id="bb81" class="graf graf--li graf-after--li">LinkedIn advisors? Check</li><li name="0289" id="0289" class="graf graf--li graf-after--li">Social media? Check</li><li name="b85c" id="b85c" class="graf graf--li graf-after--li">Open Source? Check…</li></ul><p name="667b" id="667b" class="graf graf--p graf-after--li">And we publicly publicize that this is how we measure, so what should a company do? They have a few options</p><ol class="postList"><li name="09eb" id="09eb" class="graf graf--li graf-after--p">Just admit it’s closed source and suffer the community backlash</li><li name="609a" id="609a" class="graf graf--li graf-after--li">Put everything open source and risk competitors stealing it</li><li name="0352" id="0352" class="graf graf--li graf-after--li">Put up a fake smokescreen and develop behind the scenes</li></ol><p name="caed" id="caed" class="graf graf--p graf-after--li">And we live in a capitalist society, it’s not like I’m sitting at my day job working for friendship and happiness, so there is an incentive to keep source code closed to protect IP, so now we are seeing the patent space a lot, closed source until patent registered, but that is a conversation for another day.</p><p name="c45c" id="c45c" class="graf graf--p graf-after--p">So what’s the big problem with this? My issue, how do you differentiate the real deal from the frauds? We have Crypto 100 (Top 100 coinmarketcap) companies who’s githubs look exactly like scam coin githubs. For example, I received feedback from WanChain and TomoChain that their work is happening closed source and that their githubs are just for public presence. By their own admission their public githubs are absolutely pointless (and thus so are my reviews) and just there for the tickbox above?</p><p name="c69f" id="c69f" class="graf graf--p graf-after--p">And this is actually the thing that got me so frustrated in this space, specifically I remember the day I finished reading Wanchain’s whitepaper and how excited I was to go through their code, even moreso when I found out they are a go-ethereum fork, because I have been working extensively on go-ethereum which means there is a lot I could learn, and when I started going through commit after commit after commit with just name changes. This was disheartening to me.</p><p name="9b6d" id="9b6d" class="graf graf--p graf-after--p">This by no means implies that they won’t be able to deliver absolutely amazing projects, but unfortunately it also means we can’t differentiate between the fakes and smokescreens.</p><p name="b1a2" id="b1a2" class="graf graf--p graf-after--p">How do we tell the difference between the company that just cloned geth (go-ethereum) renamed it and launched their mainnet vs the company that is actually doing work?</p><p name="4e1e" id="4e1e" class="graf graf--p graf-after--p">But again, why is Open Source so important? So right now, there are about 8 highly recognized companies all building on geth, they will each make advancements and discoveries, but none of them will be shared, because each one is protected by IP. Doesn’t that sound incredibly sad? Now imagine if they were truly open source and each one contributed together to elevate it to the next level! We are at the precipice here of a technological revolution, but instead of working together, we are dividing our communities more and more until we are left with exactly what we have now.</p><p name="21c2" id="21c2" class="graf graf--p graf-after--p graf--trailing">So please, I’m begging all enthusiasts, let’s start being critical of real enhancement and let’s start paying close attention to these Not Open Source companies and mainnets. This doesn’t mean that we won’t see great things from these teams, it just means right now, we can’t even differentiate the real deal from the scam.</p></div></div></section>
+</section>
+<footer><p class="p-tags">Tagged in <a href="https://medium.com/tag/open-source" class="p-tag">Open Source</a>, <a href="https://medium.com/tag/crypto" class="p-tag">Crypto</a>, <a href="https://medium.com/tag/cryptocurrency" class="p-tag">Cryptocurrency</a>, <a href="https://medium.com/tag/ico" class="p-tag">ICO</a></p><p>By <a href="https://medium.com/@suchi.blackwing" class="p-author h-card">Andre Cronje</a> on <a href="https://medium.com/p/665a2d70f541"><time class="dt-published" datetime="2018-03-27T05:50:27.903Z">March 27, 2018</time></a>.</p><p><a href="https://medium.com/@suchi.blackwing/open-source-not-open-source-665a2d70f541" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 2, 2018.</p></footer></article>
+
+</body></html>

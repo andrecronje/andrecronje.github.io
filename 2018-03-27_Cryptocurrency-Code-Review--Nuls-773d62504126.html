@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Cryptocurrency Code Review: Nuls</title><meta name="description" content="Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…"><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Cryptocurrency Code Review: Nuls</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…
+</section>
+<section data-field="body" class="e-content">
+<section name="807b" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="1627" id="1627" class="graf graf--h3 graf--leading graf--title">Cryptocurrency Code Review: Nuls</h3><p name="5cb2" id="5cb2" class="graf graf--p graf-after--h3"><strong class="markup--strong markup--p-strong">Disclaimer</strong>: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a comment on the overall project, scope, or success thereof. This was done as an educational review by me and any comments in the article are simply my opinion. It should not be used as any comment or advice on the project as a whole.</p><p name="622a" id="622a" class="graf graf--p graf--startsWithDoubleQuote graf-after--p">“ NULS is a global blockchain open-source project which is a highly customizable modular blockchain infrastructure; it consists of a microkernel and functional modules. NULS provides smart contract, multi-chain mechanism and cross-chain consensus. It aims to break the technical barriers of blockchain, to reduce the cost of development, and to promote the usage of blockchain technology in the commercial field.”</p><figure name="6b7d" id="6b7d" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 582px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 83.2%;"></div><img class="graf-image" data-image-id="1*rQ_2TQptsH-0UFn0MfKQQw.png" data-width="1029" data-height="856" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*rQ_2TQptsH-0UFn0MfKQQw.png"></div></figure><p name="8a19" id="8a19" class="graf graf--p graf-after--figure">Very active repository, lots of substance commits, good branches structure, good share of contributors.</p><figure name="82f5" id="82f5" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 674px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 96.3%;"></div><img class="graf-image" data-image-id="1*NhWJDRqu1CVLLVwH0oMqrA.png" data-width="868" data-height="836" src="https://cdn-images-1.medium.com/max/800/1*NhWJDRqu1CVLLVwH0oMqrA.png"></div></figure><p name="d94a" id="d94a" class="graf graf--p graf-after--figure">So far pretty straight forward, nothing amazing yet, but nothing inherently bad. Could have added a tiny bit more error handling for my liking, but that will come with time.</p><p name="e5d6" id="e5d6" class="graf graf--p graf-after--p">At the bottom we see something that is a bit of a pet peeve of mine, and that’s evaluating a boolean and then returning a fixed boolean, this is where using boolean inference can be very handy, but again this is purely a personal preference. Nothing wrong with it.</p><figure name="fd0f" id="fd0f" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 168px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 23.9%;"></div><img class="graf-image" data-image-id="1*nHYNsd_WCK63aX62VKVF1Q.png" data-width="831" data-height="199" src="https://cdn-images-1.medium.com/max/800/1*nHYNsd_WCK63aX62VKVF1Q.png"></div></figure><p name="efc5" id="efc5" class="graf graf--p graf-after--figure">Entity bean structure, now that’s something I haven’t seen in a very long time, flashbacks from my J2EE days.</p><figure name="bd31" id="bd31" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 518px; max-height: 615px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 118.7%;"></div><img class="graf-image" data-image-id="1*bnr3EmZUikNmvQurjBGimQ.png" data-width="518" data-height="615" src="https://cdn-images-1.medium.com/max/800/1*bnr3EmZUikNmvQurjBGimQ.png"></div></figure><p name="a0d3" id="a0d3" class="graf graf--p graf-after--figure">Doesn’t look like the NodesResource has been implemented yet, might or might not be an issue, let’s continue.</p><p name="6f9d" id="6f9d" class="graf graf--p graf-after--p">Little sparse in the comments, so getting to grips with the flow is a bit difficult, but I can hardly comment about comments!</p><p name="e83a" id="e83a" class="graf graf--p graf-after--p">The RPC modules looks good, still a few items requiring implementation and not yet fully production level, but it looks close to completion.</p><figure name="3996" id="3996" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 509px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 72.7%;"></div><img class="graf-image" data-image-id="1*obbOUMhgojyZk_eCH-6zcw.png" data-width="700" data-height="509" src="https://cdn-images-1.medium.com/max/800/1*obbOUMhgojyZk_eCH-6zcw.png"></div></figure><p name="5ee2" id="5ee2" class="graf graf--p graf-after--figure">Really not a fan of arguments as a string array, this means you don’t have type safety. This knows that there is an argument but it doesn’t know what the argument is, the length also assumes different types. I really don’t like seeing this in code.</p><p name="5b81" id="5b81" class="graf graf--p graf-after--p">So the arguments are fed in as a string because it is taken from the commandline, so in that case you grab them, you validate each one and cast as necessary for type safety and then you provide them to the function. Overall this is more secure and reads easier from a developer perspective. I’ll make a note for it to do a PR.</p><figure name="d058" id="d058" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 655px; max-height: 652px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 99.5%;"></div><img class="graf-image" data-image-id="1*h44XtihLmfgjYk3mZOw5zg.png" data-width="655" data-height="652" src="https://cdn-images-1.medium.com/max/800/1*h44XtihLmfgjYk3mZOw5zg.png"></div></figure><p name="ea8a" id="ea8a" class="graf graf--p graf-after--figure">Consensus processor not yet done, pity, this is what I was looking forward to.</p><p name="fd41" id="fd41" class="graf graf--p graf-after--p">For the Node, it looks like accounts and wallets have been implemented, but I’m not seeing consensus or blocks yet.</p><p name="0400" id="0400" class="graf graf--p graf-after--p">The P2P code is straight forward, using Netty and lists for node.</p><p name="36b7" id="36b7" class="graf graf--p graf-after--p">DB module is a wrapper of mybatis</p><figure name="b9e4" id="b9e4" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 545px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 77.9%;"></div><img class="graf-image" data-image-id="1*a9fRYweLkCicLsVbFedS3A.png" data-width="954" data-height="743" src="https://cdn-images-1.medium.com/max/800/1*a9fRYweLkCicLsVbFedS3A.png"></div></figure><p name="90af" id="90af" class="graf graf--p graf-after--figure">I like how the meeting rounds in consensus is done. Overall this is nice, good modular approach, in some places a bit rushed but overall good quality. At the same time there isn’t anything super wow here, but not everything has to be wow.</p><p name="3eee" id="3eee" class="graf graf--p graf-after--p">I really liked the consensus meetings, so let’s see about their roadmap</p><p name="aef6" id="aef6" class="graf graf--p graf-after--p">Highly customizable modular blockchain? Check<br>Microkernel and functional modules? Check<br>Smart contracts? Didn’t see them<br>Multi-chain mechanism? Didn’t explicitly see anything focusing around this, but you could have multiple chains in this architecture</p><p name="4c64" id="4c64" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">Conclusion</strong>: They look like they are good on track to hit their milestones. Most of the heavy lifting has been done, from what I’m seeing currently I’m not 100% sure how they are beating or improving on Ethereum, but it is definitely another kind of blockchain in this space. I feel like it’s currently still lacking that core piece of innovation, but they have put down a good foundation, so they should be able to build something strong on top of it.</p><p name="f5b3" id="f5b3" class="graf graf--p graf-after--p">A comment I have to make though, this is essentially a research project, and there is nothing inherently wrong with it, as an investor you just have to understand that there are different rounds of investing, investing in a concept is Angel investing, it means you are a long way from seeing something real. They still have a very long roadmap ahead of them and will only start seeing a real production ready product by end of year, maybe even early 2019. So just be ready for that.</p><p name="6cc6" id="6cc6" class="graf graf--p graf-after--p graf--trailing">I’ll be keeping an eye on the code though, I think when they start expanding a bit on the cross-chains there will be some interesting bits to see.</p></div></div></section>
+</section>
+<footer><p class="p-tags">Tagged in <a href="https://medium.com/tag/blockchain" class="p-tag">Blockchain</a>, <a href="https://medium.com/tag/crypto" class="p-tag">Crypto</a>, <a href="https://medium.com/tag/cryptocurrency" class="p-tag">Cryptocurrency</a>, <a href="https://medium.com/tag/nul" class="p-tag">Nuls</a></p><p>By <a href="https://medium.com/@suchi.blackwing" class="p-author h-card">Andre Cronje</a> on <a href="https://medium.com/p/773d62504126"><time class="dt-published" datetime="2018-03-27T06:41:31.366Z">March 27, 2018</time></a>.</p><p><a href="https://medium.com/@suchi.blackwing/cryptocurrency-code-review-nuls-773d62504126" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 2, 2018.</p></footer></article>
+
+</body></html>

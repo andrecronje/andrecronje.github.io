@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Cryptocurrency Code Review: Ubiq</title><meta name="description" content="Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…"><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Cryptocurrency Code Review: Ubiq</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…
+</section>
+<section data-field="body" class="e-content">
+<section name="40f9" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="0091" id="0091" class="graf graf--h3 graf--leading graf--title">Cryptocurrency Code Review: Ubiq</h3><p name="79c6" id="79c6" class="graf graf--p graf-after--h3"><strong class="markup--strong markup--p-strong">Disclaimer</strong>: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a comment on the overall project, scope, or success thereof. This was done as an educational review by me and any comments in the article are simply my opinion. It should not be used as any comment or advice on the project as a whole.</p><p name="3f17" id="3f17" class="graf graf--p graf-after--p">In staying with the Ethereum fork theme, I thought today let’s have a look at Ubiq. Ubiq describes themselves as follow;</p><p name="ed9f" id="ed9f" class="graf graf--p graf--startsWithSingleQuote graf-after--p">‘“Ubiq is a decentralized platform which allows the creation and implementation of smart contracts and decentralized applications. Built upon an improved Ethereum codebase, the Ubiq blockchain acts as a large globally distributed ledger and supercomputer, allowing developers to create decentralized and automated solutions to thousands of tasks which today are carried out by third party intermediaries.”</p><p name="3185" id="3185" class="graf graf--p graf-after--p">With a statement such as “improved Ethereum codebase” let’s see what they can offer.</p><figure name="5f88" id="5f88" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 608px; max-height: 94px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 15.5%;"></div><img class="graf-image" data-image-id="1*OCzQmsWm89VWKW5M6EBj8Q.png" data-width="608" data-height="94" src="https://cdn-images-1.medium.com/max/800/1*OCzQmsWm89VWKW5M6EBj8Q.png"></div></figure><p name="cab6" id="cab6" class="graf graf--p graf-after--figure">We start off with Ubiq being 61 commits ahead and 1185 commits behind Ethereum. All this really means is that they have done 61 chunks of work that has not been contributed to Ethereum, and Ethereum has done 1185 chunks of work that has not been implemented by Ubiq. This in itself doesn’t tell us much since it does not define how big a chunk of work needs to be, so unlike last time, when we went through each commit, this time, let’s compare the two projects codebases with one another.</p><figure name="1ec1" id="1ec1" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 526px; max-height: 104px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 19.8%;"></div><img class="graf-image" data-image-id="1*93IUhinDX57txQ4CqAqtSw.png" data-width="526" data-height="104" src="https://cdn-images-1.medium.com/max/800/1*93IUhinDX57txQ4CqAqtSw.png"></div></figure><p name="77ee" id="77ee" class="graf graf--p graf-after--figure">61 commitss, 478 files changed, 2,977 additions (lines added), and 12,740 deletions (lines deleted). That’s a very small amount of code added for an improved Ethereum, but let’s go through them in detail;</p><figure name="d5f7" id="d5f7" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 326px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 46.5%;"></div><img class="graf-image" data-image-id="1*xmjmejEm8Y-hCkuYZeg4GA.png" data-width="868" data-height="404" src="https://cdn-images-1.medium.com/max/800/1*xmjmejEm8Y-hCkuYZeg4GA.png"></div></figure><p name="55db" id="55db" class="graf graf--p graf-after--figure">We start off with name changes, so they replaced anywhere it said Ethereum with Ubiq. This is by far the majority of changes, at least 90% of all changes made, so already this doesn’t look very promising.</p><figure name="fd5e" id="fd5e" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 695px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 99.2%;"></div><img class="graf-image" data-image-id="1*AOWKwoM3M-gbjo0vF0LOBQ.png" data-width="910" data-height="903" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*AOWKwoM3M-gbjo0vF0LOBQ.png"></div></figure><p name="a466" id="a466" class="graf graf--p graf-after--figure">We finally get some real code changes, unfortunately the above is just the update to the BIP44 number. This is just a standard created for hardware wallets so that each one has it’s own directory of data, so even if code is similar they don’t overwrite each other. Ethereum is 66, and they are assigned 108. You can see this at <a href="https://github.com/satoshilabs/slips/blob/master/slip-0044.md" data-href="https://github.com/satoshilabs/slips/blob/master/slip-0044.md" class="markup--anchor markup--p-anchor" rel="nofollow noopener" target="_blank">https://github.com/satoshilabs/slips/blob/master/slip-0044.md</a> Everyone that needs hardware support needs to register/commit a BIP44 number and then conflicts won’t occur on hardware wallets. This at least is something, but at the same time it’s such a minor change that it doesn’t warrant anything just yet.</p><p name="6040" id="6040" class="graf graf--p graf-after--p">More Ethereum to Ubiq renames… We see the DAO support was removed, nothing interesting here. More Ethereum to Ubiq renames.</p><figure name="6dfc" id="6dfc" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 654px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 93.4%;"></div><img class="graf-image" data-image-id="1*vO5ZxeTYrLpA7F_6WMUJig.png" data-width="911" data-height="851" src="https://cdn-images-1.medium.com/max/800/1*vO5ZxeTYrLpA7F_6WMUJig.png"></div></figure><p name="9954" id="9954" class="graf graf--p graf-after--figure">Here we have something, CalcPastMedianTime, so Ubiq works on a variable difficulty and variable block time for each block, this adapts as the network needs to become faster or can slow down. So the median time is calculated for the past blocks and then this is used as the time for the next upcoming blocks. It’s a nice little mechanism, but it doesn’t really change much and can potentially slow down block creation during slow transactional times. This isn’t all that impressive.</p><p name="fbab" id="fbab" class="graf graf--p graf-after--p">More renames, more DAO removal, and thats it.</p><p name="f592" id="f592" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">Conclusion:</strong> So here we have the “Improved Ethereum” that’s literally just go-ethereum with the names changed, median calculation functions created, but not implemented and that’s it. This coin is currently rank #132 on coinmarketcap. Can anyone please explain that to me? How do you just copy another products code, rename it, and you are worth almost $100,000,000?</p><p name="334d" id="334d" class="graf graf--p graf-after--p">I honestly don’t understand how this is possible. They have done nothing, they have modified nothing, and essentially they have a much worse, less maintained codebase than Ethereum. Now maybe their repo is just really outdated, although last update was 8 hours ago</p><figure name="51c6" id="51c6" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 177px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 25.3%;"></div><img class="graf-image" data-image-id="1*60FqSdPrh8kXFrCGV7fYmQ.png" data-width="902" data-height="228" src="https://cdn-images-1.medium.com/max/800/1*60FqSdPrh8kXFrCGV7fYmQ.png"></div></figure><p name="356d" id="356d" class="graf graf--p graf-after--figure graf--trailing">I really don’t understand how this market works.</p></div></div></section>
+</section>
+<footer><p class="p-tags">Tagged in <a href="https://medium.com/tag/blockchain" class="p-tag">Blockchain</a>, <a href="https://medium.com/tag/ubiq" class="p-tag">Ubiq</a>, <a href="https://medium.com/tag/cryptocurrency" class="p-tag">Cryptocurrency</a>, <a href="https://medium.com/tag/crypto" class="p-tag">Crypto</a>, <a href="https://medium.com/tag/ethereum" class="p-tag">Ethereum</a></p><p>By <a href="https://medium.com/@suchi.blackwing" class="p-author h-card">Andre Cronje</a> on <a href="https://medium.com/p/7cc1c2a0a69f"><time class="dt-published" datetime="2018-02-26T09:18:33.098Z">February 26, 2018</time></a>.</p><p><a href="https://medium.com/@suchi.blackwing/cryptocurrency-code-review-ubiq-7cc1c2a0a69f" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 2, 2018.</p></footer></article>
+
+</body></html>

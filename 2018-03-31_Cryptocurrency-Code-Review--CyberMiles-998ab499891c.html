@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Cryptocurrency Code Review: CyberMiles</title><meta name="description" content="Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…"><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Cryptocurrency Code Review: CyberMiles</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…
+</section>
+<section data-field="body" class="e-content">
+<section name="dfa4" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="d58b" id="d58b" class="graf graf--h3 graf--leading graf--title">Cryptocurrency Code Review: CyberMiles</h3><p name="5e4a" id="5e4a" class="graf graf--p graf-after--h3"><strong class="markup--strong markup--p-strong">Disclaimer</strong>: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a comment on the overall project, scope, or success thereof. This was done as an educational review by me and any comments in the article are simply my opinion. It should not be used as any comment or advice on the project as a whole.</p><figure name="6d85" id="6d85" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 826px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 117.9%;"></div><img class="graf-image" data-image-id="1*DcPH5GA3h6AyS0e-sjFvIQ.png" data-width="764" data-height="901" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*DcPH5GA3h6AyS0e-sjFvIQ.png"></div></figure><p name="90d7" id="90d7" class="graf graf--p graf-after--figure">100 times faster then Ethereum.</p><figure name="faec" id="faec" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 680px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 97.2%;"></div><img class="graf-image" data-image-id="1*KjtrJgJxIkvCNIOwN7B35w.png" data-width="921" data-height="895" src="https://cdn-images-1.medium.com/max/800/1*KjtrJgJxIkvCNIOwN7B35w.png"></div></figure><p name="91a9" id="91a9" class="graf graf--p graf-after--figure">Repo is a bit confusing, there is a lot going on here. Travis looks like the blockchain, so let’s keep it in mind, the go-ethereum fork doesn’t have much happening, same with the tendermint fork, ethermint looks empty, ok this leaves us with travis-java, VM, and Travis.</p><p name="b073" id="b073" class="graf graf--p graf-after--p">Let’s grab travis</p><figure name="896f" id="896f" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 626px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 89.4%;"></div><img class="graf-image" data-image-id="1*3-qLhml8ST4ku_BjFYrhQw.png" data-width="912" data-height="815" src="https://cdn-images-1.medium.com/max/800/1*3-qLhml8ST4ku_BjFYrhQw.png"></div></figure><p name="e44a" id="e44a" class="graf graf--p graf-after--figure">Travis uses the Cosmos and Tendermint SDK’s, tendermint is a Byzantine fault-tolerant replicated state machine, and Cosmos is the decentralized network of parallel Tendermint chains. So I guess we can say that CyberMiles is just another chain in this eco system.</p><p name="d1fd" id="d1fd" class="graf graf--p graf-after--p">So a bit of a Frankenstein going on here, we have Cosmos for cross-chain, we have Tendermint for BFT consensus and we use Ethereum standards for transactions. To be honest, I like it, and what is more amazing is that they are all working together.</p><figure name="3780" id="3780" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 682px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 97.5%;"></div><img class="graf-image" data-image-id="1*LJRiqatyvzhYvt62sRTTZA.png" data-width="836" data-height="815" src="https://cdn-images-1.medium.com/max/800/1*LJRiqatyvzhYvt62sRTTZA.png"></div></figure><p name="ffa9" id="ffa9" class="graf graf--p graf-after--figure">And this shows the amalgamation, Cosmos used to load the transaction, ethereum used to decode it, ethermint used to deliver it, this is kind of beautiful, in a monster kind of way.</p><p name="4622" id="4622" class="graf graf--p graf-after--p">At this point I became a bit skeptical, and it started looking a lot like Ethermint, so I did a quick comparison</p><figure name="d7d6" id="d7d6" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 252px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 36%;"></div><img class="graf-image" data-image-id="1*q8g2rzJg5kGzfd5f_vRp6A.png" data-width="1888" data-height="679" src="https://cdn-images-1.medium.com/max/800/1*q8g2rzJg5kGzfd5f_vRp6A.png"></div></figure><p name="b6e5" id="b6e5" class="graf graf--p graf-after--figure">On the right, Ethermint, left Travis, so it’s definitely, let’s say, inspired by Ethermint, I think there is still enough going on here though to say that they are standing on their own two feet, so let’s keep going, but we have to keep this in mind to separate what they have done and what Ethermint did.</p><figure name="a81f" id="a81f" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 272px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 38.800000000000004%;"></div><img class="graf-image" data-image-id="1*RGgc6-bADYYhiW2HqIvAAQ.png" data-width="729" data-height="283" src="https://cdn-images-1.medium.com/max/800/1*RGgc6-bADYYhiW2HqIvAAQ.png"></div></figure><p name="bfc9" id="bfc9" class="graf graf--p graf-after--figure">Validator key’s published in blocks based on their dPoS implementation.</p><figure name="e699" id="e699" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 440px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 62.9%;"></div><img class="graf-image" data-image-id="1*kfpSgRsvxDVFmvLWfKZqkQ.png" data-width="902" data-height="567" src="https://cdn-images-1.medium.com/max/800/1*kfpSgRsvxDVFmvLWfKZqkQ.png"></div></figure><p name="c020" id="c020" class="graf graf--p graf-after--figure">So, not a huge fan of a direct DB implementation, disk access is notoriously slow, but the great news here is that it still leaves room for improvement if they shift this to a memory store.</p><p name="8de2" id="8de2" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">Conclusion</strong>: To be fair, they aren’t doing the heavy lifting, they are letting Tendermint, Ethermint, Ethereum, and Cosmos do the heavy lifting. That being said, it’s implemented and joined in a really novel way, this isn’t easy to do, and it actually means that they can leverage the best parts of each of those systems.</p><p name="bc48" id="bc48" class="graf graf--p graf-after--p graf--trailing">It’s a very interesting design pattern, but I really like it, will definitely keep an eye on them. Surprised they aren’t bigger.</p></div></div></section>
+</section>
+<footer><p class="p-tags">Tagged in <a href="https://medium.com/tag/blockchain" class="p-tag">Blockchain</a>, <a href="https://medium.com/tag/crypto" class="p-tag">Crypto</a>, <a href="https://medium.com/tag/cryptocurrency" class="p-tag">Cryptocurrency</a>, <a href="https://medium.com/tag/cybermiles" class="p-tag">Cybermiles</a></p><p>By <a href="https://medium.com/@suchi.blackwing" class="p-author h-card">Andre Cronje</a> on <a href="https://medium.com/p/998ab499891c"><time class="dt-published" datetime="2018-03-31T14:39:54.464Z">March 31, 2018</time></a>.</p><p><a href="https://medium.com/@suchi.blackwing/cryptocurrency-code-review-cybermiles-998ab499891c" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 2, 2018.</p></footer></article>
+
+</body></html>

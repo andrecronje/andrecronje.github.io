@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Cryptocurrency Review: Ternio</title><meta name="description" content="Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…"><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Cryptocurrency Review: Ternio</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…
+</section>
+<section data-field="body" class="e-content">
+<section name="d9d8" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="2fe1" id="2fe1" class="graf graf--h3 graf--leading graf--title">Cryptocurrency Review: Ternio</h3><p name="1487" id="1487" class="graf graf--p graf-after--h3"><strong class="markup--strong markup--p-strong">Disclaimer</strong>: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a comment on the overall project, scope, or success thereof. This was done as an educational review by me and any comments in the article are simply my opinion. It should not be used as any comment or advice on the project as a whole.</p><p name="2b1b" id="2b1b" class="graf graf--p graf-after--p">**Edit 17/03/2018: Daniel Gouldman (very cool guy btw) reached out and we had a bit of a discussion, we could not go into too much detail since they can’t disclose, but he assures me that their 1.2m TPS is happening in a distributed, decentralized on-chain, consensus free, permissioned environment.</p><p name="0fa3" id="0fa3" class="graf graf--p graf-after--p">Without much more data I can’t alter the substance of this article much, since I still have to make my assumptions on the data. But I am curious to see the third party verified results**</p><figure name="780a" id="780a" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 636px; max-height: 783px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 123.10000000000001%;"></div><img class="graf-image" data-image-id="0*cA9eTV73NWrQQrU8." data-width="636" data-height="783" src="https://cdn-images-1.medium.com/max/800/0*cA9eTV73NWrQQrU8."></div></figure><p name="6c2f" id="6c2f" class="graf graf--p graf-after--figure">TPS, TPS, TPS. The thing you will see in most telegram channels nowadays, what is your TPS, like this is some magical metric of success. Ternio, and their 1.2 million TPS. TPS, Transactions Per Second. I think we have said it enough now. So let’s look at Ternio, the advertisers blockchain that has claims of 1.2 million transactions per second.</p><p name="f3a6" id="f3a6" class="graf graf--p graf-after--p">So first off, Ternio is built on Stellar (or at least their token is, which is not the same as built on, but it just means they have a token on Stellar), and Ternio has it’s own internal system built on Hyperledger Fabric (IBM and Digital Asset’s hackathon blockchain).</p><p name="4973" id="4973" class="graf graf--p graf-after--p">So first, a quick discussion on TPS. Let’s look at a CPU, let’s say the thing you are trying to execute takes exactly 1 instruction. Then you can do 1 instruction per tick, so on a 1 MHz CPU you could do 1 million instructions. On a 2 GHz CPU you could do 2 billion instructions. So to clarify, a 2 GHz CPU can do 2 billion transactions per second. Insane right? Now we are talking about scalar processors, we haven’t even started talking about multi core.</p><p name="e4fb" id="e4fb" class="graf graf--p graf-after--p">Ok, so CPU’s are fast, but let’s say you had to cache the data to disk, so now your data isn’t freely available for the CPU, but first it needs to be picked up by the underlying disk, now let’s say this is top of the line, so we are talking about an EMC DSSD D5 (it’s just a really really fast SSD, don’t worry about it), then we are looking at 10 million IOPS (Input/output Operations Per Second). So already we see we have a new bottleneck, now also I am over simplifying there is still things like LLVM and actual transfer over wire, but I just want to illustrate the point here.</p><p name="edf3" id="edf3" class="graf graf--p graf-after--p">Now next, let’s assume that the data that CPU wants to process is located in another PC? Then it first needs to be transferred from A to B, this is where line speed comes in, let’s say you have a speed of 1 Gb, that’s 1,000,000,000 bits per second or 125m bytes, or about 119 MB / s. So if your transaction was 1 KB big, that’s a maximum of 122,070 transactions per second.</p><p name="d725" id="d725" class="graf graf--p graf-after--p">So wait, on a 1 Gb line and a 1KB payload, your max transfer is 122,070 TPS?</p><p name="d94c" id="d94c" class="graf graf--p graf-after--p">So there are certain hardware limits to TPS, so how do companies out there process millions of transactions per second (Google for example), well, we all aren’t talking to the same Google server, we are talking to a single instance of the google server and there are thousands of instances (this is where sharding comes in but that’s a discussion for another day)</p><p name="4b7d" id="4b7d" class="graf graf--p graf-after--p">So back to Ternio, and their 1.2 million transactions per second. So Ternio is built on Hyperledger Fabric, Hyperledger Fabric has a claim of 100k TPS, the actual threshold tests have delivered around 7000 TPS. Two things are very important here, Hyperledger Fabric has a module called chaincode, and a variable consensus model.</p><p name="646f" id="646f" class="graf graf--p graf-after--p">With the above in mind, we look at Ternio’s Lexicon Blockchain. A few important extracts;</p><p name="e409" id="e409" class="graf graf--p graf--startsWithDoubleQuote graf-after--p">“Lexicon is a permissioned based blockchain infrastructure”</p><p name="c589" id="c589" class="graf graf--p graf--startsWithDoubleQuote graf-after--p">“These Ternio nodes sign, verify, and hold contracts for a span of 24 hours. After this — the contract is collected for transaction settlement processing. Ternio transaction contracts are then created, and payment is settled for the publisher and the rests of the ad supply chain”</p><p name="6f66" id="6f66" class="graf graf--p graf-after--p">So the important things here are 1, permissioned (meaning only nodes they choose or own can participate in the network), so they can control the hardware requirements (fast lines, SSD’s, multi core CPU’s) and more importantly 2, “hold contracts for a span of 24 hours”, this means that all the events and contracts take place on a single node for 24 hours before it’s committed to the real (Stellar) blockchain. So what they are doing is not blockchain, it’s offchain, centralized, non distributed execution. And remember from what we saw earlier, if you have 1 high end system running transactions, you can get insanely high speeds (up to 1.2 million), this is not to be confused with blockchain transactions per second. Essentially they are saying if you took Ethereum, and had it set in PoA (where we already know we can get 10k TPS if it’s on good hardware and about 3 nodes), and then change the block times from 15 seconds to 24 hours, you can get high TPS.</p><p name="abd1" id="abd1" class="graf graf--p graf-after--p">So essentially, they have a centralized server running all the transactions for a day and then at the end of the day, it batches all the results to blockchain. So they are a 1 TPD (Transaction Per Day) dAPP.</p><p name="93e9" id="93e9" class="graf graf--p graf-after--p graf--trailing"><strong class="markup--strong markup--p-strong">Conclusion</strong>: From my tests 1.2 million transactions per second in a true decentralized, distributed, on-chain, single shard environment is currently not possible with the hardware that exists today. Nor can it be byzantine fault tolerant. 1.2 million transactions per second on a high end server assuming everything is in memory already and you are only limited by the CPU is theoretically doable, but, you want to start adding disk cache, look at around 100k tps, you want to add network, look around 20k tps, you want to have it byzantine fault tolerant, look significantly lower.</p></div></div></section>
+</section>
+<footer><p class="p-tags">Tagged in <a href="https://medium.com/tag/blockchain" class="p-tag">Blockchain</a>, <a href="https://medium.com/tag/cryptocurrency" class="p-tag">Cryptocurrency</a>, <a href="https://medium.com/tag/crypto" class="p-tag">Crypto</a>, <a href="https://medium.com/tag/ternio" class="p-tag">Ternio</a></p><p>By <a href="https://medium.com/@suchi.blackwing" class="p-author h-card">Andre Cronje</a> on <a href="https://medium.com/p/49796092e833"><time class="dt-published" datetime="2018-03-14T16:28:27.264Z">March 14, 2018</time></a>.</p><p><a href="https://medium.com/@suchi.blackwing/cryptocurrency-review-ternio-49796092e833" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 2, 2018.</p></footer></article>
+
+</body></html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Cryptocurrency Code Review: Loki</title><meta name="description" content="Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…"><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Cryptocurrency Code Review: Loki</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…
+</section>
+<section data-field="body" class="e-content">
+<section name="d2cf" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="5895" id="5895" class="graf graf--h3 graf--leading graf--title">Cryptocurrency Code Review: Loki</h3><p name="ad0d" id="ad0d" class="graf graf--p graf-after--h3"><strong class="markup--strong markup--p-strong">Disclaimer</strong>: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a comment on the overall project, scope, or success thereof. This was done as an educational review by me and any comments in the article are simply my opinion. It should not be used as any comment or advice on the project as a whole.</p><p name="c322" id="c322" class="graf graf--p graf--startsWithDoubleQuote graf-after--p">“Trade and communicate with absolute freedom. Private transactions, decentralised communication.”</p><p name="da61" id="da61" class="graf graf--p graf-after--p">So loki.network is a new privacy coin coming out. There team use github profiles instead of their linkedin profiles, so let’s have a look;</p><figure name="b3dc" id="b3dc" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 461px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 65.8%;"></div><img class="graf-image" data-image-id="1*--PYUwlsAY68e6e21yS84A.png" data-width="1006" data-height="662" src="https://cdn-images-1.medium.com/max/800/1*--PYUwlsAY68e6e21yS84A.png"></div></figure><p name="76ba" id="76ba" class="graf graf--p graf-after--figure">Monero clones, and 33 contributions in the last year.</p><figure name="6837" id="6837" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 564px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 80.5%;"></div><img class="graf-image" data-image-id="1*vQugbvdWf0C_G2xHbju3xg.png" data-width="1001" data-height="806" src="https://cdn-images-1.medium.com/max/800/1*vQugbvdWf0C_G2xHbju3xg.png"></div></figure><p name="8873" id="8873" class="graf graf--p graf-after--figure">Monero clones, and 14 contributions in the last year.</p><figure name="d236" id="d236" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 564px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 80.5%;"></div><img class="graf-image" data-image-id="1*KM6_-zl8bQsV_GULgQ-w5A.png" data-width="1000" data-height="805" src="https://cdn-images-1.medium.com/max/800/1*KM6_-zl8bQsV_GULgQ-w5A.png"></div></figure><p name="6c8a" id="6c8a" class="graf graf--p graf-after--figure">Electroneum clones, and 17 contributions in the last year.</p><p name="3bd0" id="3bd0" class="graf graf--p graf-after--p">If this is their github, I don’t know why they are hiding their linkedin…</p><p name="f3a1" id="f3a1" class="graf graf--p graf-after--p">Anyway, on to the code;</p><figure name="170e" id="170e" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 366px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 52.2%;"></div><img class="graf-image" data-image-id="1*In5KR13Seu9PeE2XUuJdUA.png" data-width="1024" data-height="535" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*In5KR13Seu9PeE2XUuJdUA.png"></div></figure><p name="68cc" id="68cc" class="graf graf--p graf-after--figure">One repo, loki, and as expected, forked from Monero.</p><figure name="d180" id="d180" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 547px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 78.10000000000001%;"></div><img class="graf-image" data-image-id="1*SK3c91Ybv4CJ54kgBGkkpQ.png" data-width="1004" data-height="784" src="https://cdn-images-1.medium.com/max/800/1*SK3c91Ybv4CJ54kgBGkkpQ.png"></div></figure><p name="d281" id="d281" class="graf graf--p graf-after--figure">This is the loki testnet, we aren’t going to go through all of Monero’s code so instead let’s look at the commits they have made (this is the value that they are adding to the project)</p><figure name="131f" id="131f" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 144px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 20.599999999999998%;"></div><img class="graf-image" data-image-id="1*S4knUSrT78tE9veKQGXQuA.png" data-width="1880" data-height="387" src="https://cdn-images-1.medium.com/max/800/1*S4knUSrT78tE9veKQGXQuA.png"></div></figure><p name="8460" id="8460" class="graf graf--p graf-after--figure">Readme update and name changes, as expected.</p><figure name="2b26" id="2b26" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 144px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 20.5%;"></div><img class="graf-image" data-image-id="1*oj-hO5HEglNPJu1wUEMzVg.png" data-width="1884" data-height="387" src="https://cdn-images-1.medium.com/max/800/1*oj-hO5HEglNPJu1wUEMzVg.png"></div></figure><p name="bbd5" id="bbd5" class="graf graf--p graf-after--figure">Removal of monero specific data.</p><figure name="8dca" id="8dca" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 157px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 22.400000000000002%;"></div><img class="graf-image" data-image-id="1*79qAUAIRkD2OqonKhWNQ9Q.png" data-width="1882" data-height="422" src="https://cdn-images-1.medium.com/max/800/1*79qAUAIRkD2OqonKhWNQ9Q.png"></div></figure><p name="2f07" id="2f07" class="graf graf--p graf-after--figure">A nice 40000000000000000 premined tokens given to the first miner.</p><figure name="9de7" id="9de7" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 229px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 32.7%;"></div><img class="graf-image" data-image-id="1*ojnpU6LJxeALn2bmc86sxg.png" data-width="1887" data-height="617" src="https://cdn-images-1.medium.com/max/800/1*ojnpU6LJxeALn2bmc86sxg.png"></div></figure><p name="4b01" id="4b01" class="graf graf--p graf-after--figure">Nothing fancy here, a rework in the block reward, Monero does a time based trickle, loki has a mechanic split based on a certain block height. Rewarding early adopters.</p><figure name="e0ae" id="e0ae" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 149px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 21.2%;"></div><img class="graf-image" data-image-id="1*QqUITJI0MjhvxtaSlrVjSg.png" data-width="1884" data-height="400" src="https://cdn-images-1.medium.com/max/800/1*QqUITJI0MjhvxtaSlrVjSg.png"></div></figure><p name="cfb3" id="cfb3" class="graf graf--p graf-after--figure">Port changes and renames, nothing interesting here.</p><p name="cc8b" id="cc8b" class="graf graf--p graf-after--p">And that’s all we have.</p><p name="54e2" id="54e2" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">Conclusion</strong>: While the changes they have made are only a tiny fraction, the code itself isn’t bad, but, all this is, is Monero with a different reward structure. Will they be able to update their code base fast enough to keep up?</p><p name="b143" id="b143" class="graf graf--p graf-after--p">We are seeing more and more clones (and Imitation is the sincerest form of flattery), but that being said Facebook was a clone Myspace, Google was a clone of (spider, mamma, yahoo, etc), Apple and Windows were clones of IBM.</p><p name="2bf3" id="2bf3" class="graf graf--p graf-after--p graf--trailing">There is very little to see here, and right now, they aren’t bringing anything new to the game, other than a clone of Monero.</p></div></div></section>
+</section>
+<footer><p class="p-tags">Tagged in <a href="https://medium.com/tag/github" class="p-tag">Github</a>, <a href="https://medium.com/tag/cryptocurrency" class="p-tag">Cryptocurrency</a>, <a href="https://medium.com/tag/blockchain" class="p-tag">Blockchain</a>, <a href="https://medium.com/tag/crypto" class="p-tag">Crypto</a>, <a href="https://medium.com/tag/loki" class="p-tag">Loki</a></p><p>By <a href="https://medium.com/@suchi.blackwing" class="p-author h-card">Andre Cronje</a> on <a href="https://medium.com/p/2ae5e3231014"><time class="dt-published" datetime="2018-03-13T05:01:18.514Z">March 13, 2018</time></a>.</p><p><a href="https://medium.com/@suchi.blackwing/cryptocurrency-code-review-loki-2ae5e3231014" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 2, 2018.</p></footer></article>
+
+</body></html>

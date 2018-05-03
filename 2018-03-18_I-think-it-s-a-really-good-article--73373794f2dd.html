@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>I think it’s a really good article.</title><meta name="description" content="A few things to note from the article, are the constraints they mention;"><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">I think it’s a really good article.</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+A few things to note from the article, are the constraints they mention;
+</section>
+<section data-field="body" class="e-content">
+<section name="6708" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><p name="d645" id="d645" class="graf graf--p graf--leading">I think it’s a really good article. They neatly discuss their technical constraints and changes. And I look forward to reviewing their blockchain code (as opposed to the rest of the code reviewed in this article).</p><p name="302e" id="302e" class="graf graf--p graf-after--p">A few things to note from the article, are the constraints they mention;</p><ol class="postList"><li name="4069" id="4069" class="graf graf--li graf-after--p">The environment they were running in was high spec with very low network latency</li><li name="2b03" id="2b03" class="graf graf--li graf-after--li">They comment on transactions being reduced to 120 bytes for purposes of the test otherwise their disk throughput is 1,387 TB per hour</li><li name="dc28" id="dc28" class="graf graf--li graf-after--li">They mention removing EDS to reduce package size and increase the throughput (something that in production they have to bring back in)</li><li name="1a7e" id="1a7e" class="graf graf--li graf-after--li">Implementation of BFT with trusted nodes</li><li name="676f" id="676f" class="graf graf--li graf-after--li">They also have a very transparent paragraph explaining how in a production environment the TPS would be much lower if there are low throughput nodes or low network bandwidth</li></ol><p name="e0d5" id="e0d5" class="graf graf--p graf-after--li">So all in all, they make very transparent how they arrived at that throughput and how it relates to real blockchain TPS, and what compromises they had to make to accomplish it, which when considered means their production throughput will be looking quite a bit less.</p><p name="5fcb" id="5fcb" class="graf graf--p graf-after--p">Essentially their article and video state, they managed a controlled isolated centralized test at that speed and that in production they are expecting less, however given the same test conditions they are still going to try and up their throughput to 1 million.</p><p name="90d2" id="90d2" class="graf graf--p graf-after--p">For now this is just a very clever marketing video, since most people will be too frantic about the TPS, and not actually read the article. That’s why I am actually impressed that they published the article, it shows that they aren’t just marketing hype at least.</p><p name="9f4a" id="9f4a" class="graf graf--p graf-after--p graf--trailing">I eagerly await them releasing a playable version so that I can boot it up for myself ;)</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@suchi.blackwing" class="p-author h-card">Andre Cronje</a> on <a href="https://medium.com/p/73373794f2dd"><time class="dt-published" datetime="2018-03-18T13:09:34.904Z">March 18, 2018</time></a>.</p><p><a href="https://medium.com/@suchi.blackwing/i-think-its-a-really-good-article-73373794f2dd" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 2, 2018.</p></footer></article>
+
+</body></html>

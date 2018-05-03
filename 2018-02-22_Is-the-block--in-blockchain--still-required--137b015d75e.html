@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Is the block, in blockchain, still required?</title><meta name="description" content="I’ve been playing with this idea now for awhile. Is the block, in blockchain, still required? So let’s look at the original blockchain…"><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Is the block, in blockchain, still required?</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+I’ve been playing with this idea now for awhile. Is the block, in blockchain, still required? So let’s look at the original blockchain…
+</section>
+<section data-field="body" class="e-content">
+<section name="7bde" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="0aca" id="0aca" class="graf graf--h3 graf--leading graf--title">Is the block, in blockchain, still required?</h3><p name="4014" id="4014" class="graf graf--p graf-after--h3">I’ve been playing with this idea now for awhile. Is the block, in blockchain, still required? So let’s look at the original blockchain proposal. We see the cornerstone of this proposal is Proof of Work. Proof of Work is essentially it’s own worst enemy. So what made Proof of Work great? It means a lot of computational power is required, it deceases the chances for centralization since the chances of guessing the hash are essentially random spread out across a big enough sector. That is great for consensus, it means a lot of work to accomplish the hash and very little work to validate the hash. So the capability to cheat the system turned into the 51% attack problem/solution, dependent on how you see it.</p><p name="e964" id="e964" class="graf graf--p graf-after--p">But, this means PoW is inherently slow, at current capacity for Bitcoin around 10 minutes. So how do you increase transactional throughput if you can only confirm 1 transaction every 10 minutes? Easy, you package them all in a block. So the block, in blockchain, exists to overcome this limitation, it’s a scaling mechanism for PoW.</p><p name="b337" id="b337" class="graf graf--p graf-after--p">Currently, we are seeing more and more consensus mechanisms coming out. The current flavor of the month is definitely Proof of Stake, followed closely by mechanisms such as dBFT, or even PoA. So what’s the difference here? So in PoW you have every miner trying to compete and to win as fast as possible. In PoS you have a lottery of who gets to seal the block. If you have more stake, you can buy more lottery tickets, if you’ve been doing this longer than the rest, your chances of winning are higher, and then lastly, that bit of randomness. So now the winning node gets chosen and it’s there turn to seal the block. Why is this still a block?</p><p name="a308" id="a308" class="graf graf--p graf-after--p">So one reason why a block is still good, is it’s easier to transmit a single set of data p2p than it is to submit a bunch of smaller transactions. Transferring 1 1MB block every few minutes is definitely more preferred than transferring 1024 1KB blocks throughout a minute, right? I think wrong, we are already doing it when we are transferring the actual transactions between each node, so the overhead is essentially the same.</p><p name="6553" id="6553" class="graf graf--p graf-after--p">So what I’ve started building, is a transaction chain. I’m throwing away the blocks. This works the same as the block mechanism, but on a transaction level. A transaction still references the previous transaction hash before it and we keep the same chain mechanism. But instead, a chosen validator in a non PoW scheme can now stream transactions as quickly as it can for a set amount of time. The stream itself will be FIFO to ensure maximum throughput. But this will essentially decrease confirmations time to a negligible number. Now we have the problem of out of sync nodes, but the issue is exactly the same be it blocks or transactions.</p><p name="5ad3" id="5ad3" class="graf graf--p graf-after--p graf--trailing">Currently busy with the PoC, let’s see how far I get and how long it takes.</p></div></div></section>
+</section>
+<footer><p class="p-tags">Tagged in <a href="https://medium.com/tag/blockchain" class="p-tag">Blockchain</a>, <a href="https://medium.com/tag/ethereum" class="p-tag">Ethereum</a>, <a href="https://medium.com/tag/transactions" class="p-tag">Transactions</a></p><p>By <a href="https://medium.com/@suchi.blackwing" class="p-author h-card">Andre Cronje</a> on <a href="https://medium.com/p/137b015d75e"><time class="dt-published" datetime="2018-02-22T11:16:12.940Z">February 22, 2018</time></a>.</p><p><a href="https://medium.com/@suchi.blackwing/is-the-block-in-blockchain-still-required-137b015d75e" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 2, 2018.</p></footer></article>
+
+</body></html>

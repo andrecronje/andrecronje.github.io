@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Cryptocurrency Code Review: Ontology (ONT)</title><meta name="description" content="Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…"><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Cryptocurrency Code Review: Ontology (ONT)</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…
+</section>
+<section data-field="body" class="e-content">
+<section name="1181" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="44e7" id="44e7" class="graf graf--h3 graf--leading graf--title">Cryptocurrency Code Review: Ontology (ONT)</h3><p name="aa6e" id="aa6e" class="graf graf--p graf-after--h3"><strong class="markup--strong markup--p-strong">Disclaimer</strong>: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a comment on the overall project, scope, or success thereof. This was done as an educational review by me and any comments in the article are simply my opinion. It should not be used as any comment or advice on the project as a whole.</p><figure name="3280" id="3280" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 623px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 89%;"></div><img class="graf-image" data-image-id="1*e2z86EGSohdVFqbCMNnDLw.png" data-width="935" data-height="832" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*e2z86EGSohdVFqbCMNnDLw.png"></div></figure><p name="dca5" id="dca5" class="graf graf--p graf-after--figure">Everyone seems very excited about Ontology (you guys can stop spamming my channel now please). Not really sure where to start, there is a lot going on here, we have ontology-ts-sdk (typescript library), we have ontology (the big boy, think we will start here), we have a java sdk, an eventbus, wasm, and even an python oracle. So a lot to cover, let’s start with ontology though.</p><figure name="6322" id="6322" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 607px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 86.7%;"></div><img class="graf-image" data-image-id="1*1ff_FCdEGCQCLfkOx412DA.png" data-width="964" data-height="836" src="https://cdn-images-1.medium.com/max/800/1*1ff_FCdEGCQCLfkOx412DA.png"></div></figure><p name="7b5c" id="7b5c" class="graf graf--p graf-after--figure">Active repo, lots of contributors, lots of commits. Readme looks good, let’s jump in.</p><figure name="007a" id="007a" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 525px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 75%;"></div><img class="graf-image" data-image-id="1*bNL9bvvm-Y9xVQE5kZjBfg.png" data-width="872" data-height="654" src="https://cdn-images-1.medium.com/max/800/1*bNL9bvvm-Y9xVQE5kZjBfg.png"></div></figure><p name="42c9" id="42c9" class="graf graf--p graf-after--figure">So, code looks familiar. This is DNA Project’s code (which is also NKN project code, which is also Elastos code). Let’s see what they have done extra though.</p><p name="4927" id="4927" class="graf graf--p graf-after--p">Ok, so it looks like tanZiWen is now working for Ontology? He did a lot of the DNA project work, so that’s a good sign. It looks like DNA Project split and has become NKN and Ontology, don’t know what happened with the original project, but let’s ignore any potential politics for now.</p><figure name="d65e" id="d65e" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 249px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 35.5%;"></div><img class="graf-image" data-image-id="1*cVC8G8S_p1oqqtil_NQbfQ.png" data-width="912" data-height="324" src="https://cdn-images-1.medium.com/max/800/1*cVC8G8S_p1oqqtil_NQbfQ.png"></div></figure><p name="f746" id="f746" class="graf graf--p graf-after--figure">Does look like they added quite a few consensus models.</p><figure name="05a0" id="05a0" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 508px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 72.5%;"></div><img class="graf-image" data-image-id="1*_LdHOkcun5RTgInJefZiLw.png" data-width="913" data-height="662" src="https://cdn-images-1.medium.com/max/800/1*_LdHOkcun5RTgInJefZiLw.png"></div></figure><p name="235d" id="235d" class="graf graf--p graf-after--figure">VBFT not available yet.</p><figure name="706f" id="706f" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 561px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 80.10000000000001%;"></div><img class="graf-image" data-image-id="1*4xknkq6UzTc4yp5cjj3zYg.png" data-width="909" data-height="728" src="https://cdn-images-1.medium.com/max/800/1*4xknkq6UzTc4yp5cjj3zYg.png"></div></figure><p name="8f88" id="8f88" class="graf graf--p graf-after--figure">SBFT not available yet. Solo is just for self hosted solutions. So for now it’s just dbft.</p><figure name="cccd" id="cccd" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 711px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 101.6%;"></div><img class="graf-image" data-image-id="1*aPkgfKBGXTM0mS9snjY41A.png" data-width="830" data-height="843" src="https://cdn-images-1.medium.com/max/800/1*aPkgfKBGXTM0mS9snjY41A.png"></div></figure><p name="53c3" id="53c3" class="graf graf--p graf-after--figure">I like that they added a bunch of different key encryption schemes, makes it a nice codebase to inherit from, but it doesn’t directly add a lot of value.</p><figure name="b680" id="b680" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 568px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 81.10000000000001%;"></div><img class="graf-image" data-image-id="1*nN8Gq7QZdWPsDMa2d1pXcg.png" data-width="904" data-height="733" src="https://cdn-images-1.medium.com/max/800/1*nN8Gq7QZdWPsDMa2d1pXcg.png"></div></figure><p name="bbf9" id="bbf9" class="graf graf--p graf-after--figure">For their WASM implementation they used Wagon, so skipping for now, for their NEOVM it is just a slightly modified version of AVM, so skipping as well for now.</p><p name="dcd0" id="dcd0" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">Conclusion</strong>: So, the rest of the code was fairly boilerplate, had a dive into validator, txnpool, vm, smartcontract, but nothing really to report. Nothing bad, but nothing great, they know the DNA project code base very well and they have made some improvements. I have yet to see the codebase in production though, so it’s difficult to say how it will perform. For now it’s still very early days but no red flags here, they have the core, but they have yet to bring all the auxiliaries (cross-chain, high performance, horizontally scalable) to the table.</p><p name="19ac" id="19ac" class="graf graf--p graf-after--p graf--trailing">I’ll keep having a look a the repo every so often, and I’ll dive some of the auxiliary projects as well.</p></div></div></section>
+</section>
+<footer><p class="p-tags">Tagged in <a href="https://medium.com/tag/github" class="p-tag">Github</a>, <a href="https://medium.com/tag/crypto" class="p-tag">Crypto</a>, <a href="https://medium.com/tag/cryptocurrency" class="p-tag">Cryptocurrency</a>, <a href="https://medium.com/tag/ontology" class="p-tag">Ontology</a></p><p>By <a href="https://medium.com/@suchi.blackwing" class="p-author h-card">Andre Cronje</a> on <a href="https://medium.com/p/378f3beb6552"><time class="dt-published" datetime="2018-03-30T11:55:36.749Z">March 30, 2018</time></a>.</p><p><a href="https://medium.com/@suchi.blackwing/cryptocurrency-code-review-ontology-ont-378f3beb6552" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 2, 2018.</p></footer></article>
+
+</body></html>

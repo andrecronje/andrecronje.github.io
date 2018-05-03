@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Cryptocurrency Code Review: Eximchain</title><meta name="description" content="Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…"><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Cryptocurrency Code Review: Eximchain</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…
+</section>
+<section data-field="body" class="e-content">
+<section name="d373" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="84fc" id="84fc" class="graf graf--h3 graf--leading graf--title">Cryptocurrency Code Review: Eximchain</h3><p name="fe8d" id="fe8d" class="graf graf--p graf-after--h3"><strong class="markup--strong markup--p-strong">Disclaimer</strong>: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a comment on the overall project, scope, or success thereof. This was done as an educational review by me and any comments in the article are simply my opinion. It should not be used as any comment or advice on the project as a whole.</p><p name="e188" id="e188" class="graf graf--p graf-after--p">EDIT 29/03/2018 Feedback from EximChain</p><p name="4097" id="4097" class="graf graf--p graf-after--p">Hi Andre,</p><p name="7111" id="7111" class="graf graf--p graf-after--p">Thanks for taking the time to review our code, our large scale network testing results are available on <a href="https://github.com/Eximchain/quorum-stress-tests" data-href="https://github.com/Eximchain/quorum-stress-tests" class="markup--anchor markup--p-anchor" rel="nofollow noopener noopener" target="_blank">https://github.com/Eximchain/quorum-stress-tests</a>. Our current testnet has around 250 machines running the protocol on real, not simulated, infrastructure live in US, Canada, Brazil, England, Ireland, Germany, France, Singapore, Japan, Australia, India; automated and managed through Infrastructure as Code. With Infra as Code we will offer our users to manage distributed blockchain, api’s, and key management infrastructures to support their applications. We will release our 10 part video tutorial series on how to use Eximchain’s self-built tools to develop decentralized enterprise infrastructure on AWS soon, hopefully you will consider doing a review again:)</p><p name="7d04" id="7d04" class="graf graf--p graf-after--p">Regards,</p><p name="e8ed" id="e8ed" class="graf graf--p graf-after--p">Eximchain</p><p name="113d" id="113d" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">Me</strong>: So their goal right now is infrastructure, and they are focusing on it a lot (as you will see from their terraformer application as well), so right now they are less focused on the actual blockchain code, but instead on creating an easy, sustainable, enterprise grade solution of infrastructure to build on top of. This is how you build your foundation the right way. I actually really hope they explore this as a solution and offer it as a service to other blockchain companies as well. I love how each team is focusing on a different angle and it shows a really positive combined future.</p><p name="2b9c" id="2b9c" class="graf graf--p graf-after--p">** Original article follows</p><figure name="2638" id="2638" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 683px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 97.6%;"></div><img class="graf-image" data-image-id="1*PuU84mbk-GTZNxmFkFfVHg.png" data-width="929" data-height="907" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*PuU84mbk-GTZNxmFkFfVHg.png"></div></figure><p name="db6c" id="db6c" class="graf graf--p graf-after--figure">4 days, 5 days, 6 days, pretty inactive. I find it interesting that they have both go-ethereum and quorum. Quorum is a permissioned version of go-ethereum, it can run in Raft or BFT consensus, it is great for private networks.</p><p name="0e3c" id="0e3c" class="graf graf--p graf-after--p">Let’s have a look at the top 3 repo’s</p><figure name="5767" id="5767" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 357px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 51%;"></div><img class="graf-image" data-image-id="1*a0ZYRkwbNuAN-8EroYyxCg.png" data-width="936" data-height="477" src="https://cdn-images-1.medium.com/max/800/1*a0ZYRkwbNuAN-8EroYyxCg.png"></div></figure><p name="3c85" id="3c85" class="graf graf--p graf-after--figure">eth-client, 3 commits ahead, let’s see what was changed</p><figure name="7ef1" id="7ef1" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 417px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 59.5%;"></div><img class="graf-image" data-image-id="1*QjNQY_qfXW_l5nIMBQyweQ.png" data-width="929" data-height="553" src="https://cdn-images-1.medium.com/max/800/1*QjNQY_qfXW_l5nIMBQyweQ.png"></div></figure><p name="b70e" id="b70e" class="graf graf--p graf-after--figure">Could have already answered that before I even looked at it, just another rename, nothing else, let’s move on</p><figure name="2138" id="2138" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 315px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 45%;"></div><img class="graf-image" data-image-id="1*CGtqGl2Mq84Bf7Zph6tV0g.png" data-width="923" data-height="415" src="https://cdn-images-1.medium.com/max/800/1*CGtqGl2Mq84Bf7Zph6tV0g.png"></div></figure><p name="a33a" id="a33a" class="graf graf--p graf-after--figure">3 commits ahead, we already know what it’s going to be right?</p><figure name="0d22" id="0d22" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 639px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 91.2%;"></div><img class="graf-image" data-image-id="1*6vqh3nEuhDI_Oy_vZ_uIBg.png" data-width="913" data-height="833" src="https://cdn-images-1.medium.com/max/800/1*6vqh3nEuhDI_Oy_vZ_uIBg.png"></div></figure><p name="ac5b" id="ac5b" class="graf graf--p graf-after--figure">If you guessed a rename, and nothing else, then 10 points.</p><figure name="454f" id="454f" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 407px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 58.199999999999996%;"></div><img class="graf-image" data-image-id="1*lTX4UCdDdBokjrNwxp1DjQ.png" data-width="926" data-height="539" src="https://cdn-images-1.medium.com/max/800/1*lTX4UCdDdBokjrNwxp1DjQ.png"></div></figure><p name="cbb0" id="cbb0" class="graf graf--p graf-after--figure">4 commits ahead, can you guess what it is?</p><figure name="2d07" id="2d07" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 297px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 42.4%;"></div><img class="graf-image" data-image-id="1*4qnO7q26F7uKYIYK0gtFOQ.png" data-width="858" data-height="364" src="https://cdn-images-1.medium.com/max/800/1*4qnO7q26F7uKYIYK0gtFOQ.png"></div></figure><p name="4495" id="4495" class="graf graf--p graf-after--figure">Well, you guessed wrong, it’s nothing.</p><p name="741d" id="741d" class="graf graf--p graf-after--p graf--trailing"><strong class="markup--strong markup--p-strong">Conclusion</strong>: Go-ethereum and Quorum forked and renamed, nothing else here. Is this what companies are doing now? Just forking and renaming and doing an ICO?</p></div></div></section>
+</section>
+<footer><p class="p-tags">Tagged in <a href="https://medium.com/tag/git" class="p-tag">Git</a>, <a href="https://medium.com/tag/crypto" class="p-tag">Crypto</a>, <a href="https://medium.com/tag/cryptocurrency" class="p-tag">Cryptocurrency</a>, <a href="https://medium.com/tag/eximchain" class="p-tag">Eximchain</a></p><p>By <a href="https://medium.com/@suchi.blackwing" class="p-author h-card">Andre Cronje</a> on <a href="https://medium.com/p/e77abe147fac"><time class="dt-published" datetime="2018-03-25T18:29:42.576Z">March 25, 2018</time></a>.</p><p><a href="https://medium.com/@suchi.blackwing/cryptocurrency-code-review-eximchain-e77abe147fac" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 2, 2018.</p></footer></article>
+
+</body></html>

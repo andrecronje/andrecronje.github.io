@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Cryptocurrency Code Review: Holochain</title><meta name="description" content="Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…"><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Cryptocurrency Code Review: Holochain</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…
+</section>
+<section data-field="body" class="e-content">
+<section name="84f8" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="856e" id="856e" class="graf graf--h3 graf--leading graf--title">Cryptocurrency Code Review: Holochain</h3><p name="93a0" id="93a0" class="graf graf--p graf-after--h3"><strong class="markup--strong markup--p-strong">Disclaimer</strong>: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a comment on the overall project, scope, or success thereof. This was done as an educational review by me and any comments in the article are simply my opinion. It should not be used as any comment or advice on the project as a whole.</p><figure name="abd2" id="abd2" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 162px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 23.200000000000003%;"></div><img class="graf-image" data-image-id="1*UyPnS6RY5hDBqhjF2GYNhg.png" data-width="1733" data-height="402" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*UyPnS6RY5hDBqhjF2GYNhg.png"></div></figure><figure name="9e73" id="9e73" class="graf graf--figure graf-after--figure"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 284px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 40.5%;"></div><img class="graf-image" data-image-id="1*sr4ZInGaCxv_xYb4wpHW1A.png" data-width="938" data-height="380" src="https://cdn-images-1.medium.com/max/800/1*sr4ZInGaCxv_xYb4wpHW1A.png"></div></figure><p name="2d79" id="2d79" class="graf graf--p graf-after--figure">Let’s start off with, what is HoloChain, in the traditional sense, HoloChain is not a blockchain, it’s a new kind of distributed internet. The idea focuses around agent centric consensus. A traditional blockchain is data centric consensus, nodes reach consensus about what data they deem to be valid and accepted. Agent centric allows the users to decide on their consensus.</p><p name="5333" id="5333" class="graf graf--p graf-after--p">HoloChains have two parts, the original hashchain and the shared Distributed Hash Table. First, the hashchain, each app is uniquely identified by their root entry in their hashchain, only hashchains that share this root entry are considered shared, these can then communicate with other hashchains with the same starting root. This is comparable to git (a source control management protocol), we all start from the same root, and then we commit our changes into the project, sometimes this causes conflicts, and then we agree on resolution (in this case conflicts aren’t permitted in the first case).</p><p name="40c0" id="40c0" class="graf graf--p graf-after--p">The idea here, is that not everyone needs awareness of what everyone else is doing. If we are having a chat on a distributed chat client, does everyone have to agree on what we are saying? Probably not, in this case, we are all using the app, but only the two of us are committing to each others hashchain. If we wanted to make it public, we could share it with the Distributed Hash Table, but for most applications this most likely won’t be required.</p><p name="4f7e" id="4f7e" class="graf graf--p graf-after--p">So if this is the case, how can we accomplish balance transfer in the traditional sense? Our roots are embedded into the DHT in this case, so that everyone can share on the given state of the overall system, when we mutually agree that transfer has happened between the two of us, we can then publish this to the DHT. So the same as the chat example, except now we start from a shared root.</p><p name="8d53" id="8d53" class="graf graf--p graf-after--p">This is a framework for decentralization, could you build a blockchain on it? Sure, could you also build a high performance social network? Yes, yes you could.</p><p name="a960" id="a960" class="graf graf--p graf-after--p">For all the technical details I did my full analysis over at Cryptobriefing, the detailed article and link are below.</p><div name="664f" id="664f" class="graf graf--mixtapeEmbed graf-after--p graf--trailing"><a href="https://cryptobriefing.com/holochain-code-review-and-distributed-computing-thoughts/" data-href="https://cryptobriefing.com/holochain-code-review-and-distributed-computing-thoughts/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://cryptobriefing.com/holochain-code-review-and-distributed-computing-thoughts/"><strong class="markup--strong markup--mixtapeEmbed-strong">Holochain Code Review and Distributed Computing Thoughts | Crypto Briefing</strong><br><em class="markup--em markup--mixtapeEmbed-em">Holochain is not really like anything I&#39;ve seen before, so this code review won&#39;t be quite like anything you&#39;ve read…</em>cryptobriefing.com</a><a href="https://cryptobriefing.com/holochain-code-review-and-distributed-computing-thoughts/" class="js-mixtapeImage mixtapeImage u-ignoreBlock" data-media-id="026e66c4eb79e1010743e8ea7a71e69d" data-thumbnail-img-id="0*mg2v-x1Ah9BtsTKq." style="background-image: url(https://cdn-images-1.medium.com/fit/c/160/160/0*mg2v-x1Ah9BtsTKq.);"></a></div></div></div></section>
+</section>
+<footer><p class="p-tags">Tagged in <a href="https://medium.com/tag/blockchain" class="p-tag">Blockchain</a>, <a href="https://medium.com/tag/crypto" class="p-tag">Crypto</a>, <a href="https://medium.com/tag/cryptocurrency" class="p-tag">Cryptocurrency</a>, <a href="https://medium.com/tag/ico" class="p-tag">ICO</a>, <a href="https://medium.com/tag/holochain" class="p-tag">Holochain</a></p><p>By <a href="https://medium.com/@suchi.blackwing" class="p-author h-card">Andre Cronje</a> on <a href="https://medium.com/p/a7dea1c5ca69"><time class="dt-published" datetime="2018-04-20T07:51:31.324Z">April 20, 2018</time></a>.</p><p><a href="https://medium.com/@suchi.blackwing/cryptocurrency-code-review-holochain-a7dea1c5ca69" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 2, 2018.</p></footer></article>
+
+</body></html>

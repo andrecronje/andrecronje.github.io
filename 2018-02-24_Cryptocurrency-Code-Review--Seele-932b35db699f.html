@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Cryptocurrency Code Review: Seele</title><meta name="description" content="Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…"><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Cryptocurrency Code Review: Seele</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…
+</section>
+<section data-field="body" class="e-content">
+<section name="ad7f" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="da50" id="da50" class="graf graf--h3 graf--leading graf--title">Cryptocurrency Code Review: Seele</h3><p name="e866" id="e866" class="graf graf--p graf-after--h3"><strong class="markup--strong markup--p-strong">Disclaimer</strong>: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a comment on the overall project, scope, or success thereof. This was done as an educational review by me and any comments in the article are simply my opinion. It should not be used as any comment or advice on the project as a whole.</p><p name="5316" id="5316" class="graf graf--p graf-after--p">**EDIT 11/03/2018: Updated with response from SeeleTech</p><p name="5b27" id="5b27" class="graf graf--p graf--startsWithDoubleQuote graf-after--p">“1. We’re testing and improving our neural consensus algorithm on a larger nodes network, will publish to GitHub later, this PoW implementation is just a baseline as comparison.</p><p name="7d31" id="7d31" class="graf graf--p graf-after--p">2. For the QVIC, what you’re seeing is just small part of whole code, we’re trying to transfer our experimental code into production code and will publish to GitHub repository ASAP.</p><p name="27ea" id="27ea" class="graf graf--p graf-after--p">Currently we’re building a basic framework of Seele, the highlight features covered in our whitepaper still not open source, we will publish them step by step, please pay attention to our GitHub page.</p><p name="d4b9" id="d4b9" class="graf graf--p graf-after--p">Thanks,</p><p name="e23c" id="e23c" class="graf graf--p graf-after--p">Seele Team”</p><p name="49d1" id="49d1" class="graf graf--p graf-after--p">The original article follows, I look forward to the updates above to provide better insight to the innovations they are trying to deliver on.**</p><p name="e3c8" id="e3c8" class="graf graf--p graf-after--p">I really enjoy all of the new blockchain systems coming out. Each new version is filled with more hope and anticipation than the last. The thing I’m most excited about is the technology improvements. As a technocrat myself I find myself fascinated by how only using code we can accomplish such amazing new systems.</p><p name="451a" id="451a" class="graf graf--p graf-after--p">The title of latest and greatest is currently claimed by Seele. As they call themselves Blockchain 4.0. So with much anticipation I went and found myself on their github. <a href="https://github.com/seeleteam/go-seele" data-href="https://github.com/seeleteam/go-seele" class="markup--anchor markup--p-anchor" rel="nofollow noopener" target="_blank">https://github.com/seeleteam/go-seele</a></p><p name="508d" id="508d" class="graf graf--p graf-after--p">Seele describes themselves as follow; Seele is powered by an up-scalable Neural Consensus protocol for high throughput concurrency among large scale heterogeneous nodes and is able to form a unique heterogeneous forest multi-chain ecosystem.</p><p name="1926" id="1926" class="graf graf--p graf-after--p">Let’s have a look at their repo;</p><figure name="2af0" id="2af0" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 624px; max-height: 393px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 63%;"></div><img class="graf-image" data-image-id="1*QJDrc_P0p7kERy3yTUWGFQ.png" data-width="624" data-height="393" src="https://cdn-images-1.medium.com/max/800/1*QJDrc_P0p7kERy3yTUWGFQ.png"></div></figure><p name="8197" id="8197" class="graf graf--p graf-after--figure">Off to an interesting start, they begin in their whitepaper by saying how inefficient Proof of Work is and they talk about their neural net consensus algorithm, and yet, here we see consensus/pow. Layout is also very similar to go-ethereum.</p><p name="c697" id="c697" class="graf graf--p graf-after--p">Let’s look at consensus/pow</p><figure name="3932" id="3932" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 533px; max-height: 296px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 55.50000000000001%;"></div><img class="graf-image" data-image-id="1*YOtgHo4r2BSxhSLLElbEZw.png" data-width="533" data-height="296" src="https://cdn-images-1.medium.com/max/800/1*YOtgHo4r2BSxhSLLElbEZw.png"></div></figure><p name="6875" id="6875" class="graf graf--p graf-after--figure">Nothing interesting here, just an interface to either produce a mining result or to validate a result, no implementation yet. Sha256Worker has the actual implementation, so let’s have a look;</p><figure name="520e" id="520e" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 638px; max-height: 663px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 103.89999999999999%;"></div><img class="graf-image" data-image-id="1*IL_zmry8MD1M0x8olb1zjw.png" data-width="638" data-height="663" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*IL_zmry8MD1M0x8olb1zjw.png"></div></figure><p name="5228" id="5228" class="graf graf--p graf-after--figure">We have an incredibly basic and inefficient implementation of a PoW worker. All it does is is increment nonce by 1, hashes it with normal sha256 and compares it to the target number.</p><figure name="9e59" id="9e59" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 382px; max-height: 77px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 20.200000000000003%;"></div><img class="graf-image" data-image-id="1*yclSnDbtx3JnvU_qOu5CGA.png" data-width="382" data-height="77" src="https://cdn-images-1.medium.com/max/800/1*yclSnDbtx3JnvU_qOu5CGA.png"></div></figure><p name="fbdf" id="fbdf" class="graf graf--p graf-after--figure">Ok, so not exactly the neural net consensus mechanism we were expecting. But ok, let’s move on, let’s have a look at their new protocol to improve over TCP and UDP called QVIC.</p><figure name="177e" id="177e" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 857px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 122.50000000000001%;"></div><img class="graf-image" data-image-id="1*QG5eVtGb4kiOXSKKniqorg.png" data-width="748" data-height="916" src="https://cdn-images-1.medium.com/max/800/1*QG5eVtGb4kiOXSKKniqorg.png"></div></figure><p name="6148" id="6148" class="graf graf--p graf-after--figure">So we have their new struct packet. For packing we have some binary shifts. And to unpack we do the opposite. Sort of like a bad ASN1 implementation. Nothing here that actually changes the underlying architecture. In fact, why didn’t they just use ProtoBuff?</p><p name="d1e2" id="d1e2" class="graf graf--p graf-after--p">Ok, so not exactly as they describe; TCP/UDP-based low-latency Quick Value Internet Connection Seele 4 (QVIC) protocol that can better adapt to and meet the requirements of blockchain network than traditional Internet TCP and UDP protocols used in current blockchain networks.</p><p name="0e47" id="0e47" class="graf graf--p graf-after--p">It’s normal TCP, with a different packaging scheme, and a bad one at that.</p><p name="88c2" id="88c2" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">Conclusion:</strong> At this point I started to become fairly demotivated, and the rest of the code follows a similar pattern of disappointment. There is no innovation here, there are no new advancements, no new discoveries. Just a few bad implementations of things we already know.</p><p name="d6d3" id="d6d3" class="graf graf--p graf-after--p graf--trailing">I hope this is just an experimental repository and not actually meant to be their real code. Let’s assume this is just early days and that more great things are to come, but for now, I am left unsatisfied and wanting for more.</p></div></div></section>
+</section>
+<footer><p class="p-tags">Tagged in <a href="https://medium.com/tag/blockchain" class="p-tag">Blockchain</a>, <a href="https://medium.com/tag/seele" class="p-tag">Seele</a>, <a href="https://medium.com/tag/code-review" class="p-tag">Code Review</a>, <a href="https://medium.com/tag/crypto" class="p-tag">Crypto</a>, <a href="https://medium.com/tag/cryptocurrency" class="p-tag">Cryptocurrency</a></p><p>By <a href="https://medium.com/@suchi.blackwing" class="p-author h-card">Andre Cronje</a> on <a href="https://medium.com/p/932b35db699f"><time class="dt-published" datetime="2018-02-24T07:47:11.645Z">February 24, 2018</time></a>.</p><p><a href="https://medium.com/@suchi.blackwing/code-review-series-seele-932b35db699f" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 2, 2018.</p></footer></article>
+
+</body></html>

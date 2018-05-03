@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Cryptocurrency Code Review: Edenchain</title><meta name="description" content="Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…"><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Cryptocurrency Code Review: Edenchain</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…
+</section>
+<section data-field="body" class="e-content">
+<section name="e3f1" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="1a3b" id="1a3b" class="graf graf--h3 graf--leading graf--title">Cryptocurrency Code Review: Edenchain</h3><p name="0cd2" id="0cd2" class="graf graf--p graf-after--h3"><strong class="markup--strong markup--p-strong">Disclaimer</strong>: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a comment on the overall project, scope, or success thereof. This was done as an educational review by me and any comments in the article are simply my opinion. It should not be used as any comment or advice on the project as a whole.</p><p name="2c75" id="2c75" class="graf graf--p graf-after--p">EDIT 26/03/2018 EdenChain confirmed the repositority below is not their repository, I have asked that they also contact <a href="https://icodrops.com/edenchain/" data-href="https://icodrops.com/edenchain/" class="markup--anchor markup--p-anchor" rel="nofollow noopener" target="_blank">https://icodrops.com/edenchain/</a> where I took the link from. EdenChain does not have any public repositories, so you can ignore all items related to the code.</p><p name="a40f" id="a40f" class="graf graf--p graf-after--p">@kenn09 (EdenChain Community Manager) also reached out with the following comments with regards to my argument against permissioned blockchains;</p><p name="c673" id="c673" class="graf graf--p graf--startsWithDoubleQuote graf-after--p">“But Edenchain has a committee comprising of the partners, developer community, and user community who will decide on granting permissions. So some form of decentralisation is still retained</p><p name="468c" id="468c" class="graf graf--p graf-after--p">Our founders, James and Jenny works closely with businesses and government entities, so in our view, this is the ideal composition of security, scalability and decentralisation for a blockchain platform to be readily adopted by enterprises”</p><p name="74d1" id="74d1" class="graf graf--p graf-after--p">Original review follows</p><p name="1f0a" id="1f0a" class="graf graf--p graf-after--p">**</p><figure name="7887" id="7887" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 89px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 12.7%;"></div><img class="graf-image" data-image-id="1*xqGBJt_gbWaKihHp0O1t3Q.png" data-width="884" data-height="112" src="https://cdn-images-1.medium.com/max/800/1*xqGBJt_gbWaKihHp0O1t3Q.png"></div></figure><p name="1771" id="1771" class="graf graf--p graf--startsWithDoubleQuote graf-after--figure">“ It is a Blockchain Platform Technology for Edenchain’s Implementation of Programmable Economy. Through Edenchain, capitalize tangible/ intangible values, and trade it safely, cost efficiently, and fast It could be used easily by company/organization/individual who need a blockchain technology and coin”</p><p name="9b81" id="9b81" class="graf graf--p graf-after--p">Another permissioned blockchain. Let us talk for a moment about permissioned blockchains. So if we look at Ethereum or Bitcoin (or any other public network), we have a very (theoretically) even distribution of wealth. Any participating node has an equal chance to win the reward. This means that the rewards aren’t monopolized and spread amongst a lot of different members. This is important since this is what is needed for a digital economy to survive. If 1 person holds 50% of the economy, that is not a stable economy, 50% of it is stable, but that other 50% essentially controls it.</p><p name="e1a8" id="e1a8" class="graf graf--p graf-after--p">So why am I so against permissioned blockchains? Because why have a blockchain at all. The amazing thing about blockchain specifically is that it is cryptographically secure and open for public consumption. This means we don’t have to trust any one entity. On a permissioned blockchain, you are trusting the validators. This means you don’t need to use blockchain. They might as well just have a public instance of cassandra/mongodb/other running and give read only rights to the entire public. The second you see “permissioned” and “blockchain” together, you have to ask, then why have a blockchain? Blockchain as a technology is just an immutable concatenated list, that’s all. So if you are “permissioned” you don’t need blockchain, use any of the other data storage options available that are a thousand times better at processing and throughput. Blockchain isn’t the amazing invention, having a tamper proof shared ledger is the amazing thing, the second you say it’s permissioned you take away all it’s power.</p><p name="1513" id="1513" class="graf graf--p graf-after--p">And then we aren’t even talking yet about the token economics, because remember, every transaction fee, every “block” that gets mined is awarded to that validator. What’s it called again when all the money goes to the same entities over and over again? Oh right, a monopoly!</p><p name="0f41" id="0f41" class="graf graf--p graf-after--p">Sigh. All of this really just makes me sad. We have open BFT, we have PoS, you can even do completely random, but instead, every other “blockchain” is coming out as permissioned, why? Because with permissioned you can claim you are fixing security and scalability issues. Guess what, you aren’t, you are just throwing away blockchain and instead saying you might as well just host a database on your servers, you can trust us.</p><p name="d7ee" id="d7ee" class="graf graf--p graf-after--p">Let’s look at their code.</p><figure name="5ed0" id="5ed0" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 493px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 70.5%;"></div><img class="graf-image" data-image-id="1*_193VYWN7ttrXOhCUNu_AQ.png" data-width="924" data-height="651" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*_193VYWN7ttrXOhCUNu_AQ.png"></div></figure><p name="a359" id="a359" class="graf graf--p graf-after--figure">2 years ago, 4 years ago, 3 years ago. So this repository hasn’t been touched in a very long time. But some recent changes 5 months ago. Although first,</p><figure name="a897" id="a897" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 313px; max-height: 90px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 28.799999999999997%;"></div><img class="graf-image" data-image-id="1*muIq1jEAERkIaQGwL1RBkg.png" data-width="313" data-height="90" src="https://cdn-images-1.medium.com/max/800/1*muIq1jEAERkIaQGwL1RBkg.png"></div></figure><p name="baa9" id="baa9" class="graf graf--p graf-after--figure">Forked from cryptonote? Let’s have a look</p><figure name="5bd0" id="5bd0" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 481px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 68.7%;"></div><img class="graf-image" data-image-id="1*YGLfFMSWsZN0tpuv9XL2Cw.png" data-width="958" data-height="658" src="https://cdn-images-1.medium.com/max/800/1*YGLfFMSWsZN0tpuv9XL2Cw.png"></div></figure><p name="2c2b" id="2c2b" class="graf graf--p graf-after--figure">Who is Cryptonote and how do they relate to Edenchain?</p><figure name="59dc" id="59dc" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 413px; max-height: 153px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 37%;"></div><img class="graf-image" data-image-id="1*sd4RF0RFEeDIaqNB63ZoRQ.png" data-width="413" data-height="153" src="https://cdn-images-1.medium.com/max/800/1*sd4RF0RFEeDIaqNB63ZoRQ.png"></div></figure><p name="1b9d" id="1b9d" class="graf graf--p graf-after--figure">And cryptonote is just a fork of bytecoin, let’s have a look</p><figure name="9523" id="9523" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 384px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 54.800000000000004%;"></div><img class="graf-image" data-image-id="1*RTqOGMgY64NPzAQfgkWM9g.png" data-width="932" data-height="511" src="https://cdn-images-1.medium.com/max/800/1*RTqOGMgY64NPzAQfgkWM9g.png"></div></figure><p name="ec04" id="ec04" class="graf graf--p graf-after--figure">Ok, I have no idea what’s going on, so a fork of a fork of a fork. But at least lets look at the changes made by Edenchain</p><figure name="d817" id="d817" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 352px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 50.3%;"></div><img class="graf-image" data-image-id="1*biF7tE9k6157rU0wds2sBA.png" data-width="1889" data-height="950" src="https://cdn-images-1.medium.com/max/800/1*biF7tE9k6157rU0wds2sBA.png"></div></figure><p name="cc28" id="cc28" class="graf graf--p graf-after--figure">They renamed cryptonote to edenchain, and changed the supply, fee, and default ports.</p><p name="3fbc" id="3fbc" class="graf graf--p graf-after--p">That’s it. That’s all that is here.</p><p name="6004" id="6004" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">Conclusion</strong>: I honestly have no idea, I should comment that the github link was from ICO drops, I didn’t actually see it on their own website, is this even their github? Are they really a blockchain and not just a financial platform for creating coins and tokenizing real world objects?</p><figure name="68d6" id="68d6" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 111px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 15.9%;"></div><img class="graf-image" data-image-id="1*yFCX_oOdYHO60FQpXi2BBA.png" data-width="1596" data-height="253" src="https://cdn-images-1.medium.com/max/800/1*yFCX_oOdYHO60FQpXi2BBA.png"></div></figure><p name="17ef" id="17ef" class="graf graf--p graf-after--figure">Where are these things? Where is the EdenChain Alpha version? Please don’t tell me it’s the above.</p><figure name="9ecd" id="9ecd" class="graf graf--figure graf-after--p graf--trailing"><div class="aspectRatioPlaceholder is-locked" style="max-width: 289px; max-height: 242px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 83.7%;"></div><img class="graf-image" data-image-id="1*wbchXANNVZs0_lsrU4BNGA.png" data-width="289" data-height="242" src="https://cdn-images-1.medium.com/max/800/1*wbchXANNVZs0_lsrU4BNGA.png"></div></figure></div></div></section>
+</section>
+<footer><p class="p-tags">Tagged in <a href="https://medium.com/tag/blockchain" class="p-tag">Blockchain</a>, <a href="https://medium.com/tag/edenchain" class="p-tag">Edenchain</a>, <a href="https://medium.com/tag/cryptocurrency" class="p-tag">Cryptocurrency</a>, <a href="https://medium.com/tag/crypto" class="p-tag">Crypto</a>, <a href="https://medium.com/tag/ico" class="p-tag">ICO</a></p><p>By <a href="https://medium.com/@suchi.blackwing" class="p-author h-card">Andre Cronje</a> on <a href="https://medium.com/p/b16899e18569"><time class="dt-published" datetime="2018-03-23T08:38:42.567Z">March 23, 2018</time></a>.</p><p><a href="https://medium.com/@suchi.blackwing/cryptocurrency-code-review-edenchain-b16899e18569" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 2, 2018.</p></footer></article>
+
+</body></html>

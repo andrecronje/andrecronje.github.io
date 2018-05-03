@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Cryptocurrency Code Review: Seele v2</title><meta name="description" content="Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…"><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Cryptocurrency Code Review: Seele v2</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…
+</section>
+<section data-field="body" class="e-content">
+<section name="e963" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="c667" id="c667" class="graf graf--h3 graf--leading graf--title">Cryptocurrency Code Review: Seele v2</h3><p name="e866" id="e866" class="graf graf--p graf-after--h3"><strong class="markup--strong markup--p-strong">Disclaimer</strong>: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a comment on the overall project, scope, or success thereof. This was done as an educational review by me and any comments in the article are simply my opinion. It should not be used as any comment or advice on the project as a whole.</p><div name="b0ad" id="b0ad" class="graf graf--mixtapeEmbed graf-after--p"><a href="https://cryptobriefing.com/seele-code-review-audit/" data-href="https://cryptobriefing.com/seele-code-review-audit/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://cryptobriefing.com/seele-code-review-audit/"><strong class="markup--strong markup--mixtapeEmbed-strong">Seele Code Review And Audit - Neural Consensus | Crypto Briefing</strong><br><em class="markup--em markup--mixtapeEmbed-em">The Seele Neural Consensus Algorithm has been getting everyone riled up for a while, and I&#39;ve performed a Seele code…</em>cryptobriefing.com</a><a href="https://cryptobriefing.com/seele-code-review-audit/" class="js-mixtapeImage mixtapeImage u-ignoreBlock" data-media-id="da84463f2a03564baaa3ba5195cb5d54" data-thumbnail-img-id="0*m7r3oVdIAAfPC3lY." style="background-image: url(https://cdn-images-1.medium.com/fit/c/160/160/0*m7r3oVdIAAfPC3lY.);"></a></div><p name="5ca4" id="5ca4" class="graf graf--p graf-after--mixtapeEmbed">Ok people, I get it, you want another Seele review. Please stop asking now.</p><figure name="74dc" id="74dc" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 650px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 92.80000000000001%;"></div><img class="graf-image" data-image-id="1*0nBI-gQWr2T_nkggYGzuOw.png" data-width="932" data-height="865" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*0nBI-gQWr2T_nkggYGzuOw.png"></div></figure><p name="60f2" id="60f2" class="graf graf--p graf-after--figure">Instead of looking at the code in entirety, we are going to look at what did they change since my last review.</p><figure name="d6e1" id="d6e1" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 436px; max-height: 280px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 64.2%;"></div><img class="graf-image" data-image-id="1*pTuLwu4IfGCi2-dm_R3pWg.png" data-width="436" data-height="280" src="https://cdn-images-1.medium.com/max/800/1*pTuLwu4IfGCi2-dm_R3pWg.png"></div></figure><p name="3431" id="3431" class="graf graf--p graf-after--figure">Adding some string functions to levelDB</p><figure name="98af" id="98af" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 477px; max-height: 724px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 151.8%;"></div><img class="graf-image" data-image-id="1*gKOSILuZY5nsfYM58oDFmg.png" data-width="477" data-height="724" src="https://cdn-images-1.medium.com/max/800/1*gKOSILuZY5nsfYM58oDFmg.png"></div></figure><p name="dac1" id="dac1" class="graf graf--p graf-after--figure">Added some mini node code (presumably to make testing easier for them)</p><p name="d7cd" id="d7cd" class="graf graf--p graf-after--p">Some substance in adding ASN.1 (a communication protocol, one I like a lot), and ECIES encryption. Nothing amazing yet, but steps towards improvement. Some RPC, transaction, and block updates, nothing that isn’t in go-ethereum.</p><figure name="7036" id="7036" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 505px; max-height: 894px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 177%;"></div><img class="graf-image" data-image-id="1*r8P58gwq_g6Xxjri4l_IRQ.png" data-width="505" data-height="894" src="https://cdn-images-1.medium.com/max/800/1*r8P58gwq_g6Xxjri4l_IRQ.png"></div></figure><p name="548e" id="548e" class="graf graf--p graf-after--figure">Seele service looked interesting, but no substance yet. Does look like they are setting up for their multiple networks though. How does building a multi layer p2p network add value again?</p><figure name="0b4a" id="0b4a" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 452px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 64.60000000000001%;"></div><img class="graf-image" data-image-id="1*7tQx3vQj7_mS_5KO4JdwoA.png" data-width="934" data-height="603" src="https://cdn-images-1.medium.com/max/800/1*7tQx3vQj7_mS_5KO4JdwoA.png"></div></figure><p name="d758" id="d758" class="graf graf--p graf-after--figure">This by the way, has been the majority of changes, changing node to Node an levelDB to LevelDB, they really like capitalizing the first letter.</p><figure name="ef42" id="ef42" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 397px; max-height: 349px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 87.9%;"></div><img class="graf-image" data-image-id="1*gZOV3DYaZz0I-uzh2M7htQ.png" data-width="397" data-height="349" src="https://cdn-images-1.medium.com/max/800/1*gZOV3DYaZz0I-uzh2M7htQ.png"></div></figure><p name="6774" id="6774" class="graf graf--p graf-after--figure">Added block downloader events.</p><p name="c58e" id="c58e" class="graf graf--p graf-after--p">Sha3Miner added, and Sha3Miner removed.</p><figure name="da25" id="da25" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 667px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 95.3%;"></div><img class="graf-image" data-image-id="1*-WXJ3u6kKBYvdzZjbb4SvA.png" data-width="936" data-height="892" src="https://cdn-images-1.medium.com/max/800/1*-WXJ3u6kKBYvdzZjbb4SvA.png"></div></figure><p name="fc56" id="fc56" class="graf graf--p graf-after--figure">Ok, starting with their Trie structure for nodes, this would be their “forest”, so we are seeing some steps towards their implementation.</p><figure name="4977" id="4977" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 648px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 92.60000000000001%;"></div><img class="graf-image" data-image-id="1*aaLjiamv_1_gPFi8AVw0Qg.png" data-width="937" data-height="868" src="https://cdn-images-1.medium.com/max/800/1*aaLjiamv_1_gPFi8AVw0Qg.png"></div></figure><p name="0b4b" id="0b4b" class="graf graf--p graf-after--figure">Saving the current state in the block. The block is the state, this is cyclic redundancy, I must be missing something? So, they are splitting up saving blocks from account space. Then saving the reference of the account state into the blockchain. I don’t know why. Could this allow for multiple blockchains each with their own account snapshot? Will investigate more on this.</p><figure name="7c7c" id="7c7c" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 228px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 32.6%;"></div><img class="graf-image" data-image-id="1*5V9_QFZ_bwzfX7Wy3AubqQ.png" data-width="871" data-height="284" src="https://cdn-images-1.medium.com/max/800/1*5V9_QFZ_bwzfX7Wy3AubqQ.png"></div></figure><p name="ac3e" id="ac3e" class="graf graf--p graf-after--figure">A payload object added to the transactions (making transactions more mutable, but bigger).</p><figure name="ceeb" id="ceeb" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 265px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 37.8%;"></div><img class="graf-image" data-image-id="1*SzzYtMCrqfHAQfxBra8HNA.png" data-width="820" data-height="310" src="https://cdn-images-1.medium.com/max/800/1*SzzYtMCrqfHAQfxBra8HNA.png"></div></figure><p name="85da" id="85da" class="graf graf--p graf-after--figure">Adding the reward as a transaction in the block. A modification I normally do as well.</p><figure name="22b6" id="22b6" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 141px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 20.1%;"></div><img class="graf-image" data-image-id="1*6GBziR8ZMsPSpJV2ZF1Hhg.png" data-width="915" data-height="184" src="https://cdn-images-1.medium.com/max/800/1*6GBziR8ZMsPSpJV2ZF1Hhg.png"></div></figure><p name="3c7e" id="3c7e" class="graf graf--p graf-after--figure">Validating the new block reward transactions as first transaction of a signed block.</p><div name="2732" id="2732" class="graf graf--mixtapeEmbed graf-after--p"><a href="https://cryptobriefing.com/seele-code-review-audit/" data-href="https://cryptobriefing.com/seele-code-review-audit/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://cryptobriefing.com/seele-code-review-audit/"><strong class="markup--strong markup--mixtapeEmbed-strong">Seele Code Review And Audit - Neural Consensus | Crypto Briefing</strong><br><em class="markup--em markup--mixtapeEmbed-em">The Seele Neural Consensus Algorithm has been getting everyone riled up for a while, and I&#39;ve performed a Seele code…</em>cryptobriefing.com</a><a href="https://cryptobriefing.com/seele-code-review-audit/" class="js-mixtapeImage mixtapeImage u-ignoreBlock" data-media-id="da84463f2a03564baaa3ba5195cb5d54" data-thumbnail-img-id="0*m7r3oVdIAAfPC3lY." style="background-image: url(https://cdn-images-1.medium.com/fit/c/160/160/0*m7r3oVdIAAfPC3lY.);"></a></div><p name="891e" id="891e" class="graf graf--p graf-after--mixtapeEmbed"><strong class="markup--strong markup--p-strong">Conclusion</strong>: I admit, they have made some good improvements, they are starting to build out the skeleton of their idea, but it’s still just an idea. Normally the process is idea &gt; prototype &gt; raise funds, I guess sometimes that just isn’t required.</p><p name="b4f1" id="b4f1" class="graf graf--p graf-after--p graf--trailing">To be clear, none of their concepts have been proven and none of them are in any state of completion within the code. For now it’s still just a go-ethereum copy, but at least they are working on it and they are making some changes that I like, I’ll keep a closer eye on them.</p></div></div></section>
+</section>
+<footer><p class="p-tags">Tagged in <a href="https://medium.com/tag/blockchain" class="p-tag">Blockchain</a>, <a href="https://medium.com/tag/crypto" class="p-tag">Crypto</a>, <a href="https://medium.com/tag/cryptocurrency" class="p-tag">Cryptocurrency</a>, <a href="https://medium.com/tag/seele" class="p-tag">Seele</a></p><p>By <a href="https://medium.com/@suchi.blackwing" class="p-author h-card">Andre Cronje</a> on <a href="https://medium.com/p/f34254a404bb"><time class="dt-published" datetime="2018-04-14T14:31:12.588Z">April 14, 2018</time></a>.</p><p><a href="https://medium.com/@suchi.blackwing/cryptocurrency-code-review-seele-v2-f34254a404bb" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 2, 2018.</p></footer></article>
+
+</body></html>

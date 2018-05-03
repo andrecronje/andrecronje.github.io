@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Cryptocurrency Code Review: Neurochain</title><meta name="description" content="Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…"><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Cryptocurrency Code Review: Neurochain</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…
+</section>
+<section data-field="body" class="e-content">
+<section name="ba38" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="6438" id="6438" class="graf graf--h3 graf--leading graf--title">Cryptocurrency Code Review: Neurochain</h3><p name="0154" id="0154" class="graf graf--p graf-after--h3"><strong class="markup--strong markup--p-strong">Disclaimer</strong>: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a comment on the overall project, scope, or success thereof. This was done as an educational review by me and any comments in the article are simply my opinion. It should not be used as any comment or advice on the project as a whole.</p><figure name="26fb" id="26fb" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 594px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 84.89999999999999%;"></div><img class="graf-image" data-image-id="1*nA4J1doI-QX_-IJZegZXhw.png" data-width="808" data-height="686" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*nA4J1doI-QX_-IJZegZXhw.png"></div></figure><figure name="9ec8" id="9ec8" class="graf graf--figure graf-after--figure"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 654px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 93.4%;"></div><img class="graf-image" data-image-id="1*z7j3e-Omk_kqrQUC9Mg0Ug.png" data-width="924" data-height="863" src="https://cdn-images-1.medium.com/max/800/1*z7j3e-Omk_kqrQUC9Mg0Ug.png"></div></figure><p name="197d" id="197d" class="graf graf--p graf-after--figure">Prototype looks like the real meat of the Proof of Concept (PoC), so let’s have a look</p><figure name="0bb1" id="0bb1" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 647px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 92.4%;"></div><img class="graf-image" data-image-id="1*zMx6eFPjiAo8QEO1ptX9Gw.png" data-width="936" data-height="865" src="https://cdn-images-1.medium.com/max/800/1*zMx6eFPjiAo8QEO1ptX9Gw.png"></div></figure><p name="c85f" id="c85f" class="graf graf--p graf-after--figure">Admittedly, this is just a demo, their real project will be in C++, so we can’t judge too much based on what we see</p><figure name="75c2" id="75c2" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 576px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 82.3%;"></div><img class="graf-image" data-image-id="1*wGfHAL0Hb4eF8uj1oI-BqQ.png" data-width="734" data-height="604" src="https://cdn-images-1.medium.com/max/800/1*wGfHAL0Hb4eF8uj1oI-BqQ.png"></div></figure><p name="3931" id="3931" class="graf graf--p graf-after--figure">NodeJS has two variable types, var (the object will change) and const (the object is fixed), the latter is more optimized, I like seeing const used instead of var, but again, this is a PoC, so we can’t expect high quality.</p><p name="a09c" id="a09c" class="graf graf--p graf-after--p">A bot is made for each purpose, this is a microservices model for bots, I like it.</p><figure name="d0ce" id="d0ce" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 384px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 54.900000000000006%;"></div><img class="graf-image" data-image-id="1*01Yt8rGXHOacfSLaPIAjOA.png" data-width="893" data-height="490" src="https://cdn-images-1.medium.com/max/800/1*01Yt8rGXHOacfSLaPIAjOA.png"></div></figure><p name="00e4" id="00e4" class="graf graf--p graf-after--figure">The bad, using global as a shared pattern, the good, fantastic comments.</p><figure name="7ad3" id="7ad3" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 492px; max-height: 254px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 51.6%;"></div><img class="graf-image" data-image-id="1*Ps1ufgllKHu4pxtSzR6SZQ.png" data-width="492" data-height="254" src="https://cdn-images-1.medium.com/max/800/1*Ps1ufgllKHu4pxtSzR6SZQ.png"></div></figure><p name="9146" id="9146" class="graf graf--p graf-after--figure">This is the meat, let’s have a look;</p><figure name="5c20" id="5c20" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 595px; max-height: 280px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 47.099999999999994%;"></div><img class="graf-image" data-image-id="1*VLudeAKmhiWRgWDVbpdfyA.png" data-width="595" data-height="280" src="https://cdn-images-1.medium.com/max/800/1*VLudeAKmhiWRgWDVbpdfyA.png"></div></figure><p name="ad5a" id="ad5a" class="graf graf--p graf-after--figure">Websockets for activity.</p><figure name="dc93" id="dc93" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 441px; max-height: 262px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 59.4%;"></div><img class="graf-image" data-image-id="1*1iP5z9rpheDjxrfGuWbdog.png" data-width="441" data-height="262" src="https://cdn-images-1.medium.com/max/800/1*1iP5z9rpheDjxrfGuWbdog.png"></div></figure><p name="c821" id="c821" class="graf graf--p graf-after--figure">Transactions have a reference to lastBlockID, interesting.</p><figure name="a256" id="a256" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 290px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 41.4%;"></div><img class="graf-image" data-image-id="1*Wr4MBpgeZysTKTNmC6Ycbw.png" data-width="734" data-height="304" src="https://cdn-images-1.medium.com/max/800/1*Wr4MBpgeZysTKTNmC6Ycbw.png"></div></figure><p name="bf4d" id="bf4d" class="graf graf--p graf-after--figure">All the basics covered, hash and signature.</p><figure name="5791" id="5791" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 299px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 42.699999999999996%;"></div><img class="graf-image" data-image-id="1*WCTC0t30G58M3t2pINemow.png" data-width="929" data-height="397" src="https://cdn-images-1.medium.com/max/800/1*WCTC0t30G58M3t2pINemow.png"></div></figure><p name="49ed" id="49ed" class="graf graf--p graf-after--figure">No mining yet, but transactions, signatures, and messages implemented, let’s keep going</p><figure name="d3f6" id="d3f6" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 337px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 48.1%;"></div><img class="graf-image" data-image-id="1*gWDwm7xWFBokdv3Gv9xJZQ.png" data-width="813" data-height="391" src="https://cdn-images-1.medium.com/max/800/1*gWDwm7xWFBokdv3Gv9xJZQ.png"></div></figure><p name="26fa" id="26fa" class="graf graf--p graf-after--figure">Consensus creates a quorum based on bot entropy and then selects a bot to propose. Nice mechanism.</p><p name="7980" id="7980" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">Conclusion</strong>: For now the machine learning is just a gimmick, but I like the bot swarm micoservices design architecture. I don’t know why they want to re-write it to C++, they should keep building on this base, it’s a nice design and it’s nice code.</p><p name="c838" id="c838" class="graf graf--p graf-after--p graf--trailing">For now it’s just messages being passed around and an elected bot creating a block, content in messages is left variable, that’s a nice mutable implementation. I like the design architecture, will keep an eye on them.</p></div></div></section>
+</section>
+<footer><p class="p-tags">Tagged in <a href="https://medium.com/tag/javascript" class="p-tag">JavaScript</a>, <a href="https://medium.com/tag/crypto" class="p-tag">Crypto</a>, <a href="https://medium.com/tag/cryptocurrency" class="p-tag">Cryptocurrency</a>, <a href="https://medium.com/tag/ico" class="p-tag">ICO</a>, <a href="https://medium.com/tag/neurochain" class="p-tag">Neurochain</a></p><p>By <a href="https://medium.com/@suchi.blackwing" class="p-author h-card">Andre Cronje</a> on <a href="https://medium.com/p/d92f429a1b73"><time class="dt-published" datetime="2018-03-31T14:00:28.095Z">March 31, 2018</time></a>.</p><p><a href="https://medium.com/@suchi.blackwing/cryptocurrency-code-review-neurochain-d92f429a1b73" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 2, 2018.</p></footer></article>
+
+</body></html>

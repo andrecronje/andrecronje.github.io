@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Cryptocurrency Code Review: High Performance Blockchain (HPB)</title><meta name="description" content="Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…"><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Cryptocurrency Code Review: High Performance Blockchain (HPB)</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Disclaimer: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a…
+</section>
+<section data-field="body" class="e-content">
+<section name="7346" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="fc21" id="fc21" class="graf graf--h3 graf--leading graf--title">Cryptocurrency Code Review: High Performance Blockchain (HPB)</h3><p name="9428" id="9428" class="graf graf--p graf-after--h3"><strong class="markup--strong markup--p-strong">Disclaimer</strong>: These reviews are done as is from what is on display in the master branch of the repo’s made available. This review is not a comment on the overall project, scope, or success thereof. This was done as an educational review by me and any comments in the article are simply my opinion. It should not be used as any comment or advice on the project as a whole.</p><figure name="ab8e" id="ab8e" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 613px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 87.6%;"></div><img class="graf-image" data-image-id="1*_tGjlneHAwNAS1gdNXyusg.png" data-width="922" data-height="808" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*_tGjlneHAwNAS1gdNXyusg.png"></div></figure><p name="f46a" id="f46a" class="graf graf--p graf-after--figure">HPB (High-Performance Blockchain) is a new kind of block chain hardware and software architecture, which includes a chip acceleration engine and the blockchain platform, aiming to realize the performance extension of distributed applications.</p><p name="5a86" id="5a86" class="graf graf--p graf-after--p">The great thing here, is the chip acceleration, now first I have to admit, I have no idea how they are going to do this, tcp/ip, cpu’s, and ram are already as optimized as we can get them, and blockchain as it stands is generalized software, meaning it needs to fulfull a variety of functions, from calculations, to data transfer, to storing data. So it’s difficult to specialize that, unlike for example a PoW calculation which because it’s the exact same sequence of events you can do a lot of optimization by removing the generalized functions.</p><p name="a6b3" id="a6b3" class="graf graf--p graf-after--p">In their repository they have BOE (Blockchain Offload Engine) and TOE (TCP Offload Engine), the real value is in these two, this is their hardware sets, unfortunately, I don’t know AutoCad nor do I own AutoCad, so I can’t actually look at or investigate either of these two. If there is another friendly engineer out there that has AutoCad installed and they would be so kind as to have a look I would greatly appreciate it.</p><p name="6721" id="6721" class="graf graf--p graf-after--p">What I can look at though is their ghpb-testnet, although, they don’t need it, if they manage their chip acceleration, then every blockchain out there can use it and that will be their real value, so I don’t even know why they are doing their own blockchain. They have the opportunity here to purely focus on the chip so I actually don’t understand why they are splitting their attention. You will know that normally I don’t like all these ICO’s that just clone go-ethereum and then rename it, but if there ever was a case for a company to do it, it’s these guys. Don’t waste time trying to build blockchain software, leave that to the current big boys, instead, bring these amazing chips to us!</p><p name="b3bc" id="b3bc" class="graf graf--p graf-after--p">But, we are here to review some code, so let’s review. ghpb-testnet</p><figure name="927b" id="927b" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 683px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 97.6%;"></div><img class="graf-image" data-image-id="1*A6vL_wSp80wBx1aicXWyog.png" data-width="931" data-height="909" src="https://cdn-images-1.medium.com/max/800/1*A6vL_wSp80wBx1aicXWyog.png"></div></figure><p name="6660" id="6660" class="graf graf--p graf-after--figure">First thing we notice, they did indeed take go-ethereum and are working off of it. Not a lot of commits, decent amount of contributors. I’m curious, why aren’t people forking projects anymore? It keeps commit history in tact, it makes it easier to do merges in the future, and personally, I think it is just polite. I’m not saying it’s the intention, but when I see these projects that copied go-ethereum and removed all the credit, I get a little bit annoyed, there is nothing inherently wrong with doing it, I just feel it’s a bit rude. I mean, we are going to find out you are using the copy? Are you actually trying to hide it?</p><p name="f81a" id="f81a" class="graf graf--p graf-after--p">But this is good news, we like go-ethereum a lot, in fact it is kind of the standard from which I judge other code bases, so it makes it easier to see what is going on here.</p><p name="9e33" id="9e33" class="graf graf--p graf-after--p">So first, let’s jump into consensus</p><figure name="0ac7" id="0ac7" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 273px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 39.1%;"></div><img class="graf-image" data-image-id="1*6IZvs-VtfXtjejaS3lQQqA.png" data-width="932" data-height="364" src="https://cdn-images-1.medium.com/max/800/1*6IZvs-VtfXtjejaS3lQQqA.png"></div></figure><p name="2384" id="2384" class="graf graf--p graf-after--figure">We have something new! Prometheus, let’s look</p><figure name="7e44" id="7e44" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 615px; max-height: 570px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 92.7%;"></div><img class="graf-image" data-image-id="1*Mr3iGCRw_JVGrmsYLfxQFA.png" data-width="615" data-height="570" src="https://cdn-images-1.medium.com/max/800/1*Mr3iGCRw_JVGrmsYLfxQFA.png"></div></figure><p name="c785" id="c785" class="graf graf--p graf-after--figure">For sealing, Prometheus has this concept of a unique random, for the most part this is a SHA256 of the network interface [0] hardware address. This is used in combination with the signer identifier to create a signerHash, this random prefix is added to the header.</p><p name="690a" id="690a" class="graf graf--p graf-after--p">This seems a bit redundant, and I’m not sure what extra value this is really adding, originally I thought it’s a nice mechanism since it helps to uniquely identify a given round (each round has it’s own random number) which is nice because we don’t have any time concepts. But we already achieve this by pointing to the previous block, so I don’t actually thinks this does much except add a bit more overhead, I would actually like to hear why they used this, I think I might be missing something here.</p><p name="48c1" id="48c1" class="graf graf--p graf-after--p">Unfortunately, other than that, Prometheus is just Clique and Clique is just PoA, so right now HPB is go-ethereum running in PoA.</p><p name="1c20" id="1c20" class="graf graf--p graf-after--p">Let’s go through the commits and see what changes have been made;</p><p name="8270" id="8270" class="graf graf--p graf-after--p">We start with mostly formatting and styling changes, then they remove all the PoW code (I’m actually really happy to see this, the one thing that get’s me is we have a lot of projects forking go-ethereum, but none of them are cleaning up the code they don’t use, the DAO code is in there, the Byzantium code is in there, the PoW code is in there, if you guys really care about speed and optimization then we should all fork from a base that doesn’t have this in it, I will gladly do this and keep a maintained copy if that will help the community, just let me know)</p><p name="fdd5" id="fdd5" class="graf graf--p graf-after--p">Nice new metrics engine added for some more detailed system feedback.</p><p name="00d5" id="00d5" class="graf graf--p graf-after--p">And that’s unfortunately all we have.</p><p name="5bfc" id="5bfc" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">Conclusion</strong>: So not a lot of substance on the blockchain side of things, some nice additions and they are trying to optimize the code base by removing PoW, Prometheus is just Clique which is just PoA, so another PoA code base.</p><p name="e8a9" id="e8a9" class="graf graf--p graf-after--p graf--trailing">But again, I don’t even think they should be building their own blockchain, I think they should exclusively focus on the hardware, so are these guys going to bring us a new revolutionary blockchain? No, I don’t think so, do they have a real chance at bringing a new kind of chip acceleration that improves all other blockchains? Yes, I really think they have a shot if they stop caring about trying to make their own blockchain.</p></div></div></section>
+</section>
+<footer><p class="p-tags">Tagged in <a href="https://medium.com/tag/blockchain" class="p-tag">Blockchain</a>, <a href="https://medium.com/tag/crypto" class="p-tag">Crypto</a>, <a href="https://medium.com/tag/cryptocurrency" class="p-tag">Cryptocurrency</a>, <a href="https://medium.com/tag/hpb" class="p-tag">Hpb</a></p><p>By <a href="https://medium.com/@suchi.blackwing" class="p-author h-card">Andre Cronje</a> on <a href="https://medium.com/p/2dc856c307e9"><time class="dt-published" datetime="2018-03-29T06:31:36.266Z">March 29, 2018</time></a>.</p><p><a href="https://medium.com/@suchi.blackwing/cryptocurrency-code-review-high-performance-blockchain-hpb-2dc856c307e9" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 2, 2018.</p></footer></article>
+
+</body></html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>How to: create your own ethereum wallet in javascript</title><meta name="description" content="So the end goal is to create our own Android/iOS Ethereum ERC20 wallet. This will eventually become a tri purpose wallet storing Ethereum…"><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">How to: create your own ethereum wallet in javascript</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+So the end goal is to create our own Android/iOS Ethereum ERC20 wallet. This will eventually become a tri purpose wallet storing Ethereum…
+</section>
+<section data-field="body" class="e-content">
+<section name="0ca4" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="cb5c" id="cb5c" class="graf graf--h3 graf--leading graf--title">How to: create your own ethereum wallet in javascript</h3><p name="c043" id="c043" class="graf graf--p graf-after--h3">So the end goal is to create our own Android/iOS Ethereum ERC20 wallet. This will eventually become a tri purpose wallet storing Ethereum, Fusion, and Wanchain RC20 tokens repsectively.</p><p name="0638" id="0638" class="graf graf--p graf-after--p">Step 1 in creating a wallet is to actually generate the private/public key pair and storing these safely. This quick article will demonstrate how to accomplish this task.</p><figure name="0ca8" id="0ca8" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 632px; max-height: 467px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 73.9%;"></div><img class="graf-image" data-image-id="1*7QcCtaKm9VfWDEoUI6djIA.png" data-width="632" data-height="467" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*7QcCtaKm9VfWDEoUI6djIA.png"></div></figure><p name="0d48" id="0d48" class="graf graf--p graf-after--figure">Libraries used include ethereumjs-wallet, bip39, and ethereumjs-wallet/hdkey.</p><p name="2f1f" id="2f1f" class="graf graf--p graf-after--p">Line #6: First we generate the mnemonic phase from bip39 (this is just a string of 12 different words. At this point, ask the user to save these 12 words on a paper wallet.</p><p name="4818" id="4818" class="graf graf--p graf-after--p">#9: We create our hd wallet from the mnemonic seed.</p><p name="feb4" id="feb4" class="graf graf--p graf-after--p">#12: We set the standard hd path to /0, so as to be compatable with Metamask.</p><p name="17af" id="17af" class="graf graf--p graf-after--p">#13: We create the actual wallet.</p><p name="42c4" id="42c4" class="graf graf--p graf-after--p">#16: We create the V3 compatible JSON keystore file that is password protected (this file we will store locally and access via the password).</p><p name="7f01" id="7f01" class="graf graf--p graf-after--p">And that’s it, it is that simplistic to create your own Ethereum based wallet. With just the few lines above we already have our own Ethereum compatable wallet.</p><p name="b133" id="b133" class="graf graf--p graf-after--p">Next, we want to be able to create and verify a transaction</p><figure name="cd04" id="cd04" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 639px; max-height: 569px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 89%;"></div><img class="graf-image" data-image-id="1*Vdj3jM-E3QnvxKrKfBtN1g.png" data-width="639" data-height="569" src="https://cdn-images-1.medium.com/max/800/1*Vdj3jM-E3QnvxKrKfBtN1g.png"></div></figure><p name="89a2" id="89a2" class="graf graf--p graf-after--figure">#24: Retreive the private key from the JSON keystore we created.</p><p name="97b7" id="97b7" class="graf graf--p graf-after--p">#26–31: Create the transaction object using ethereumjs-tx</p><p name="0801" id="0801" class="graf graf--p graf-after--p">#33: Sign the transaction.</p><p name="c674" id="c674" class="graf graf--p graf-after--p">#43–49: Validate the just created transaction to ensure it matches the transaction payload we are expecting.</p><p name="e837" id="e837" class="graf graf--p graf-after--p">Again, it’s that simplistic. So in less than 50 lines of code, you can create your own wallet, create a transaction and sign it, and then using infura you can post it to Ethereum.</p><p name="d927" id="d927" class="graf graf--p graf-after--p">This was supposed to be the hard part, so I’m not exactly sure why some mobile app cryptocurrencies out there are valued at $350m and $60m USD respectively. Throwing a UI ontop of the above won’t take more than a week to do.</p><p name="ed44" id="ed44" class="graf graf--p graf-after--p">Next step, sending the transaction, polling for transactions, and possibly implementing a light client in mobile. For phase 1 development I think I will go the Metamask route.</p><p name="42ad" id="42ad" class="graf graf--p graf-after--p graf--trailing">That easy people, hope the above helped.</p></div></div></section>
+</section>
+<footer><p class="p-tags">Tagged in <a href="https://medium.com/tag/blockchain" class="p-tag">Blockchain</a>, <a href="https://medium.com/tag/javascript" class="p-tag">JavaScript</a>, <a href="https://medium.com/tag/ethereum" class="p-tag">Ethereum</a>, <a href="https://medium.com/tag/ethereum-wallet" class="p-tag">Ethereum Wallet</a></p><p>By <a href="https://medium.com/@suchi.blackwing" class="p-author h-card">Andre Cronje</a> on <a href="https://medium.com/p/fe548ccf19aa"><time class="dt-published" datetime="2018-03-04T10:30:31.092Z">March 4, 2018</time></a>.</p><p><a href="https://medium.com/@suchi.blackwing/how-to-create-your-own-ethereum-wallet-in-javascript-fe548ccf19aa" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 2, 2018.</p></footer></article>
+
+</body></html>
